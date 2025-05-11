@@ -3,7 +3,7 @@
   --primary-color: #aa392d;
   --secondary-color: #333;
   --background-color: #eaedef;
-  --text-color: #222831;
+  --text-color: #000; /* Ubah ke hitam */
   --highlight-color: #aa392d;
   --font-family: "Kanit", "Nunito Sans", sans-serif;
 }
@@ -55,11 +55,33 @@
 #about span,
 #about em,
 #about strong {
-  color: var(--text-color);
+  color: #000; /* Paksa semua text jadi hitam */
   font-size: 1.08rem;
   line-height: 1.7;
   font-family: var(--font-family);
   text-align: center;
+}
+
+/* Kecualikan yang ditandai: strong, em, a */
+#about strong {
+  font-weight: bold;
+  color: var(--primary-color); /* tetap warna utama */
+}
+
+#about em {
+  font-style: italic;
+  color: #0056b3; /* tetap biru */
+}
+
+#about a {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+#about a:hover {
+  color: var(--primary-color);
 }
 
 #about p {
@@ -77,27 +99,6 @@
   text-align: left;
 }
 
-#about strong {
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-#about em {
-  font-style: italic;
-  color: #0056b3;
-}
-
-#about a {
-  color: #007bff;
-  text-decoration: underline;
-  font-weight: 600;
-  transition: color 0.2s;
-}
-
-#about a:hover {
-  color: var(--primary-color);
-}
-
 .highlights {
   margin: 20px 0 30px 0;
   padding-left: 0;
@@ -107,7 +108,7 @@
 
 .highlights li {
   margin-bottom: 10px;
-  color: var(--text-color);
+  color: #000; /* pastikan list juga hitam */
   font-size: 1.05rem;
 }
 
@@ -138,7 +139,7 @@
 
 .skill-item span {
   font-size: 1rem;
-  color: var(--text-color);
+  color: #000; /* pastikan label skill juga hitam */
   font-weight: 500;
   text-align: center;
 }
