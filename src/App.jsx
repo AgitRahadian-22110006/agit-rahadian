@@ -4,7 +4,7 @@ import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-const Home = lazy(() => import('./pages/Home'));
+const Home = lazy(() => import('./pages/home')); // gunakan 'home' kecil
 const DetailPortfolio = lazy(() => import('./pages/DetailPortfolio'));
 const Experience = lazy(() => import('./pages/Experience'));
 const About = lazy(() => import('./components/About'));
