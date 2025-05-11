@@ -16,7 +16,10 @@ function DetailPortfolio() {
       <>
         <Helmet>
           <title>Portfolio Tidak Ditemukan - Agit Rahadian</title>
-          <meta name="description" content="Halaman portfolio tidak ditemukan. Silakan kembali ke halaman utama untuk melihat proyek lainnya." />
+          <meta
+            name="description"
+            content="Halaman portfolio tidak ditemukan. Silakan kembali ke halaman utama untuk melihat proyek lainnya."
+          />
         </Helmet>
         <Navbar />
         <p className="not-found">Portfolio tidak ditemukan.</p>
@@ -33,7 +36,7 @@ function DetailPortfolio() {
         <meta property="og:title" content={`${item.title} - Agit Rahadian`} />
         <meta property="og:description" content={item.description} />
         <meta property="og:image" content={item.images[0]?.src} />
-        <meta property="og:url" content={`https://yourwebsite.com/portfolio/${item.id}`} />
+        <meta property="og:url" content={`https://agitrahadian.my.id/portfolio/${item.id}`} />
         <script type="application/ld+json">
           {`
             {
@@ -41,7 +44,7 @@ function DetailPortfolio() {
               "@type": "CreativeWork",
               "name": "${item.title}",
               "description": "${item.description}",
-              "url": "https://yourwebsite.com/portfolio/${item.id}",
+              "url": "https://agitrahadian.my.id/portfolio/${item.id}",
               "image": "${item.images[0]?.src}"
             }
           `}

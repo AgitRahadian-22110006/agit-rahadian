@@ -24,8 +24,8 @@ function Portfolio() {
           content="Lihat proyek-proyek portofolio saya, termasuk pengembangan website, aplikasi internal, dan solusi digital lainnya."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.com/portfolio" />
-        <meta property="og:image" content="https://yourwebsite.com/images/portfolio-thumbnail.png" />
+        <meta property="og:url" content="https://agitrahadian.my.id/portfolio" />
+        <meta property="og:image" content="https://agitrahadian.my.id/assets/portfolio-thumbnail.png" />
         <script type="application/ld+json">
           {`
             {
@@ -33,14 +33,18 @@ function Portfolio() {
               "@type": "ItemList",
               "name": "Portfolio - Agit Rahadian",
               "description": "Lihat proyek-proyek portofolio saya, termasuk pengembangan website, aplikasi internal, dan solusi digital lainnya.",
-              "itemListElement": ${portfolioList.map((item, index) => ({
-                "@type": "ListItem",
-                "position": index + 1,
-                "url": `https://yourwebsite.com/portfolio/${item.id}`,
-                "name": item.title,
-                "image": item.images[0].src,
-                "description": item.description,
-              }))}
+              "itemListElement": [
+                ${portfolioList.map((item, index) => `
+                  {
+                    "@type": "ListItem",
+                    "position": ${index + 1},
+                    "url": "https://agitrahadian.my.id/portfolio/${item.id}",
+                    "name": "${item.title}",
+                    "image": "${item.images[0].src}",
+                    "description": "${item.description}"
+                  }
+                `).join(',')}
+              ]
             }
           `}
         </script>
@@ -56,7 +60,12 @@ function Portfolio() {
             <div className="item" key={item.id}>
               <div className="box">
                 <Link to={`/portfolio/${item.id}`}>
-                  <img src={item.images[0].src} alt={`Gambar proyek ${item.title}`} />
+                  <img
+                    src={item.images[0].src}
+                    alt={`Gambar proyek ${item.title}`}
+                    width={item.images[0].width || 600}
+                    height={item.images[0].height || 400}
+                  />
                 </Link>
                 <h2>{item.title}</h2>
                 <p className="description">{item.description}</p>

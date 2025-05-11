@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
 import { FaHtml5 } from 'react-icons/fa';
 import { MdCss } from 'react-icons/md';
@@ -23,8 +22,8 @@ function About() {
         <meta property="og:title" content="Agit Rahadian - Full-Stack Web Developer" />
         <meta property="og:description" content="Profil Agit Rahadian, seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.com" />
-        <meta property="og:image" content="https://yourwebsite.com/images/profile-picture.png" />
+        <meta property="og:url" content="https://agitrahadian.my.id" />
+        <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.webp" />
         <script type="application/ld+json">
           {`
             {
@@ -33,7 +32,7 @@ function About() {
               "name": "Agit Rahadian",
               "jobTitle": "Full-Stack Web Developer",
               "description": "Seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly.",
-              "url": "https://yourwebsite.com",
+              "url": "https://agitrahadian.my.id",
               "sameAs": [
                 "https://github.com/agitrahadian",
                 "https://www.linkedin.com/in/agitrahadian"

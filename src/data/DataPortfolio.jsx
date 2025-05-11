@@ -5,6 +5,7 @@ import prestasiImg from '../assets/prestasi.webp';
 import kurikulumImg from '../assets/kurikulum.webp';
 import guruImg from '../assets/guru.webp';
 import ppdbImg from '../assets/ppdb.webp';
+// import gambar lain jika ada proyek tambahan
 
 export const portfolioList = [
   {
@@ -50,4 +51,5 @@ export const portfolioList = [
       },
     ],
   },
+  // Tambahkan proyek lain di bawah ini jika ada
 ];

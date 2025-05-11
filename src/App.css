@@ -1,29 +1,32 @@
 html,
 body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   font-size: 16px;
   font-family: "Nunito Sans", "Kanit", sans-serif;
   scroll-behavior: smooth;
   background-color: #dedede;
 }
 
+/* Wrapper utama untuk konten */
 .wrapper {
   width: 1024px;
   margin: auto;
-  padding: 20px 0px 20px 0px;
+  padding: 20px 0;
 }
 
+/* Section spacing */
 section {
-  padding: 50px 0px 50px 0px;
+  padding: 50px 0;
 }
 
+/* Heading utama di dalam wrapper */
 .wrapper > h3,
 .wrapper > h1 {
   text-align: center;
   font-size: 2.8rem;
-  margin: 0px 0px 30px 0px;
-  padding: 0px;
+  margin: 0 0 30px 0;
+  padding: 0;
   font-family: "Kanit", "Nunito Sans", sans-serif;
   color: #222831;
   letter-spacing: 5px;
@@ -31,6 +34,7 @@ section {
   border-bottom: 5px solid #cccccc;
 }
 
+/* Garis bawah merah pada heading */
 .wrapper > h3::after,
 .wrapper > h1::after {
   content: "";
@@ -42,6 +46,7 @@ section {
   margin: auto;
 }
 
+/* Responsif untuk tablet dan mobile */
 @media only screen and (max-width: 1000px) {
   .wrapper {
     width: 80%;

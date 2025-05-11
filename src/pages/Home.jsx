@@ -26,8 +26,8 @@ function Home() {
           content="Selamat datang di portofolio Agit Rahadian, seorang Full-Stack Web Developer yang berfokus pada pengembangan solusi digital modern dan responsif."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.com" />
-        <meta property="og:image" content="https://yourwebsite.com/images/profile-picture.png" />
+        <meta property="og:url" content="https://agitrahadian.my.id" />
+        <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.webp" />
         <script type="application/ld+json">
           {`
             {
@@ -35,7 +35,7 @@ function Home() {
               "@type": "WebPage",
               "name": "Agit Rahadian - Full-Stack Web Developer",
               "description": "Selamat datang di portofolio Agit Rahadian, seorang Full-Stack Web Developer yang berfokus pada pengembangan solusi digital modern dan responsif.",
-              "url": "https://yourwebsite.com"
+              "url": "https://agitrahadian.my.id"
             }
           `}
         </script>

@@ -14,20 +14,20 @@ function Experience() {
         <title>Pengalaman Kerja - Agit Rahadian</title>
         <meta
           name="description"
-          content="Lihat pengalaman kerja saya, termasuk peran sebagai Art Director dan kontribusi dalam desain kreatif, pengalaman pengguna, dan pemasaran online."
+          content="Lihat pengalaman kerja Agit Rahadian sebagai Full-Stack Web Developer, termasuk pengembangan website sekolah, aplikasi internal, dan kontribusi pada solusi digital pendidikan."
         />
         <meta
           name="keywords"
-          content="Agit Rahadian, Full-Stack Developer, Web Developer, Programmer, Solusi Digital, Portofolio, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design, Pengalaman Kerja, Art Director, Desain Kreatif, Pengalaman Pengguna, SEO, Pemasaran Online"
+          content="Agit Rahadian, Full-Stack Developer, Web Developer, Programmer, Solusi Digital, Portofolio, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design, Pengalaman Kerja, Pengalaman Proyek, Pengalaman Profesional"
         />
         <meta name="author" content="Agit Rahadian" />
         <meta property="og:title" content="Pengalaman Kerja - Agit Rahadian" />
         <meta
           property="og:description"
-          content="Lihat pengalaman kerja saya, termasuk peran sebagai Art Director dan kontribusi dalam desain kreatif, pengalaman pengguna, dan pemasaran online."
+          content="Lihat pengalaman kerja Agit Rahadian sebagai Full-Stack Web Developer, termasuk pengembangan website sekolah, aplikasi internal, dan kontribusi pada solusi digital pendidikan."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.com/experience" />
+        <meta property="og:url" content="https://agitrahadian.my.id/experience" />
       </Helmet>
 
       <Navbar />
@@ -36,28 +36,38 @@ function Experience() {
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2025 - present"
+            date="2023 - Sekarang"
             iconStyle={{ background: '#222831', color: '#fff' }}
             icon={<SiNextdotjs aria-label="Next.js Icon" />}
           >
-            <h3 className="vertical-timeline-element-title">Art Director</h3>
-            <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+            <h3 className="vertical-timeline-element-title">Full-Stack Web Developer (Freelance)</h3>
+            <h4 className="vertical-timeline-element-subtitle">Remote & Garut, Jawa Barat</h4>
             <p>
-              Creative Direction, User Experience, Visual Design, SEO, Online Marketing
+              Membangun dan mengembangkan berbagai website profil sekolah, aplikasi internal madrasah, serta sistem manajemen informasi akademik. Fokus pada clean code, performa optimal, dan desain responsif. Berpengalaman menggunakan React, Laravel, PHP, dan MySQL.
             </p>
+            <ul>
+              <li>Website Profil Madrasah Aliyah AS-SIROJI (maassiroji.sch.id)</li>
+              <li>Aplikasi PPDB Online & Sistem Informasi Akademik</li>
+              <li>Website profil sekolah dan landing page edukasi</li>
+            </ul>
           </VerticalTimelineElement>
 
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2023 - 2024"
+            date="2021 - 2023"
             iconStyle={{ background: '#222831', color: '#fff' }}
             icon={<SiNextdotjs aria-label="Next.js Icon" />}
           >
-            <h3 className="vertical-timeline-element-title">Art Director</h3>
-            <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+            <h3 className="vertical-timeline-element-title">Web Developer (Project Based)</h3>
+            <h4 className="vertical-timeline-element-subtitle">STMIK Mardira Indonesia</h4>
             <p>
-              Creative Direction, User Experience, Visual Design, SEO, Online Marketing
+              Berperan dalam tim pengembangan aplikasi internal kampus dan sistem informasi akademik. Bertanggung jawab pada pengembangan frontend dan backend, deployment, serta optimasi performa aplikasi.
             </p>
+            <ul>
+              <li>Pengembangan aplikasi manajemen data mahasiswa</li>
+              <li>Integrasi API dan deployment ke server kampus</li>
+              <li>Maintenance dan update sistem internal</li>
+            </ul>
           </VerticalTimelineElement>
         </VerticalTimeline>
       </div>

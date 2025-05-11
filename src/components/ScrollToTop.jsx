@@ -2,13 +2,13 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 function ScrollToTop() {
-  const location = useLocation(); // Perbaikan penamaan variabel
+  const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Menggulir ke atas setiap kali rute berubah
+    window.scrollTo(0, 0);
   }, [location]);
 
-  return null; // Komponen tidak merender elemen apa pun
+  return null;
 }
 
 export default ScrollToTop;

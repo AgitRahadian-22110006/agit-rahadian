@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
 import profilepicture from '../assets/profile-picture.webp';
 import background from '../assets/background.webp';
@@ -31,18 +30,24 @@ function Header() {
       <div className="header-jumbotron">
         <picture>
           <source srcSet={profilepicture} type="image/webp" />
-          <img src={profilepicture} alt="Agit Rahadian" className="profile-img" loading="lazy" />
+          <img
+            src={profilepicture}
+            alt="Agit Rahadian"
+            className="profile-img"
+            width="180"
+            height="180"
+          />
         </picture>
 
         <h1>Agit Rahadian</h1>
         <p className="role">Programmer - Web Developer - Creator</p>
 
         <p className="bio">
-          Hai, saya <strong>Agit Rahadian</strong>, Full-Stack Web Developer  
-          yang fokus menciptakan solusi digital praktis dan user-friendly.  
-          Dengan pengalaman membangun situs profil sekolah hingga aplikasi internal,  
-          saya mengutamakan clean code, performa optimal, dan desain responsif  
-          yang meningkatkan engagement pengguna.  
+          Hai, saya <strong>Agit Rahadian</strong>, Full-Stack Web Developer<br />
+          yang fokus menciptakan solusi digital praktis dan user-friendly.<br />
+          Dengan pengalaman membangun situs profil sekolah hingga aplikasi internal,<br />
+          saya mengutamakan clean code, performa optimal, dan desain responsif<br />
+          yang meningkatkan engagement pengguna.<br />
           Ayo wujudkan ide digitalmu bersama saya!
         </p>
 

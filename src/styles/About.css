@@ -3,145 +3,173 @@
   --primary-color: #aa392d;
   --secondary-color: #333;
   --background-color: #eaedef;
-  --text-color: #444;
+  --text-color: #222831;
   --highlight-color: #aa392d;
-  --font-family: "Kanit", sans-serif;
+  --font-family: "Kanit", "Nunito Sans", sans-serif;
 }
 
 #about {
-  background-color: var(--background-color);
-  position: relative;
-  font-size: 1.1rem;
+  background: #fff;
+  color: var(--text-color);
   padding: 60px 0;
-}
-
-#about > .wrapper {
-  margin: auto;
-  max-width: 800px;
-  width: 90%;
+  font-family: var(--font-family);
   text-align: center;
 }
 
-#about > .wrapper > h3 {
-  font-size: 2.8rem;
-  margin-bottom: 30px;
-  font-family: var(--font-family);
-  color: var(--secondary-color);
-  letter-spacing: 4px;
-  text-transform: uppercase;
+#about .wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(34, 40, 49, 0.07);
+  text-align: center;
 }
 
-#about > .wrapper > p {
-  margin-bottom: 20px;
-  line-height: 1.6;
+#about h1,
+#about h2,
+#about h3 {
+  color: var(--primary-color);
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  text-align: center;
+}
+
+#about h1 {
+  font-size: 2.4rem;
+  margin-bottom: 24px;
+}
+
+#about h2 {
+  font-size: 1.5rem;
+}
+
+#about h3 {
+  font-size: 1.2rem;
+}
+
+#about p,
+#about li,
+#about span,
+#about em,
+#about strong {
   color: var(--text-color);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  font-family: var(--font-family);
+  text-align: center;
 }
 
-#about > .wrapper > h4 {
-  font-size: 1.6rem;
-  margin: 40px 0 20px;
-  font-family: var(--font-family);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--secondary-color);
+#about p {
+  margin-bottom: 18px;
+}
+
+#about ul {
+  margin-bottom: 18px;
+  display: inline-block;
+  text-align: left;
+}
+
+#about ul.highlights {
+  display: inline-block;
+  text-align: left;
+}
+
+#about strong {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+#about em {
+  font-style: italic;
+  color: #0056b3;
+}
+
+#about a {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+#about a:hover {
+  color: var(--primary-color);
+}
+
+.highlights {
+  margin: 20px 0 30px 0;
+  padding-left: 0;
+  display: inline-block;
+  text-align: left;
+}
+
+.highlights li {
+  margin-bottom: 10px;
+  color: var(--text-color);
+  font-size: 1.05rem;
 }
 
 .skills {
   display: flex;
   flex-wrap: wrap;
+  gap: 24px;
+  margin: 30px 0 20px 0;
   justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
 }
 
 .skill-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
-  transition: transform 0.3s ease, color 0.3s ease;
+  gap: 8px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 18px 16px;
+  min-width: 90px;
+  box-shadow: 0 1px 6px rgba(34, 40, 49, 0.06);
 }
 
 .skill-item svg {
-  color: #74797e;
-  width: 50px;
-  height: auto;
-  margin-bottom: 8px;
+  font-size: 2.2rem;
+  color: var(--primary-color);
 }
 
 .skill-item span {
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: 500;
+  text-align: center;
 }
 
-.skill-item:hover {
-  transform: scale(1.1);
-}
-
-.skill-item:hover svg {
-  color: var(--highlight-color);
-}
-
-.skill-item:focus {
-  outline: 2px solid var(--highlight-color);
-  outline-offset: 4px;
-}
-
-@media only screen and (max-width: 600px) {
+@media (max-width: 700px) {
+  #about .wrapper {
+    padding: 15px 5vw;
+  }
   .skills {
-    gap: 20px;
+    gap: 12px;
   }
-  #about > .wrapper > h3 {
-    font-size: 2.2rem;
-  }
-  #about > .wrapper > h4 {
-    font-size: 1.4rem;
+  .skill-item {
+    min-width: 70px;
+    padding: 12px 8px;
   }
 }
 
-/* Tambahan gaya untuk highlights */
-.highlights {
-  list-style: none;
-  padding: 0;
-  margin: 20px auto;
-  max-width: 700px;
-  text-align: left;
-  line-height: 1.6;
-  color: var(--secondary-color);
-}
-
-.highlights li {
-  margin-bottom: 10px;
-  font-size: 1.05rem;
-  position: relative;
-  padding-left: 20px;
-}
-
-.highlights li::before {
-  content: "🔹";
-  position: absolute;
-  left: 0;
-  color: var(--highlight-color);
-}
-
-/* Responsivitas tambahan untuk layar kecil */
 @media only screen and (max-width: 480px) {
-  #about > .wrapper > h3 {
+  #about .wrapper h1 {
     font-size: 2rem;
   }
-
-  #about > .wrapper > p {
+  #about .wrapper p,
+  #about .wrapper li {
     font-size: 0.95rem;
   }
-
   .skills {
-    gap: 15px;
+    gap: 10px;
   }
-
   .skill-item svg {
-    width: 40px;
+    font-size: 1.6rem;
   }
-
   .skill-item span {
     font-size: 0.85rem;
   }

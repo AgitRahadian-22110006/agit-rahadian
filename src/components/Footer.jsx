@@ -7,9 +7,11 @@ function Footer() {
         <p className="footer-text">
           Terima kasih telah mengunjungi portofolio saya. Sampai jumpa di proyek selanjutnya!
         </p>
-        <nav className="footer-nav">
-          <a href="/" aria-label="Beranda">Beranda</a> | 
-          <a href="/about" aria-label="Tentang Saya">Tentang Saya</a> | 
+        <nav className="footer-nav" aria-label="Footer Navigation">
+          <a href="/" aria-label="Beranda">Beranda</a>
+          <span aria-hidden="true"> | </span>
+          <a href="/about" aria-label="Tentang Saya">Tentang Saya</a>
+          <span aria-hidden="true"> | </span>
           <a href="/contact" aria-label="Kontak">Kontak</a>
         </nav>
         <p className="footer-copy">
