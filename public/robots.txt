@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap:https://agitrahadian.my.id//robots.txt
+Sitemap: https://agitrahadian.my.id/sitemap.xml
