@@ -1,0 +1,95 @@
+#detail-portfolio {
+  background: #fdfdfd;
+  padding: 60px 20px;
+}
+
+#detail-portfolio .container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.detail-header {
+  margin-bottom: 40px;
+}
+
+.btn-visit {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: #fff;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-visit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.detail-title {
+  font-size: 2rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.detail-description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.image-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.image-card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.image-card img:hover {
+  transform: scale(1.05);
+}
+
+.card-caption {
+  padding: 16px;
+  font-size: 0.95rem;
+  color: #666;
+  text-align: left;
+}
+
+.not-found {
+  text-align: center;
+  margin-top: 50px;
+  color: #999;
+}
+
+/* Responsivitas untuk layar kecil */
+@media screen and (max-width: 600px) {
+  .detail-title {
+    font-size: 1.5rem;
+  }
+
+  .detail-description {
+    font-size: 0.95rem;
+  }
+
+  .btn-visit {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

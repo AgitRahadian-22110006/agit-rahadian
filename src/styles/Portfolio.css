@@ -1,0 +1,73 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Gunakan repeat untuk fleksibilitas */
+  grid-gap: 25px;
+  justify-content: center;
+}
+
+/* Styling kotak pembungkus */
+.grid > .item > .box {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid > .item > .box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Gambar di dalam box */
+.grid > .item > .box > a > img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.grid > .item > .box > a > img:hover {
+  transform: scale(1.05);
+}
+
+/* Judul di dalam box */
+.grid > .item > .box > h2 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+/* Deskripsi di bawah gambar */
+.grid > .item > .box > .description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Responsivitas untuk layar sedang */
+@media only screen and (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsivitas untuk layar kecil */
+@media only screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid > .item > .box {
+    padding: 10px;
+  }
+
+  .grid > .item > .box > h2 {
+    font-size: 1rem;
+  }
+
+  .grid > .item > .box > .description {
+    font-size: 0.85rem;
+  }
+}
