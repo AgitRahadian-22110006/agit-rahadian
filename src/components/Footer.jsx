@@ -10,7 +10,6 @@ function Footer() {
         <nav className="footer-nav">
           <a href="/" aria-label="Beranda">Beranda</a> | 
           <a href="/about" aria-label="Tentang Saya">Tentang Saya</a> | 
-          <a href="/portfolio" aria-label="Portofolio">Portofolio</a> | 
           <a href="/contact" aria-label="Kontak">Kontak</a>
         </nav>
         <p className="footer-copy">

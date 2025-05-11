@@ -105,7 +105,7 @@ function About() {
         </div>
 
         <p>
-          Lihat juga <a href="/portfolio">proyek saya</a> untuk mengetahui lebih lanjut tentang apa yang telah saya kerjakan.
+          Lihat juga <a href="/#portfolio">proyek saya</a> untuk mengetahui lebih lanjut tentang apa yang telah saya kerjakan.
         </p>
       </div>
     </section>

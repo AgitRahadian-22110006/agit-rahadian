@@ -44,9 +44,6 @@ function Navbar() {
             <li>
               <Link to="/experience" aria-label="Experience">Experience</Link>
             </li>
-            <li>
-              <HashLink to="/#contact" aria-label="Contact">Contact</HashLink>
-            </li>
           </ul>
         </div>
       </div>
