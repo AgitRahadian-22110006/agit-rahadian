@@ -1,16 +1,13 @@
-/* Global */
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
-
 html,
 body {
   margin: 0px;
   padding: 0px;
   font-size: 16px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito Sans", "Kanit", sans-serif;
   scroll-behavior: smooth;
   background-color: #dedede;
 }
+
 .wrapper {
   width: 1024px;
   margin: auto;
@@ -27,12 +24,13 @@ section {
   font-size: 2.8rem;
   margin: 0px 0px 30px 0px;
   padding: 0px;
-  font-family: "Kanit", sans-serif;
+  font-family: "Kanit", "Nunito Sans", sans-serif;
   color: #222831;
   letter-spacing: 5px;
   text-transform: uppercase;
   border-bottom: 5px solid #cccccc;
 }
+
 .wrapper > h3::after,
 .wrapper > h1::after {
   content: "";
@@ -40,7 +38,7 @@ section {
   border-bottom: 5px solid #aa392d;
   width: 25%;
   position: relative;
-  bottom: -5px; /* your padding + border-width */
+  bottom: -5px;
   margin: auto;
 }
 

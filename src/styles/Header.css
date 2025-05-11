@@ -7,7 +7,7 @@
 }
 
 .header {
-  background-image: url('/images/background.png'); /* Pastikan path sesuai lokasi gambar */
+  background-image: url('../assets/background.webp'); /* Ganti ke WebP dan path sesuai */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

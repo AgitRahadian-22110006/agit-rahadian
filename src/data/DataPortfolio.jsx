@@ -1,10 +1,10 @@
-import portfolio1 from '../assets/portfolio1.png';
-import profilImg from '../assets/profil.png';
-import saranaImg from '../assets/sarana.png';
-import prestasiImg from '../assets/prestasi.png';
-import kurikulumImg from '../assets/kurikulum.png';
-import guruImg from '../assets/guru.png';
-import ppdbImg from '../assets/ppdb.png';
+import portfolio1 from '../assets/portfolio1.webp';
+import profilImg from '../assets/profil.webp';
+import saranaImg from '../assets/sarana.webp';
+import prestasiImg from '../assets/prestasi.webp';
+import kurikulumImg from '../assets/kurikulum.webp';
+import guruImg from '../assets/guru.webp';
+import ppdbImg from '../assets/ppdb.webp';
 
 export const portfolioList = [
   {

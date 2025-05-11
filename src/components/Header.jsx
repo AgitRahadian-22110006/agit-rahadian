@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import profilepicture from '../assets/profile-picture.png';
-import background from '../assets/background.png';
+import profilepicture from '../assets/profile-picture.webp';
+import background from '../assets/background.webp';
 import {
   FaInstagram,
   FaTiktok,
@@ -24,12 +24,15 @@ function Header() {
         <meta property="og:title" content="Agit Rahadian - Full-Stack Web Developer" />
         <meta property="og:description" content="Profil Agit Rahadian, seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.com" />
-        <meta property="og:image" content="https://yourwebsite.com/images/profile-picture.png" />
+        <meta property="og:url" content="https://agitrahadian.my.id" />
+        <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.webp" />
       </Helmet>
 
       <div className="header-jumbotron">
-        <img src={profilepicture} alt="Agit Rahadian" className="profile-img" />
+        <picture>
+          <source srcSet={profilepicture} type="image/webp" />
+          <img src={profilepicture} alt="Agit Rahadian" className="profile-img" loading="lazy" />
+        </picture>
 
         <h1>Agit Rahadian</h1>
         <p className="role">Programmer - Web Developer - Creator</p>
