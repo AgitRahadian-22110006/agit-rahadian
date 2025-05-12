@@ -7,6 +7,7 @@
 }
 
 .header {
+  background-color: #222831; /* fallback color */
   background-image: url('../assets/background.webp'); /* Ganti ke WebP dan path sesuai */
   background-position: center;
   background-size: cover;
@@ -15,7 +16,7 @@
   font-family: var(--font-family);
   letter-spacing: 2px;
   color: #fff;
-  text-shadow: 0 0 4px #000;
+  text-shadow: 0 0 2px #000; /* lebih ringan */
   overflow: hidden;
   min-height: 100vh;
   display: flex;
@@ -23,11 +24,20 @@
   justify-content: center;
 }
 
+@media screen and (max-width: 768px) {
+  .header {
+    background-image: url('../assets/background-mobile.webp');
+    min-height: 60vh;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 .header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.45); /* overlay lebih tipis */
   z-index: 0;
 }
 
@@ -220,21 +230,28 @@
     min-height: 60vh;
     background-size: cover;
     background-position: center;
+    background-image: url('../assets/background-mobile.webp');
   }
   .profile-img {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
+  }
+  .header-jumbotron {
+    padding: 10px;
   }
   .header-jumbotron h1 {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
   }
   .role {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+  .bio {
+    font-size: 0.9rem;
   }
   .socialMedia a {
-    width: 60px;
-    height: 60px;
-    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
   }
 }
 
@@ -245,13 +262,13 @@
     background-position: center;
   }
   .header-jumbotron h1 {
-    font-size: 1.8rem;
+    font-size: 1.1rem;
   }
   .bio {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .contact-btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    padding: 8px 12px;
+    font-size: 0.8rem;
   }
 }
