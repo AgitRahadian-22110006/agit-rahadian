@@ -1,13 +1,13 @@
-/* Variabel CSS untuk konsistensi */
 :root {
   --primary-color: #aa392d;
   --secondary-color: #222831;
-  --text-color: #fff; /* Warna teks putih */
+  --text-color: #fff;
   --font-family: "Kanit", sans-serif;
 }
 
 .header {
-  background-image: url('../assets/background.webp'); /* Ganti ke WebP dan path sesuai */
+  background-color: #222831;
+  background-image: url('../assets/background.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -15,7 +15,7 @@
   font-family: var(--font-family);
   letter-spacing: 2px;
   color: #fff;
-  text-shadow: 0 0 4px #000;
+  text-shadow: 0 0 2px #000;
   overflow: hidden;
   min-height: 100vh;
   display: flex;
@@ -27,12 +27,12 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.45);
   z-index: 0;
 }
 
 .header-jumbotron {
-  position: relative; /* Di atas overlay */
+  position: relative;
   z-index: 1;
   text-align: center;
   max-width: 800px;
@@ -222,19 +222,25 @@
     background-position: center;
   }
   .profile-img {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
+  }
+  .header-jumbotron {
+    padding: 10px;
   }
   .header-jumbotron h1 {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
   }
   .role {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+  .bio {
+    font-size: 0.9rem;
   }
   .socialMedia a {
-    width: 60px;
-    height: 60px;
-    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
   }
 }
 
@@ -245,13 +251,13 @@
     background-position: center;
   }
   .header-jumbotron h1 {
-    font-size: 1.8rem;
+    font-size: 1.1rem;
   }
   .bio {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .contact-btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    padding: 8px 12px;
+    font-size: 0.8rem;
   }
 }
