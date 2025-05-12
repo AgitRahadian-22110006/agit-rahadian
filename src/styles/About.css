@@ -1,20 +1,8 @@
-/* Variabel CSS untuk konsistensi */
-:root {
-  --primary-color: #aa392d;
-  --secondary-color: #222831;
-  --background-color: #fff;
-  --text-color: #111; /* Hitam pekat untuk kontras maksimal */
-  --highlight-color: #aa392d;
-  --link-color: #0056b3; /* Biru tua, sangat kontras di atas putih */
-  --link-hover: #aa392d;
-  --font-family: "Kanit", "Nunito Sans", sans-serif;
-}
-
 #about {
-  background: var(--background-color);
-  color: var(--text-color);
+  background: #fff;
+  color: #111;
   padding: 60px 0;
-  font-family: var(--font-family);
+  font-family: "Kanit", "Nunito Sans", sans-serif;
   text-align: center;
 }
 
@@ -22,7 +10,7 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 32px 24px;
-  background: var(--background-color);
+  background: #fff;
   border-radius: 16px;
   box-shadow: 0 2px 16px rgba(34, 40, 49, 0.07);
   text-align: center;
@@ -31,10 +19,9 @@
 #about h1,
 #about h2,
 #about h3 {
-  color: var(--primary-color);
+  color: #aa392d;
   margin-bottom: 18px;
   letter-spacing: 2px;
-  font-family: var(--font-family);
   font-weight: 700;
   text-align: center;
 }
@@ -57,26 +44,24 @@
 #about span,
 #about em,
 #about strong {
-  color: var(--text-color); /* Hitam pekat */
+  color: #111;
   font-size: 1.08rem;
   line-height: 1.7;
-  font-family: var(--font-family);
   text-align: center;
 }
 
-/* Kecualikan yang ditandai: strong, em, a */
 #about strong {
   font-weight: bold;
-  color: var(--primary-color); /* tetap warna utama */
+  color: #aa392d;
 }
 
 #about em {
   font-style: italic;
-  color: var(--link-color); /* biru tua */
+  color: #0056b3;
 }
 
 #about a {
-  color: var(--link-color); /* biru tua, sangat kontras */
+  color: #0056b3;
   text-decoration: underline;
   font-weight: 600;
   transition: color 0.2s;
@@ -85,7 +70,7 @@
 
 #about a:focus,
 #about a:hover {
-  color: var(--link-hover); /* warna utama saat hover/fokus */
+  color: #aa392d;
   background: #f3e9e7;
   border-radius: 3px;
 }
@@ -114,7 +99,7 @@
 
 .highlights li {
   margin-bottom: 10px;
-  color: var(--text-color); /* pastikan list juga hitam */
+  color: #111;
   font-size: 1.05rem;
 }
 
@@ -140,12 +125,12 @@
 
 .skill-item svg {
   font-size: 2.2rem;
-  color: var(--primary-color);
+  color: #aa392d;
 }
 
 .skill-item span {
   font-size: 1rem;
-  color: var(--text-color); /* pastikan label skill juga hitam */
+  color: #111;
   font-weight: 500;
   text-align: center;
 }
