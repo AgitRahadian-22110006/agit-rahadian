@@ -43,7 +43,7 @@ function Experience() {
             <h3 className="vertical-timeline-element-title">Full-Stack Web Developer (Freelance)</h3>
             <h4 className="vertical-timeline-element-subtitle">Remote & Garut, Jawa Barat</h4>
             <p>
-              Membangun dan mengembangkan berbagai website profil sekolah, aplikasi internal madrasah, serta sistem manajemen informasi akademik. Fokus pada clean code, performa optimal, dan desain responsif. Berpengalaman menggunakan React, Laravel, PHP, dan MySQL.
+              Membangun dan mengembangkan berbagai Website profil sekolah, aplikasi internal madrasah, serta sistem manajemen informasi akademik. Fokus pada clean code, performa optimal, dan desain responsif. Berpengalaman menggunakan React, Laravel, PHP, dan MySQL.
             </p>
             <ul>
               <li>Website Profil Madrasah Aliyah AS-SIROJI (maassiroji.sch.id)</li>

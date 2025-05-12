@@ -63,7 +63,9 @@ function Portfolio() {
                   <img
                     src={item.images[0].src}
                     alt={`Gambar proyek ${item.title}`}
-                    height={item.images[0].height || 170}
+                    loading="lazy"
+                    width={600}
+                    height={281}
                   />
                 </Link>
                 <h2>{item.title}</h2>

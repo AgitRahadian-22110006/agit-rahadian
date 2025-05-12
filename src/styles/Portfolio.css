@@ -23,9 +23,12 @@
 /* Gambar di dalam box */
 .grid > .item > .box > a > img {
   width: 100%;
+  height: auto;
+  aspect-ratio: 600 / 281;
   border-radius: 10px;
   display: block;
   transition: transform 0.3s ease;
+  object-fit: cover;
 }
 
 .grid > .item > .box > a > img:hover {
