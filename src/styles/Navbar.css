@@ -23,7 +23,7 @@ nav > .wrapper {
 
 /* Logo */
 nav .logo a {
-  font-size: 1.8rem; /* Ukuran font lebih besar */
+  font-size: 1.2rem; /* Ukuran font lebih besar */
   font-weight: 800; /* Font lebih tebal */
   letter-spacing: 4px; /* Jarak antar huruf lebih rapat */
   text-decoration: none;
