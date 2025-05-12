@@ -1,15 +1,17 @@
 /* Variabel CSS untuk konsistensi */
 :root {
   --primary-color: #aa392d;
-  --secondary-color: #333;
-  --background-color: #eaedef;
-  --text-color: #000; /* Ubah ke hitam */
+  --secondary-color: #222831;
+  --background-color: #fff;
+  --text-color: #181818; /* Hitam pekat untuk kontras maksimal */
   --highlight-color: #aa392d;
+  --link-color: #0056b3; /* Biru tua, sangat kontras di atas putih */
+  --link-hover: #aa392d;
   --font-family: "Kanit", "Nunito Sans", sans-serif;
 }
 
 #about {
-  background: #fff;
+  background: var(--background-color);
   color: var(--text-color);
   padding: 60px 0;
   font-family: var(--font-family);
@@ -20,7 +22,7 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 32px 24px;
-  background: #fff;
+  background: var(--background-color);
   border-radius: 16px;
   box-shadow: 0 2px 16px rgba(34, 40, 49, 0.07);
   text-align: center;
@@ -55,7 +57,7 @@
 #about span,
 #about em,
 #about strong {
-  color: #000; /* Paksa semua text jadi hitam */
+  color: var(--text-color); /* Hitam pekat */
   font-size: 1.08rem;
   line-height: 1.7;
   font-family: var(--font-family);
@@ -70,18 +72,22 @@
 
 #about em {
   font-style: italic;
-  color: #0056b3; /* tetap biru */
+  color: var(--link-color); /* biru tua */
 }
 
 #about a {
-  color: #007bff;
+  color: var(--link-color); /* biru tua, sangat kontras */
   text-decoration: underline;
   font-weight: 600;
   transition: color 0.2s;
+  outline: none;
 }
 
+#about a:focus,
 #about a:hover {
-  color: var(--primary-color);
+  color: var(--link-hover); /* warna utama saat hover/fokus */
+  background: #f3e9e7;
+  border-radius: 3px;
 }
 
 #about p {
@@ -108,7 +114,7 @@
 
 .highlights li {
   margin-bottom: 10px;
-  color: #000; /* pastikan list juga hitam */
+  color: var(--text-color); /* pastikan list juga hitam */
   font-size: 1.05rem;
 }
 
@@ -139,7 +145,7 @@
 
 .skill-item span {
   font-size: 1rem;
-  color: #000; /* pastikan label skill juga hitam */
+  color: var(--text-color); /* pastikan label skill juga hitam */
   font-weight: 500;
   text-align: center;
 }
