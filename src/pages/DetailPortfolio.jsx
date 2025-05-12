@@ -32,6 +32,7 @@ function DetailPortfolio() {
       <Helmet>
         <title>{item.title} - Agit Rahadian</title>
         <meta name="description" content={item.description} />
+        <meta name="keywords" content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design" />
         <meta property="og:title" content={`${item.title} - Agit Rahadian`} />
         <meta property="og:description" content={item.description} />
         <meta property="og:image" content={item.images[0]?.src} />

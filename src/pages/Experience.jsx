@@ -18,7 +18,7 @@ function Experience() {
         />
         <meta
           name="keywords"
-          content="Agit Rahadian, Full-Stack Developer, Web Developer, Programmer, Solusi Digital, Portofolio, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design, Pengalaman Kerja, Pengalaman Proyek, Pengalaman Profesional"
+         content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design"
         />
         <meta name="author" content="Agit Rahadian" />
         <meta property="og:title" content="Pengalaman Kerja - Agit Rahadian" />
