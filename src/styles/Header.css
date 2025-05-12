@@ -7,6 +7,7 @@
 }
 
 .header {
+  background-color: #222831; /* fallback color */
   background-image: url('../assets/background.webp'); /* Ganti ke WebP dan path sesuai */
   background-position: center;
   background-size: cover;
@@ -15,7 +16,7 @@
   font-family: var(--font-family);
   letter-spacing: 2px;
   color: #fff;
-  text-shadow: 0 0 4px #000;
+  text-shadow: 0 0 2px #000; /* lebih ringan untuk performa */
   overflow: hidden;
   min-height: 100vh;
   display: flex;
@@ -27,7 +28,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5); /* overlay lebih ringan */
   z-index: 0;
 }
 
