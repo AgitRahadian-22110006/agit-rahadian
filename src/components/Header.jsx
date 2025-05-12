@@ -34,7 +34,7 @@ function Header() {
           className="profile-img"
           width="180"
           height="180"
-          loading="eager"
+          fetchpriority="high"
         />
 
         <h1>Agit Rahadian</h1>
