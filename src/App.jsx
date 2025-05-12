@@ -1,4 +1,3 @@
-// src/App.jsx
 import './App.css';
 import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

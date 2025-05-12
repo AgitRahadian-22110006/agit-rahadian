@@ -76,7 +76,7 @@ function Header() {
         </div>
 
         <div className="education-info">
-          <h4>Pendidikan</h4>
+          <h2>Pendidikan</h2>
           <ul>
             <li>SD Sindangsari 2</li>
             <li>SMP Negeri 1 Leuwigoong</li>
