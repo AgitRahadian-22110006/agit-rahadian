@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet';
-import profilepicture from '../assets/profile-picture.webp';
-import background from '../assets/background.webp';
+import profilepicture from '../assets/profile-picture.png';
 import {
   FaInstagram,
   FaTiktok,
@@ -17,14 +16,13 @@ function Header() {
       <Helmet>
         <title>Agit Rahadian - Full-Stack Web Developer</title>
         <meta name="description" content="Hai, saya Agit Rahadian, seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly." />
-        <meta name="keywords" content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design" />
+        <meta name="keywords" content="Agit Rahadian, Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design" />
         <meta name="author" content="Agit Rahadian" />
         <meta property="og:title" content="Agit Rahadian - Full-Stack Web Developer" />
         <meta property="og:description" content="Profil Agit Rahadian, seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://agitrahadian.my.id" />
-        <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.webp" />
-        <link rel="preload" as="image" href={background} />
+        <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.png" />
       </Helmet>
 
       <div className="header-jumbotron">

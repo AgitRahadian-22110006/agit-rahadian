@@ -1,6 +1,6 @@
 import './App.css';
 import { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 const Home = lazy(() => import('./pages/Home'));
@@ -32,7 +32,7 @@ function App() {
           rel="stylesheet"
         />
       </Helmet>
-      <BrowserRouter>
+      <HashRouter>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -41,7 +41,7 @@ function App() {
             <Route path='/experience' element={<Experience />} />
           </Routes>
         </Suspense>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
