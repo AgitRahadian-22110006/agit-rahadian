@@ -3,43 +3,72 @@ import Header from "../components/Header";
 import Portfolio from "../components/Portfolio";
 import About from "../components/About";
 import Footer from "../components/Footer";
-import { Helmet } from "react-helmet";
+import SEO from "../components/SEO"; // Import the new SEO component
 
 function Home() {
+  // Organization schema for rich results
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Agit Rahadian",
+    "url": "https://agitrahadian.my.id",
+    "image": "https://agitrahadian.my.id/assets/profile-picture.webp",
+    "sameAs": [
+      "https://github.com/agitrahadian-22110006",
+      "https://www.instagram.com/agitrhdn",
+      "https://www.tiktok.com/@agitrahadian",
+      "https://www.facebook.com/share/16HuZskNh5/"
+    ],
+    "jobTitle": "Full-Stack Web Developer",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "STMIK Mardira Indonesia",
+      "department": "Teknik Informatika - Prodi Sistem Informasi"
+    },
+    "description": "Full-Stack Web Developer dari Garut yang berspesialisasi dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital praktis.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Garut",
+      "addressRegion": "Jawa Barat",
+      "addressCountry": "Indonesia"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://agitrahadian.my.id"
+    }
+  };
+
+  // Breadcrumb schema for rich results
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://agitrahadian.my.id"
+      }
+    ]
+  };
+
+  // Combined schema array
+  const structuredData = [organizationSchema, breadcrumbSchema];
+
   return (
     <>
-      {/* Metadata untuk SEO */}
-      <Helmet>
-        <title>Agit Rahadian - Full-Stack Web Developer</title>
-        <meta
-          name="description"
-          content="Selamat datang di portofolio Agit Rahadian, seorang Full-Stack Web Developer yang berfokus pada pengembangan solusi digital modern dan responsif."
-        />
-        <meta
-          name="keywords"
-          content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design"
-        />
-        <meta name="author" content="Agit Rahadian" />
-        <meta property="og:title" content="Agit Rahadian - Full-Stack Web Developer" />
-        <meta
-          property="og:description"
-          content="Selamat datang di portofolio Agit Rahadian, seorang Full-Stack Web Developer yang berfokus pada pengembangan solusi digital modern dan responsif."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://agitrahadian.my.id" />
-        <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.webp" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              "name": "Agit Rahadian - Full-Stack Web Developer",
-              "description": "Selamat datang di portofolio Agit Rahadian, seorang Full-Stack Web Developer yang berfokus pada pengembangan solusi digital modern dan responsif.",
-              "url": "https://agitrahadian.my.id"
-            }
-          `}
-        </script>
-      </Helmet>
+      <SEO
+        description="Agit Rahadian adalah Full-Stack Web Developer lulusan STMIK Mardira Indonesia yang berspesialisasi dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital praktis. Lihat portfolio dan pengalaman membangun aplikasi dengan teknologi React, Laravel, dan PHP."
+        keywords="Website Sekolah, Aplikasi Pendidikan, React Developer, Laravel Developer, Garut, Jawa Barat, Indonesia"
+        canonical="/"
+        structuredData={structuredData}
+      >
+        {/* Additional meta tags specific to the home page */}
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="google" content="notranslate" />
+        <meta name="revisit-after" content="7 days" />
+      </SEO>
 
       <Navbar />
       <Header />

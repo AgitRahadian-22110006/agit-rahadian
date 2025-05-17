@@ -1,47 +1,28 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Halaman Utama -->
   <url>
     <loc>https://agitrahadian.my.id/</loc>
     <lastmod>2025-05-17</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- About Page -->
   <url>
     <loc>https://agitrahadian.my.id/#about</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Experience Page -->
-  <url>
-    <loc>https://agitrahadian.my.id/experience</loc>
-    <lastmod>2025-05-17</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Portfolio Page -->
   <url>
     <loc>https://agitrahadian.my.id/#portfolio</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
-  
-  <!-- Detail Portfolio Pages -->
   <url>
-    <loc>https://agitrahadian.my.id/portfolio/1</loc>
+    <loc>https://agitrahadian.my.id/experience</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://agitrahadian.my.id/assets/portfolio1.webp</image:loc>
-      <image:title>Madrasah Aliyah (MA) AS-SIROJI</image:title>
-      <image:caption>Website profil sekolah Madrasah Aliyah AS-SIROJI</image:caption>
-    </image:image>
   </url>
 </urlset>

@@ -1,10 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { portfolioList } from '../data/DataPortfolio';
-import { Helmet } from 'react-helmet';
-import '../styles/DetailPortfolio.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
+import SEO from '../components/SEO'; // Import the new SEO component
 
 function DetailPortfolio() {
   const { id } = useParams();
@@ -13,13 +12,11 @@ function DetailPortfolio() {
   if (!item) {
     return (
       <>
-        <Helmet>
-          <title>Portfolio Tidak Ditemukan - Agit Rahadian</title>
-          <meta
-            name="description"
-            content="Halaman portfolio tidak ditemukan. Silakan kembali ke halaman utama untuk melihat proyek lainnya."
-          />
-        </Helmet>
+        <SEO
+          title="Portfolio Tidak Ditemukan"
+          description="Halaman portfolio yang Anda cari tidak ditemukan. Silakan kembali ke halaman utama untuk melihat proyek lainnya."
+          canonical="/404"
+        />
         <Navbar />
         <p className="not-found">Portfolio tidak ditemukan.</p>
         <Footer />
@@ -27,29 +24,67 @@ function DetailPortfolio() {
     );
   }
 
+  // Create rich structured data for this project
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": item.title,
+    "description": item.description,
+    "image": item.images[0]?.src,
+    "url": `https://agitrahadian.my.id/portfolio/${item.id}`,
+    "author": {
+      "@type": "Person",
+      "name": "Agit Rahadian",
+      "url": "https://agitrahadian.my.id"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Agit Rahadian"
+    }
+  };
+
+  // Breadcrumb schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://agitrahadian.my.id"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Portfolio",
+        "item": "https://agitrahadian.my.id/#portfolio"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": item.title,
+        "item": `https://agitrahadian.my.id/portfolio/${item.id}`
+      }
+    ]
+  };
+
+  // Combined schema array
+  const structuredData = [projectSchema, breadcrumbSchema];
+
   return (
     <>
-      <Helmet>
-        <title>{item.title} - Agit Rahadian</title>
-        <meta name="description" content={item.description} />
-        <meta name="keywords" content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design" />
-        <meta property="og:title" content={`${item.title} - Agit Rahadian`} />
-        <meta property="og:description" content={item.description} />
-        <meta property="og:image" content={item.images[0]?.src} />
-        <meta property="og:url" content={`https://agitrahadian.my.id/portfolio/${item.id}`} />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "CreativeWork",
-              "name": "${item.title}",
-              "description": "${item.description}",
-              "url": "https://agitrahadian.my.id/portfolio/${item.id}",
-              "image": "${item.images[0]?.src}"
-            }
-          `}
-        </script>
-      </Helmet>
+      <SEO
+        title={item.title}
+        description={`${item.description} Lihat detail proyek ${item.title} oleh Agit Rahadian, Full-Stack Web Developer asal Garut yang berspesialisasi dalam pengembangan solusi digital.`}
+        keywords={`${item.title}, Web Development, Portofolio, Agit Rahadian, Garut`}
+        ogImage={item.images[0]?.src}
+        canonical={`/portfolio/${item.id}`}
+        structuredData={structuredData}
+      >
+        {/* Add any additional meta tags specific to portfolio detail pages */}
+        <meta name="robots" content="index, follow" />
+      </SEO>
       <Navbar />
       <section id="detail-portfolio">
         <div className="container">

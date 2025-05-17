@@ -11,6 +11,87 @@ import { IoLogoJavascript } from 'react-icons/io';
 import '../styles/About.css';
 
 function About() {
+  // FAQ Schema untuk SEO
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apa spesialisasi Agit Rahadian sebagai Web Developer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Agit Rahadian adalah Full-Stack Web Developer yang berspesialisasi dalam pengembangan website profil sekolah, aplikasi internal madrasah, dan sistem informasi akademik. Keahlian utamanya meliputi React, Laravel, PHP, dan MySQL."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apa pendidikan formal Agit Rahadian?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Agit Rahadian adalah lulusan S1 Teknik Informatika - Prodi Sistem Informasi dari STMIK Mardira Indonesia. Sebelumnya, ia menempuh pendidikan di SMA Negeri 10 Garut jurusan IPA."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Layanan apa saja yang ditawarkan oleh Agit Rahadian?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Agit Rahadian menawarkan layanan pengembangan website profil sekolah/institusi, pembuatan aplikasi web internal, pengembangan sistem informasi akademik, dan solusi digital lainnya dengan fokus pada clean code, performa optimal, dan desain responsif."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana cara menghubungi Agit Rahadian untuk kerja sama?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Anda dapat menghubungi Agit Rahadian melalui email di agitrahadian140702@gmail.com atau WhatsApp di nomor 087758263820. Anda juga dapat mengunjungi profil media sosialnya di Instagram (@agitrhdn) atau GitHub (agitrahadian-22110006)."
+        }
+      }
+    ]
+  };
+
+  // Person Schema yang sudah ada
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Agit Rahadian",
+    "jobTitle": "Full-Stack Web Developer",
+    "description": "Seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly untuk sektor pendidikan di Indonesia.",
+    "url": "https://agitrahadian.my.id",
+    "image": "https://agitrahadian.my.id/assets/profile-picture.webp",
+    "birthDate": "2002-07-14",
+    "alumniOf": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "STMIK Mardira Indonesia",
+        "department": "Teknik Informatika - Prodi Sistem Informasi"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "SMA Negeri 10 Garut",
+        "department": "Jurusan IPA"
+      }
+    ],
+    "knowsAbout": ["Web Development", "React", "Laravel", "PHP", "MySQL", "JavaScript", "CSS3", "HTML5"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance Web Developer"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Garut",
+      "addressRegion": "Jawa Barat",
+      "addressCountry": "Indonesia"
+    },
+    "sameAs": [
+      "https://github.com/agitrahadian-22110006",
+      "https://www.instagram.com/agitrhdn",
+      "https://www.tiktok.com/@agitrahadian",
+      "https://www.facebook.com/share/16HuZskNh5/"
+    ]
+  };
+
   return (
     <section id="about">
       {/* Metadata untuk SEO */}
@@ -33,48 +114,15 @@ function About() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://agitrahadian.my.id/about" />
         <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.webp" />
+        
+        {/* Schema.org JSON-LD untuk informasi person */}
         <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Agit Rahadian",
-              "jobTitle": "Full-Stack Web Developer",
-              "description": "Seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly untuk sektor pendidikan di Indonesia.",
-              "url": "https://agitrahadian.my.id",
-              "image": "https://agitrahadian.my.id/assets/profile-picture.webp",
-              "birthDate": "2002-07-14",
-              "alumniOf": [
-                {
-                  "@type": "EducationalOrganization",
-                  "name": "STMIK Mardira Indonesia",
-                  "department": "Teknik Informatika - Prodi Sistem Informasi"
-                },
-                {
-                  "@type": "EducationalOrganization",
-                  "name": "SMA Negeri 10 Garut",
-                  "department": "Jurusan IPA"
-                }
-              ],
-              "knowsAbout": ["Web Development", "React", "Laravel", "PHP", "MySQL", "JavaScript", "CSS3", "HTML5"],
-              "worksFor": {
-                "@type": "Organization",
-                "name": "Freelance Web Developer"
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Garut",
-                "addressRegion": "Jawa Barat",
-                "addressCountry": "Indonesia"
-              },
-              "sameAs": [
-                "https://github.com/agitrahadian-22110006",
-                "https://www.instagram.com/agitrhdn",
-                "https://www.tiktok.com/@agitrahadian",
-                "https://www.facebook.com/share/16HuZskNh5/"
-              ]
-            }
-          `}
+          {JSON.stringify(personSchema)}
+        </script>
+        
+        {/* Schema.org JSON-LD untuk FAQ */}
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
         </script>
       </Helmet>
 
@@ -150,6 +198,55 @@ function About() {
             <FaGithub aria-label="Git & GitHub" title="Git & GitHub" />
             <span>Git & GitHub</span>
           </div>
+        </div>
+
+        {/* FAQ Section - Menampilkan FAQ di halaman */}
+        <h2>Frequently Asked Questions</h2>
+        <div className="faq-section">
+          <div className="faq-item">
+            <h3>Apa spesialisasi Agit Rahadian sebagai Web Developer?</h3>
+            <p>
+              Agit Rahadian adalah Full-Stack Web Developer yang berspesialisasi dalam pengembangan website profil sekolah, 
+              aplikasi internal madrasah, dan sistem informasi akademik. Keahlian utamanya meliputi React, Laravel, PHP, dan MySQL.
+            </p>
+          </div>
+          
+          <div className="faq-item">
+            <h3>Apa pendidikan formal Agit Rahadian?</h3>
+            <p>
+              Agit Rahadian adalah lulusan S1 Teknik Informatika - Prodi Sistem Informasi dari STMIK Mardira Indonesia. 
+              Sebelumnya, ia menempuh pendidikan di SMA Negeri 10 Garut jurusan IPA.
+            </p>
+          </div>
+          
+          <div className="faq-item">
+            <h3>Layanan apa saja yang ditawarkan oleh Agit Rahadian?</h3>
+            <p>
+              Agit Rahadian menawarkan layanan pengembangan website profil sekolah/institusi, pembuatan aplikasi web internal, 
+              pengembangan sistem informasi akademik, dan solusi digital lainnya dengan fokus pada clean code, performa optimal, 
+              dan desain responsif.
+            </p>
+          </div>
+          
+          <div className="faq-item">
+            <h3>Bagaimana cara menghubungi Agit Rahadian untuk kerja sama?</h3>
+            <p>
+              Anda dapat menghubungi Agit Rahadian melalui email di <a href="mailto:agitrahadian140702@gmail.com">agitrahadian140702@gmail.com</a> atau 
+              WhatsApp di nomor <a href="https://wa.me/6287758263820">087758263820</a>. Anda juga dapat mengunjungi profil media sosialnya 
+              di Instagram (<a href="https://www.instagram.com/agitrhdn" target="_blank" rel="noopener noreferrer">@agitrhdn</a>) atau 
+              GitHub (<a href="https://github.com/agitrahadian-22110006" target="_blank" rel="noopener noreferrer">agitrahadian-22110006</a>).
+            </p>
+          </div>
+        </div>
+
+        {/* Contact CTA */}
+        <div className="contact-cta">
+          <h2>Mari Bekerja Sama!</h2>
+          <p>
+            Jika Anda memiliki proyek website atau aplikasi untuk institusi pendidikan yang ingin dikembangkan, 
+            jangan ragu untuk menghubungi saya. Saya siap membantu mewujudkan solusi digital yang sesuai dengan kebutuhan Anda.
+          </p>
+          <a href="/#contact" className="cta-button">Hubungi Saya</a>
         </div>
 
         <p>
