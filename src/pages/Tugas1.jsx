@@ -1,0 +1,130 @@
+// src/pages/Tugas1.jsx
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
+
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import '../styles/IsiTugas.css';
+
+export default function Tugas1() {
+  return (
+    <>
+      <Helmet>
+        <title>Agit Rahadian | Detail Tugas 1</title>
+        <meta
+          name="description"
+          content="Detail tugas pertama: Pelajari Logika First Order, menuliskan ekspresi, dan konversi kalimat ke FOL."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Fonts & Icons */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          rel="stylesheet"
+        />
+      </Helmet>
+
+      <Navbar />
+
+      <main className="tugas1-page container" role="main">
+        <h1 className="tugas1-title">Tugas 1: Logika First Order</h1>
+
+        {/* 1 */}
+        <section className="tugas1-content">
+          <h2>
+            <i className="fas fa-lightbulb" /> 1. Pelajari Logika First Order dan Contoh Kasusnya
+          </h2>
+          <p>
+            <strong>Pengertian:</strong> Logika First Order (First Order Logic/FOL) adalah sistem logika yang menggunakan predikat, kuantor, dan variabel untuk menyatakan fakta tentang objek di dunia nyata.
+          </p>
+          <h3>Ciri-ciri utama:</h3>
+          <ul>
+            <li>Memiliki kuantor universal (∀) dan eksistensial (∃)</li>
+            <li>Menyatakan sifat objek dengan predikat (misalnya: Manusia(x))</li>
+            <li>Digunakan dalam AI, basis data, sistem pakar, dll.</li>
+          </ul>
+          <h3>Contoh kasus:</h3>
+          <ul>
+            <li>∀x (Demam(x) ∧ Batuk(x) → Flu(x))</li>
+            <li>∀x (Anggota(x) → ∃y (Meminjam(x, y)))</li>
+          </ul>
+        </section>
+
+        {/* 2 */}
+        <section className="tugas1-content">
+          <h2>
+            <i className="fas fa-pencil-alt" /> 2. Menuliskan Ekspresi dalam Logika First Order
+          </h2>
+          <p><strong>Pernyataan:</strong></p>
+          <ol>
+            <li>Semua mahasiswa informatika suka kecerdasan buatan</li>
+            <li>Setiap yang paham pemrograman suka kecerdasan buatan</li>
+            <li>Kesimpulan: Semua mahasiswa ilmu komputer paham pemrograman</li>
+          </ol>
+          <p><strong>Notasi:</strong></p>
+          <ul>
+            <li>M(x): x adalah mahasiswa informatika</li>
+            <li>C(x): x suka kecerdasan buatan</li>
+            <li>P(x): x paham pemrograman</li>
+            <li>K(x): x adalah mahasiswa ilmu komputer</li>
+          </ul>
+          <h3>FOL:</h3>
+          <ul>
+            <li>∀x (M(x) → C(x))</li>
+            <li>∀x (P(x) → C(x))</li>
+            <li><strong>Kesimpulan:</strong> ∀x (K(x) → P(x))</li>
+          </ul>
+          <p>
+            <strong>Evaluasi Kesimpulan:</strong> Tidak valid, karena premis hanya menyatakan siapa yang menyukai kecerdasan buatan, bukan hubungan langsung antara mahasiswa ilmu komputer dan pemrograman.
+          </p>
+        </section>
+
+        {/* 3 */}
+        <section className="tugas1-content">
+          <h2>
+            <i className="fas fa-exchange-alt" /> 3. Konversi Kalimat ke FOL dan Pembuktian
+          </h2>
+          <p><strong>Pernyataan:</strong></p>
+          <ol>
+            <li>Setiap apel atau pear adalah buah</li>
+            <li>Setiap buah memiliki warna kuning atau hijau atau merah</li>
+            <li>Tidak ada pear berwarna merah</li>
+            <li>Tidak ada buah manis berwarna hijau</li>
+          </ol>
+          <p><strong>Notasi:</strong></p>
+          <ul>
+            <li>A(x): x adalah apel</li>
+            <li>R(x): x adalah pear</li>
+            <li>B(x): x adalah buah</li>
+            <li>K(x): x berwarna kuning</li>
+            <li>H(x): x berwarna hijau</li>
+            <li>M(x): x berwarna merah</li>
+            <li>S(x): x adalah buah manis</li>
+          </ul>
+          <h3>FOL:</h3>
+          <ul>
+            <li>∀x ((A(x) ∨ R(x)) → B(x))</li>
+            <li>∀x (B(x) → (K(x) ∨ H(x) ∨ M(x)))</li>
+            <li>¬∃x (R(x) ∧ M(x))</li>
+            <li>¬∃x (S(x) ∧ H(x))</li>
+          </ul>
+          <p>
+            <strong>Pembuktian:</strong> Berdasarkan premis, pear tidak berwarna merah dan buah manis tidak berwarna hijau. Maka, buah manis hanya mungkin berwarna kuning atau merah, dan pear hanya mungkin kuning atau hijau. Tidak ada kontradiksi jika tidak disimpulkan lebih jauh.
+          </p>
+        </section>
+
+        <div className="back-link">
+          <Link to="/tugas" className="btn-back">
+            ← Kembali ke Daftar Tugas
+          </Link>
+        </div>
+      </main>
+
+      <Footer />
+    </>
+  );
+}

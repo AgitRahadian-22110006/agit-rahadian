@@ -21,9 +21,10 @@ function Navbar() {
       <div className="wrapper">
         {/* Logo */}
         <div className="logo" style={{ color: '#ffffff' }}>
-  <FaBriefcase className="logo-icon" />
-  AGITRAHADIAN
-</div>
+          <FaBriefcase className="logo-icon" />
+          AGITRAHADIAN
+        </div>
+
         {/* Hamburger */}
         <button
           className="hamburger"
@@ -40,7 +41,7 @@ function Navbar() {
             <li>
               <NavLink
                 to="/"
-                exact
+                end
                 className={({ isActive }) => (isActive ? 'active' : '')}
                 onClick={closeMenu}
               >
@@ -74,6 +75,15 @@ function Navbar() {
                 onClick={closeMenu}
               >
                 Experience
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/tugas"
+                className={({ isActive }) => (isActive ? 'active' : '')}
+                onClick={closeMenu}
+              >
+                Tugas
               </NavLink>
             </li>
           </ul>
