@@ -142,3 +142,5 @@ function SEOHead() {
     </Helmet>
   );
 }
+
+export default SEOHead;

@@ -1,10 +1,15 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  build: {
-    target: 'esnext', // Pastikan build untuk browser modern
+  // Ensure build finds your files
+  resolve: {
+    extensions: ['.js', '.jsx', '.json']
   },
-})
+  // For better error tracking if build issues persist
+  build: {
+    sourcemap: true
+  }
+});

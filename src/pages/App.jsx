@@ -2,7 +2,7 @@ import './App.css';
 import { Suspense, lazy } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import SEOHead from './components/SEOHead';
+import SEOHead from './components/SEOHead'; // Pastikan nama file persis seperti ini
 
 const Home = lazy(() => import('./pages/Home'));
 const DetailPortfolio = lazy(() => import('./pages/DetailPortfolio'));
