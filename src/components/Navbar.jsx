@@ -1,48 +1,81 @@
 import React, { useState } from 'react';
 import { FaBriefcase, FaBars } from 'react-icons/fa';
 import { IoCloseSharp } from 'react-icons/io5';
-import '../styles/Navbar.css';
+import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import { Link } from 'react-router-dom';
+import '../styles/Navbar.css';
 
 function Navbar() {
-  const [statusTampil, setStatusTampil] = useState('');
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  function tampilMenu() {
-    setStatusTampil((prevStatus) => (prevStatus === '' ? 'tampil' : ''));
-  }
+  const toggleMenu = () => setMenuOpen((open) => !open);
+  const closeMenu = () => setMenuOpen(false);
+
+  // Helper to apply active class for hash links
+  const isHashActive = (hash) => {
+    return window.location.hash === hash ? 'active' : '';
+  };
 
   return (
-    <nav role="navigation" aria-label="Main Navigation">
+    <nav role="navigation" aria-label="Main Navigation" className="navbar">
       <div className="wrapper">
-        {/* Logo dengan ikon kecil di sebelah kiri */}
-        <div className="logo">
-          <Link to="/" aria-label="Beranda">
-            <FaBriefcase style={{ fontSize: '1.2rem', marginRight: '8px', verticalAlign: 'middle' }} />
-            AGITRAHADIAN
-          </Link>
-        </div>
+        {/* Logo */}
+        <NavLink to="/" className="logo" onClick={closeMenu} aria-label="Beranda">
+          <FaBriefcase className="logo-icon" />
+          AGITRAHADIAN
+        </NavLink>
 
-        {/* Tombol Hamburger untuk menu mobile */}
+        {/* Hamburger */}
         <button
           className="hamburger"
-          onClick={tampilMenu}
-          aria-label={statusTampil === '' ? 'Buka Menu' : 'Tutup Menu'}
+          onClick={toggleMenu}
+          aria-label={menuOpen ? 'Tutup Menu' : 'Buka Menu'}
+          aria-expanded={menuOpen}
         >
-          {statusTampil === '' ? <FaBars /> : <IoCloseSharp />}
+          {menuOpen ? <IoCloseSharp /> : <FaBars />}
         </button>
 
-        {/* Menu utama */}
-        <div className={`menu ${statusTampil}`} onClick={tampilMenu}>
+        {/* Menu */}
+        <div className={`menu ${menuOpen ? 'tampil' : ''}`}>
           <ul>
             <li>
-              <HashLink to="/#portfolio" aria-label="Portfolio">Portfolio</HashLink>
+              <NavLink
+                to="/"
+                exact
+                className={({ isActive }) => (isActive ? 'active' : '')}
+                onClick={closeMenu}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <HashLink to="/#about" aria-label="About">About</HashLink>
+              <HashLink
+                to="/#portfolio"
+                smooth
+                className={isHashActive('#portfolio')}
+                onClick={closeMenu}
+              >
+                Portfolio
+              </HashLink>
             </li>
             <li>
-              <Link to="/experience" aria-label="Experience">Experience</Link>
+              <HashLink
+                to="/#about"
+                smooth
+                className={isHashActive('#about')}
+                onClick={closeMenu}
+              >
+                About
+              </HashLink>
+            </li>
+            <li>
+              <NavLink
+                to="/experience"
+                className={({ isActive }) => (isActive ? 'active' : '')}
+                onClick={closeMenu}
+              >
+                Experience
+              </NavLink>
             </li>
           </ul>
         </div>

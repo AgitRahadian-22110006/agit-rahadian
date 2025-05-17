@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO'; // Import the new SEO component
+import '../styles/DetailPortfolio.css'; // Import your CSS file for styling
+
 
 function DetailPortfolio() {
   const { id } = useParams();

@@ -12,7 +12,7 @@ function Home() {
     "@type": "Person",
     "name": "Agit Rahadian",
     "url": "https://agitrahadian.my.id",
-    "image": "https://agitrahadian.my.id/assets/profile-picture.webp",
+    "image": "https://agitrahadian.my.id/assets/profile-picture.png",
     "sameAs": [
       "https://github.com/agitrahadian-22110006",
       "https://www.instagram.com/agitrhdn",

@@ -22,7 +22,7 @@ function App() {
         <meta property="og:description" content="Website resmi Agit Rahadian, Full-Stack Web Developer asal Garut yang berspesialisasi dalam pengembangan website sekolah dan aplikasi pendidikan." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://agitrahadian.my.id" />
-        <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.webp" />
+        <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.png" />
         <meta property="og:site_name" content="Agit Rahadian" />
         <meta property="og:locale" content="id_ID" />
         
@@ -30,7 +30,7 @@ function App() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Agit Rahadian - Full-Stack Web Developer" />
         <meta name="twitter:description" content="Website resmi Agit Rahadian, Full-Stack Web Developer asal Garut yang berspesialisasi dalam pengembangan website sekolah dan aplikasi pendidikan." />
-        <meta name="twitter:image" content="https://agitrahadian.my.id/assets/profile-picture.webp" />
+        <meta name="twitter:image" content="https://agitrahadian.my.id/assets/profile-picture.png" />
         
         {/* Canonical URL */}
         <link rel="canonical" href="https://agitrahadian.my.id" />
