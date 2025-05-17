@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Allow all robots complete access
+Disallow:
+
+# Sitemap location
 Sitemap: https://agitrahadian.my.id/sitemap.xml
