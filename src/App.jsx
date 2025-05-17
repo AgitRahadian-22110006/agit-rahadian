@@ -2,7 +2,6 @@ import './App.css';
 import { Suspense, lazy } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import SEOHead from './components/SEOHead'; // Pastikan nama file persis seperti ini
 
 const Home = lazy(() => import('./pages/Home'));
 const DetailPortfolio = lazy(() => import('./pages/DetailPortfolio'));
@@ -36,7 +35,6 @@ function App() {
         {/* Canonical URL */}
         <link rel="canonical" href="https://agitrahadian.my.id" />
         
-        {/* Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link
@@ -47,28 +45,7 @@ function App() {
           href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap"
           rel="stylesheet"
         />
-        
-        {/* SEO Technical Tags */}
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        
-        {/* Mobile Optimization */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#222831" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        
-        {/* Favicon - Add these files to your public directory */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
       </Helmet>
-      
-      {/* Global SEO Component */}
-      <SEOHead />
-      
       <HashRouter>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
