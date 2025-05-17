@@ -15,23 +15,23 @@ function About() {
     <section id="about">
       {/* Metadata untuk SEO */}
       <Helmet>
-        <title>Agit Rahadian - Full-Stack Web Developer</title>
+        <title>Tentang Agit Rahadian - Full-Stack Web Developer</title>
         <meta
           name="description"
-          content="Hai, saya Agit Rahadian, seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly."
+          content="Agit Rahadian adalah Full-Stack Web Developer dengan pengalaman membangun website sekolah dan aplikasi pendidikan sejak 2020. Menguasai PHP, Laravel, React & MySQL."
         />
         <meta
           name="keywords"
-          content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design"
+          content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA, Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design, Garut, Indonesia"
         />
         <meta name="author" content="Agit Rahadian" />
-        <meta property="og:title" content="Agit Rahadian - Full-Stack Web Developer" />
+        <meta property="og:title" content="Tentang Agit Rahadian - Full-Stack Web Developer" />
         <meta
           property="og:description"
-          content="Profil Agit Rahadian, seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly."
+          content="Agit Rahadian adalah Full-Stack Web Developer dengan pengalaman membangun website sekolah dan aplikasi pendidikan sejak 2020. Menguasai PHP, Laravel, React & MySQL."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://agitrahadian.my.id" />
+        <meta property="og:url" content="https://agitrahadian.my.id/about" />
         <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.webp" />
         <script type="application/ld+json">
           {`
@@ -40,11 +40,38 @@ function About() {
               "@type": "Person",
               "name": "Agit Rahadian",
               "jobTitle": "Full-Stack Web Developer",
-              "description": "Seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly.",
+              "description": "Seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly untuk sektor pendidikan di Indonesia.",
               "url": "https://agitrahadian.my.id",
+              "image": "https://agitrahadian.my.id/assets/profile-picture.webp",
+              "birthDate": "2002-07-14",
+              "alumniOf": [
+                {
+                  "@type": "EducationalOrganization",
+                  "name": "STMIK Mardira Indonesia",
+                  "department": "Teknik Informatika - Prodi Sistem Informasi"
+                },
+                {
+                  "@type": "EducationalOrganization",
+                  "name": "SMA Negeri 10 Garut",
+                  "department": "Jurusan IPA"
+                }
+              ],
+              "knowsAbout": ["Web Development", "React", "Laravel", "PHP", "MySQL", "JavaScript", "CSS3", "HTML5"],
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Freelance Web Developer"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Garut",
+                "addressRegion": "Jawa Barat",
+                "addressCountry": "Indonesia"
+              },
               "sameAs": [
-                "https://github.com/agitrahadian",
-                "https://www.linkedin.com/in/agitrahadian"
+                "https://github.com/agitrahadian-22110006",
+                "https://www.instagram.com/agitrhdn",
+                "https://www.tiktok.com/@agitrahadian",
+                "https://www.facebook.com/share/16HuZskNh5/"
               ]
             }
           `}
@@ -53,6 +80,19 @@ function About() {
 
       <div className="wrapper">
         <h1>About Me</h1>
+
+        <div className="professional-bio">
+          <h2>Siapa Agit Rahadian?</h2>
+          <p>
+            Agit Rahadian adalah seorang Full-Stack Web Developer lulusan STMIK Mardira Indonesia yang berspesialisasi dalam pengembangan website dan aplikasi untuk sektor pendidikan. Lahir pada 14 Juli 2002 di Garut, Jawa Barat, Agit telah mengembangkan berbagai solusi digital termasuk website profil sekolah Madrasah Aliyah AS-SIROJI dan sistem informasi akademik internal.
+          </p>
+          <p>
+            Sebagai programmer yang peduli dengan kualitas pendidikan di Indonesia, Agit Rahadian menggabungkan keahlian teknis dengan pemahaman mendalam tentang kebutuhan institusi pendidikan. Fokus utamanya adalah menciptakan solusi digital yang tidak hanya fungsional, tetapi juga user-friendly dan berdampak positif.
+          </p>
+          <blockquote>
+            "Setiap baris kode yang saya tulis adalah langkah kecil menuju transformasi digital pendidikan Indonesia." - Agit Rahadian
+          </blockquote>
+        </div>
 
         <p>
           Halo!! Saya <strong>Agit Rahadian</strong>, seorang <strong>Full-Stack Web Developer</strong> 

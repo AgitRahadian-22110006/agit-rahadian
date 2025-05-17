@@ -14,12 +14,12 @@ function Header() {
   return (
     <header className="header">
       <Helmet>
-        <title>Agit Rahadian - Full-Stack Web Developer</title>
-        <meta name="description" content="Hai, saya Agit Rahadian, seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly." />
-        <meta name="keywords" content="Agit Rahadian, Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design" />
+        <title>Agit Rahadian - Full-Stack Web Developer | Portfolio Resmi</title>
+        <meta name="description" content="Agit Rahadian adalah Full-Stack Web Developer dari Garut yang mengkhususkan diri dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital untuk meningkatkan kualitas pendidikan di Indonesia." />
+        <meta name="keywords" content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA, Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design, Website Sekolah, Aplikasi Madrasah" />
         <meta name="author" content="Agit Rahadian" />
-        <meta property="og:title" content="Agit Rahadian - Full-Stack Web Developer" />
-        <meta property="og:description" content="Profil Agit Rahadian, seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly." />
+        <meta property="og:title" content="Agit Rahadian - Full-Stack Web Developer | Portfolio Resmi" />
+        <meta property="og:description" content="Agit Rahadian adalah Full-Stack Web Developer dari Garut yang mengkhususkan diri dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital untuk meningkatkan kualitas pendidikan di Indonesia." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://agitrahadian.my.id" />
         <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.png" />
@@ -28,7 +28,7 @@ function Header() {
       <div className="header-jumbotron">
         <img
           src={profilepicture}
-          alt="Agit Rahadian"
+          alt="Agit Rahadian - Full-Stack Web Developer"
           className="profile-img"
           width="180"
           height="180"
@@ -92,7 +92,7 @@ function Header() {
             href="https://www.instagram.com/agitrhdn"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram"
+            aria-label="Instagram Agit Rahadian"
           >
             <FaInstagram />
           </a>
@@ -100,7 +100,7 @@ function Header() {
             href="https://www.tiktok.com/@agitrahadian"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="TikTok"
+            aria-label="TikTok Agit Rahadian"
           >
             <FaTiktok />
           </a>
@@ -108,7 +108,7 @@ function Header() {
             href="https://github.com/agitrahadian-22110006"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub"
+            aria-label="GitHub Agit Rahadian"
           >
             <IoLogoGithub />
           </a>
@@ -116,7 +116,7 @@ function Header() {
             href="https://www.facebook.com/share/16HuZskNh5/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Facebook"
+            aria-label="Facebook Agit Rahadian"
           >
             <FaFacebook />
           </a>

@@ -8,20 +8,20 @@ function Portfolio() {
     <section id="portfolio">
       {/* Metadata untuk SEO */}
       <Helmet>
-        <title>Portfolio - Agit Rahadian</title>
+        <title>Portfolio - Agit Rahadian | Proyek-Proyek Web Development</title>
         <meta
           name="description"
-          content="Lihat proyek-proyek portofolio saya, termasuk pengembangan website, aplikasi internal, dan solusi digital lainnya."
+          content="Lihat portfolio Agit Rahadian, seorang Full-Stack Developer dari Garut. Koleksi proyek pengembangan website sekolah, aplikasi madrasah, dan sistem informasi akademik."
         />
         <meta
           name="keywords"
-          content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design"
+          content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA, Proyek Web Development, Website Sekolah, MA AS-SIROJI, Garut, Jawa Barat, Indonesia"
         />
         <meta name="author" content="Agit Rahadian" />
-        <meta property="og:title" content="Portfolio - Agit Rahadian" />
+        <meta property="og:title" content="Portfolio - Agit Rahadian | Proyek-Proyek Web Development" />
         <meta
           property="og:description"
-          content="Lihat proyek-proyek portofolio saya, termasuk pengembangan website, aplikasi internal, dan solusi digital lainnya."
+          content="Lihat portfolio Agit Rahadian, seorang Full-Stack Developer dari Garut. Koleksi proyek pengembangan website sekolah, aplikasi madrasah, dan sistem informasi akademik."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://agitrahadian.my.id/portfolio" />
@@ -32,7 +32,7 @@ function Portfolio() {
               "@context": "https://schema.org",
               "@type": "ItemList",
               "name": "Portfolio - Agit Rahadian",
-              "description": "Lihat proyek-proyek portofolio saya, termasuk pengembangan website, aplikasi internal, dan solusi digital lainnya.",
+              "description": "Lihat proyek-proyek portofolio Agit Rahadian, termasuk pengembangan website, aplikasi internal, dan solusi digital lainnya.",
               "itemListElement": [
                 ${portfolioList.map((item, index) => `
                   {
@@ -51,9 +51,9 @@ function Portfolio() {
       </Helmet>
 
       <div className="wrapper">
-        <h1>Project Portfolio Saya</h1>
+        <h1>Project Portfolio Agit Rahadian</h1>
         <p>
-          Berikut adalah beberapa proyek yang telah saya kerjakan, mencakup pengembangan website, aplikasi internal, dan solusi digital lainnya.
+          Berikut adalah beberapa proyek yang telah saya, Agit Rahadian, kerjakan. Portofolio ini mencakup pengembangan website profil sekolah, aplikasi internal madrasah, dan sistem informasi akademik yang dirancang untuk memenuhi kebutuhan khusus klien saya.
         </p>
         <div className="grid">
           {portfolioList.map((item) => (
@@ -62,7 +62,7 @@ function Portfolio() {
                 <Link to={`/portfolio/${item.id}`}>
                   <img
                     src={item.images[0].src}
-                    alt={`Gambar proyek ${item.title}`}
+                    alt={`Proyek ${item.title} oleh Agit Rahadian`}
                     loading="lazy"
                     width={600}
                     height={281}

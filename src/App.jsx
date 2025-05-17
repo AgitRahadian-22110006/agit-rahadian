@@ -12,15 +12,29 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Agit Rahadian - Full-Stack Web Developer</title>
-        <meta name="description" content="Hai, saya Agit Rahadian, seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly." />
-        <meta name="keywords" content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design" />
+        <title>Agit Rahadian - Full-Stack Web Developer | Portfolio Resmi</title>
+        <meta name="description" content="Agit Rahadian adalah Full-Stack Web Developer berpengalaman dari Garut yang fokus pada pengembangan website sekolah, aplikasi pendidikan, dan solusi digital praktis." />
+        <meta name="keywords" content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA, Full-Stack Developer, Web Developer, Programmer, Garut, Website Sekolah, Aplikasi Pendidikan, Pengembang Web, Portfolio Developer Indonesia" />
         <meta name="author" content="Agit Rahadian" />
-        <meta property="og:title" content="Agit Rahadian - Full-Stack Web Developer" />
-        <meta property="og:description" content="Profil Agit Rahadian, seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly." />
+        
+        {/* Open Graph Meta Tags yang Ditingkatkan */}
+        <meta property="og:title" content="Agit Rahadian - Full-Stack Web Developer | Portfolio Resmi" />
+        <meta property="og:description" content="Website resmi Agit Rahadian, Full-Stack Web Developer asal Garut yang berspesialisasi dalam pengembangan website sekolah dan aplikasi pendidikan." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://agitrahadian.my.id" />
         <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.webp" />
+        <meta property="og:site_name" content="Agit Rahadian" />
+        <meta property="og:locale" content="id_ID" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Agit Rahadian - Full-Stack Web Developer" />
+        <meta name="twitter:description" content="Website resmi Agit Rahadian, Full-Stack Web Developer asal Garut yang berspesialisasi dalam pengembangan website sekolah dan aplikasi pendidikan." />
+        <meta name="twitter:image" content="https://agitrahadian.my.id/assets/profile-picture.webp" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://agitrahadian.my.id" />
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link
