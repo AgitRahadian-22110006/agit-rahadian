@@ -20,11 +20,10 @@ function Navbar() {
     <nav role="navigation" aria-label="Main Navigation" className="navbar">
       <div className="wrapper">
         {/* Logo */}
-        <NavLink to="/" className="logo" onClick={closeMenu} aria-label="Beranda">
-          <FaBriefcase className="logo-icon" />
-          AGITRAHADIAN
-        </NavLink>
-
+        <div className="logo" style={{ color: '#ffffff' }}>
+  <FaBriefcase className="logo-icon" />
+  AGITRAHADIAN
+</div>
         {/* Hamburger */}
         <button
           className="hamburger"
