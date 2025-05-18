@@ -1,8 +1,9 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Gunakan repeat untuk fleksibilitas */
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px;
   justify-content: center;
+  align-items: start; /* agar kotak rapi meski konten berbeda tinggi */
 }
 
 /* Styling kotak pembungkus */
@@ -20,18 +21,18 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Gambar di dalam box */
-.grid > .item > .box > a > img {
+/* Gambar di dalam box: responsive dengan object-fit dan lazy loading */
+.grid > .item > .box picture,
+.grid > .item > .box picture img {
   width: 100%;
   height: auto;
-  aspect-ratio: 600 / 281;
-  border-radius: 10px;
   display: block;
-  transition: transform 0.3s ease;
+  border-radius: 10px;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.grid > .item > .box > a > img:hover {
+.grid > .item > .box picture img:hover {
   transform: scale(1.05);
 }
 
@@ -72,5 +73,10 @@
 
   .grid > .item > .box > .description {
     font-size: 0.85rem;
+  }
+
+  /* Spasi tambahan untuk picture */
+  .grid > .item > .box picture {
+    margin-bottom: 10px;
   }
 }

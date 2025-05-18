@@ -29,7 +29,7 @@ function Portfolio() {
         title="Portfolio"
         description="Lihat portfolio Agit Rahadian, seorang Full-Stack Developer dari Garut. Koleksi proyek pengembangan website sekolah, aplikasi madrasah, dan sistem informasi akademik."
         keywords="Portfolio, Proyek Web Development, Agit Rahadian, Website Sekolah, Aplikasi Madrasah, Sistem Informasi Akademik"
-        ogImage="https://agitrahadian.my.id/assets/portfolio1.webp"
+        ogImage="https://agitrahadian.my.id/assets/portfolio1-600x281.webp"
         canonical="/portfolio"
         structuredData={listSchema}
       />
@@ -41,23 +41,44 @@ function Portfolio() {
         </p>
 
         <div className="grid">
-          {portfolioList.map((item) => (
-            <div className="item" key={item.id}>
-              <div className="box">
-                <Link to={`/portfolio/${item.id}`}>
-                  <img
-                    src={item.images[0].src}
-                    alt={`Proyek ${item.title} oleh Agit Rahadian`}
-                    loading="lazy"
-                    width={600}
-                    height={281}
-                  />
-                </Link>
-                <h2>{item.title}</h2>
-                <p className="description">{item.description}</p>
+          {portfolioList.map((item) => {
+            // derive base path and extensions for responsive images
+            const src = item.images[0].src; // e.g., '/assets/portfolio1.webp'
+            const base = src.replace(/\.(webp|png|jpg|jpeg)$/, '');
+            return (
+              <div className="item" key={item.id}>
+                <div className="box">
+                  <Link to={`/portfolio/${item.id}`}>
+                    <picture>
+                      {/* varian AVIF */}
+                      <source
+                        type="image/avif"
+                        srcSet={`${base}-287x134.avif 287w, ${base}-600x281.avif 600w`}
+                        sizes="(max-width: 600px) 100vw, 600px"
+                      />
+                      {/* varian WebP */}
+                      <source
+                        type="image/webp"
+                        srcSet={`${base}-287x134.webp 287w, ${base}-600x281.webp 600w`}
+                        sizes="(max-width: 600px) 100vw, 600px"
+                      />
+                      {/* fallback img */}
+                      <img
+                        src={`${base}-287x134.webp`}
+                        alt={`Proyek ${item.title} oleh Agit Rahadian`}
+                        loading="lazy"
+                        decoding="async"
+                        width={287}
+                        height={134}
+                      />
+                    </picture>
+                  </Link>
+                  <h2>{item.title}</h2>
+                  <p className="description">{item.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
