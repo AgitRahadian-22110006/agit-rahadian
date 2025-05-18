@@ -67,7 +67,7 @@ function Header() {
         {/* Additional meta tags for header */}
         <meta name="robots" content="index, follow" />
         <meta name="twitter:creator" content="@agitrhdn" />
-        <meta name="google-site-verification" content="your-verification-code-here" />
+        <meta name="google-site-verification" content="google-site-verification: google68989f7575251084.html" />
         <link rel="preload" as="image" href={profilepicture} />
       </SEO>
 
