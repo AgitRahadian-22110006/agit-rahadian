@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/tugas.css';
-import profileImg from '../assets/profile-picture.png';
+import profileImg from '../assets/profile-picture.avif';
 
 export default function Tugas() {
   return (
