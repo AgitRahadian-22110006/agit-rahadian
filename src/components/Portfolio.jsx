@@ -29,7 +29,7 @@ function Portfolio() {
         title="Portfolio"
         description="Lihat portfolio Agit Rahadian, seorang Full-Stack Developer dari Garut. Koleksi proyek pengembangan website sekolah, aplikasi madrasah, dan sistem informasi akademik."
         keywords="Portfolio, Proyek Web Development, Agit Rahadian, Website Sekolah, Aplikasi Madrasah, Sistem Informasi Akademik"
-        ogImage="https://agitrahadian.my.id/assets/portfolio-thumbnail.png"
+        ogImage="https://agitrahadian.my.id/assets/portfolio1.webp"
         canonical="/portfolio"
         structuredData={listSchema}
       />

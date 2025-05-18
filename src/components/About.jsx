@@ -59,7 +59,7 @@ function About() {
     "jobTitle": "Full-Stack Web Developer",
     "description": "Seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly untuk sektor pendidikan di Indonesia.",
     "url": "https://agitrahadian.my.id",
-    "image": "https://agitrahadian.my.id/assets/profile-picture.webp",
+    "image": "https://agitrahadian.my.id/assets/profile-picture.avif",
     "birthDate": "2002-07-14",
     "alumniOf": [
       {
@@ -113,7 +113,7 @@ function About() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://agitrahadian.my.id/about" />
-        <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.webp" />
+        <meta property="og:image" content="https://agitrahadian.my.id/assets/profile-picture.avif" />
         
         {/* Schema.org JSON-LD untuk informasi person */}
         <script type="application/ld+json">

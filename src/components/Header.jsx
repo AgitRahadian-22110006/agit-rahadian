@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import profilepicture from '../assets/profile-picture.png';
+import profilepicture from '../assets/profile-picture.avif';
 import {
   FaInstagram,
   FaTiktok,
@@ -20,7 +20,7 @@ function Header() {
     "jobTitle": "Full-Stack Web Developer",
     "description": "Seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly untuk sektor pendidikan di Indonesia.",
     "url": "https://agitrahadian.my.id",
-    "image": "https://agitrahadian.my.id/assets/profile-picture.png",
+    "image": "https://agitrahadian.my.id/assets/profile-picture.avif",
     "birthDate": "2002-07-14",
     "alumniOf": [
       {
@@ -59,7 +59,7 @@ function Header() {
         title="Full-Stack Web Developer | Portfolio Resmi"
         description="Agit Rahadian adalah Full-Stack Web Developer dari Garut yang mengkhususkan diri dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital untuk meningkatkan kualitas pendidikan di Indonesia."
         keywords="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA, Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design, Website Sekolah, Aplikasi Madrasah"
-        ogImage="https://agitrahadian.my.id/assets/profile-picture.png"
+        ogImage="https://agitrahadian.my.id/assets/profile-picture.avif"
         ogType="website"
         canonical="/"
         structuredData={personSchema}
