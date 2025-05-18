@@ -1,49 +1,37 @@
-// src/pages/Experience.jsx
-import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { SiNextdotjs } from 'react-icons/si';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
-import SEO from '../components/SEO';
+import { Helmet } from 'react-helmet';
+import { SiNextdotjs } from "react-icons/si";
 
-export default function Experience() {
-  // Breadcrumb schema
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Beranda",
-        "item": "https://agitrahadian.my.id/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Experience",
-        "item": "https://agitrahadian.my.id/experience"
-      }
-    ]
-  };
-
+function Experience() {
   return (
     <>
-      <SEO
-        title="Experience"
-        description="Lihat pengalaman kerja Agit Rahadian sebagai Full-Stack Web Developer: pengembangan website sekolah, aplikasi internal, dan solusi digital pendidikan menggunakan React, Laravel, dan PHP."
-        keywords="Pengalaman Kerja, Full-Stack Web Developer, React, Laravel, PHP, Garut"
-        canonical="/experience"
-        structuredData={breadcrumbSchema}
-      >
-        <meta name="robots" content="index, follow" />
-      </SEO>
+      {/* Metadata untuk SEO */}
+      <Helmet>
+        <title>Pengalaman Kerja - Agit Rahadian</title>
+        <meta
+          name="description"
+          content="Lihat pengalaman kerja Agit Rahadian sebagai Full-Stack Web Developer, termasuk pengembangan website sekolah, aplikasi internal, dan kontribusi pada solusi digital pendidikan."
+        />
+        <meta
+          name="keywords"
+         content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design"
+        />
+        <meta name="author" content="Agit Rahadian" />
+        <meta property="og:title" content="Pengalaman Kerja - Agit Rahadian" />
+        <meta
+          property="og:description"
+          content="Lihat pengalaman kerja Agit Rahadian sebagai Full-Stack Web Developer, termasuk pengembangan website sekolah, aplikasi internal, dan kontribusi pada solusi digital pendidikan."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://agitrahadian.my.id/experience" />
+      </Helmet>
 
       <Navbar />
-
-      <main className="wrapper">
+      <div className="wrapper">
         <h1>Pengalaman Kerja</h1>
         <VerticalTimeline>
           <VerticalTimelineElement
@@ -52,21 +40,15 @@ export default function Experience() {
             iconStyle={{ background: '#222831', color: '#fff' }}
             icon={<SiNextdotjs aria-label="Next.js Icon" />}
           >
-            <h3 className="vertical-timeline-element-title">
-              Full-Stack Web Developer (Freelance)
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              Remote &amp; Garut, Jawa Barat
-            </h4>
+            <h3 className="vertical-timeline-element-title">Full-Stack Web Developer (Freelance)</h3>
+            <h4 className="vertical-timeline-element-subtitle">Remote & Garut, Jawa Barat</h4>
             <p>
-              Membangun dan mengembangkan berbagai website profil sekolah,
-              aplikasi internal madrasah, serta sistem manajemen informasi akademik.
-              Fokus pada clean code, performa optimal, dan desain responsif.
+              Membangun dan mengembangkan berbagai Website profil sekolah, aplikasi internal madrasah, serta sistem manajemen informasi akademik. Fokus pada clean code, performa optimal, dan desain responsif. Berpengalaman menggunakan React, Laravel, PHP, dan MySQL.
             </p>
             <ul>
               <li>Website Profil Madrasah Aliyah AS-SIROJI (maassiroji.sch.id)</li>
-              <li>Aplikasi PPDB Online &amp; Sistem Informasi Akademik</li>
-              <li>Landing page edukasi dan situs profil sekolah</li>
+              <li>Aplikasi PPDB Online & Sistem Informasi Akademik</li>
+              <li>Website profil sekolah dan landing page edukasi</li>
             </ul>
           </VerticalTimelineElement>
 
@@ -76,16 +58,10 @@ export default function Experience() {
             iconStyle={{ background: '#222831', color: '#fff' }}
             icon={<SiNextdotjs aria-label="Next.js Icon" />}
           >
-            <h3 className="vertical-timeline-element-title">
-              Web Developer (Project Based)
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              STMIK Mardira Indonesia
-            </h4>
+            <h3 className="vertical-timeline-element-title">Web Developer (Project Based)</h3>
+            <h4 className="vertical-timeline-element-subtitle">STMIK Mardira Indonesia</h4>
             <p>
-              Berperan dalam tim pengembangan aplikasi internal kampus dan
-              sistem informasi akademik. Bertanggung jawab pada frontend,
-              backend, deployment, dan optimasi performa.
+              Berperan dalam tim pengembangan aplikasi internal kampus dan sistem informasi akademik. Bertanggung jawab pada pengembangan frontend dan backend, deployment, serta optimasi performa aplikasi.
             </p>
             <ul>
               <li>Pengembangan aplikasi manajemen data mahasiswa</li>
@@ -94,10 +70,11 @@ export default function Experience() {
             </ul>
           </VerticalTimelineElement>
         </VerticalTimeline>
-      </main>
-
+      </div>
       <Footer />
       <ScrollToTop />
     </>
   );
 }
+
+export default Experience;
