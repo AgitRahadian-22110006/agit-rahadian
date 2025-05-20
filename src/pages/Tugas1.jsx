@@ -1,6 +1,6 @@
 // src/pages/Tugas1.jsx
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 
 import Navbar from '../components/Navbar';
@@ -8,25 +8,38 @@ import Footer from '../components/Footer';
 import '../styles/IsiTugas.css';
 
 export default function Tugas1() {
+  // Breadcrumb schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://agitrahadian.my.id/" },
+      { "@type": "ListItem", "position": 2, "name": "Tugas", "item": "https://agitrahadian.my.id/tugas" },
+      { "@type": "ListItem", "position": 3, "name": "Detail Tugas 1", "item": "https://agitrahadian.my.id/tugas/1" }
+    ]
+  };
+
+  // WebPage schema
+  const webpageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://agitrahadian.my.id/tugas/1",
+    "url": "https://agitrahadian.my.id/tugas/1",
+    "name": "Detail Tugas 1 – Agit Rahadian",
+    "description": "Detail tugas pertama: Pelajari Logika First Order, menuliskan ekspresi, dan konversi kalimat ke FOL."
+  };
+
+  const structuredData = [breadcrumbSchema, webpageSchema];
+
   return (
     <>
-      <Helmet>
-        <title>Agit Rahadian | Detail Tugas 1</title>
-        <meta
-          name="description"
-          content="Detail tugas pertama: Pelajari Logika First Order, menuliskan ekspresi, dan konversi kalimat ke FOL."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Fonts & Icons */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-          rel="stylesheet"
-        />
-      </Helmet>
+      <SEO
+        title="Detail Tugas 1"
+        description="Detail tugas pertama: Pelajari Logika First Order, menuliskan ekspresi, dan konversi kalimat ke FOL."
+        keywords="Logika First Order, FOL, Tugas 1, Agit Rahadian"
+        canonical="/tugas/1"
+        structuredData={structuredData}
+      />
 
       <Navbar />
 

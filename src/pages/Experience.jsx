@@ -1,34 +1,54 @@
+// src/pages/Experience.jsx
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { SiNextdotjs } from "react-icons/si";
 
 function Experience() {
+  // Breadcrumb schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://agitrahadian.my.id/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Pengalaman",
+        "item": "https://agitrahadian.my.id/experience"
+      }
+    ]
+  };
+
+  // WebPage schema
+  const webpageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://agitrahadian.my.id/experience",
+    "url": "https://agitrahadian.my.id/experience",
+    "name": "Pengalaman Kerja – Agit Rahadian",
+    "description": "Lihat pengalaman kerja Agit Rahadian sebagai Full-Stack Web Developer, termasuk pengembangan website sekolah, aplikasi internal, dan kontribusi pada solusi digital pendidikan."
+  };
+
+  const structuredData = [breadcrumbSchema, webpageSchema];
+
   return (
     <>
-      {/* Metadata untuk SEO */}
-      <Helmet>
-        <title>Pengalaman Kerja - Agit Rahadian</title>
-        <meta
-          name="description"
-          content="Lihat pengalaman kerja Agit Rahadian sebagai Full-Stack Web Developer, termasuk pengembangan website sekolah, aplikasi internal, dan kontribusi pada solusi digital pendidikan."
-        />
-        <meta
-          name="keywords"
-         content="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design"
-        />
-        <meta name="author" content="Agit Rahadian" />
-        <meta property="og:title" content="Pengalaman Kerja - Agit Rahadian" />
-        <meta
-          property="og:description"
-          content="Lihat pengalaman kerja Agit Rahadian sebagai Full-Stack Web Developer, termasuk pengembangan website sekolah, aplikasi internal, dan kontribusi pada solusi digital pendidikan."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://agitrahadian.my.id/experience" />
-      </Helmet>
+      <SEO
+        title="Pengalaman Kerja – Agit Rahadian"
+        description="Lihat pengalaman kerja Agit Rahadian sebagai Full-Stack Web Developer, termasuk pengembangan website sekolah, aplikasi internal, dan kontribusi pada solusi digital pendidikan."
+        keywords="Agit Rahadian, pengalaman kerja, Full-Stack Web Developer, React, Laravel, PHP, Pendidikan, Digital Solutions"
+        canonical="https://agitrahadian.my.id/experience"
+        structuredData={structuredData}
+      />
 
       <Navbar />
       <div className="wrapper">

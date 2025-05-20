@@ -1,11 +1,11 @@
+// src/pages/DetailPortfolio.jsx
 import { useParams } from 'react-router-dom';
 import { portfolioList } from '../data/DataPortfolio';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
-import SEO from '../components/SEO'; // Import the new SEO component
-import '../styles/DetailPortfolio.css'; // Import your CSS file for styling
-
+import SEO from '../components/SEO'; // Komponen SEO menggunakan react-helmet-async
+import '../styles/DetailPortfolio.css';
 
 function DetailPortfolio() {
   const { id } = useParams();
@@ -18,15 +18,19 @@ function DetailPortfolio() {
           title="Portfolio Tidak Ditemukan"
           description="Halaman portfolio yang Anda cari tidak ditemukan. Silakan kembali ke halaman utama untuk melihat proyek lainnya."
           canonical="/404"
-        />
+        >
+          <meta name="robots" content="noindex, follow" />
+        </SEO>
         <Navbar />
-        <p className="not-found">Portfolio tidak ditemukan.</p>
+        <main className="not-found">
+          <h1>Portfolio tidak ditemukan.</h1>
+        </main>
         <Footer />
       </>
     );
   }
 
-  // Create rich structured data for this project
+  // Schema untuk proyek
   const projectSchema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
@@ -38,10 +42,6 @@ function DetailPortfolio() {
       "@type": "Person",
       "name": "Agit Rahadian",
       "url": "https://agitrahadian.my.id"
-    },
-    "creator": {
-      "@type": "Person",
-      "name": "Agit Rahadian"
     }
   };
 
@@ -50,28 +50,12 @@ function DetailPortfolio() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Beranda",
-        "item": "https://agitrahadian.my.id"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Portfolio",
-        "item": "https://agitrahadian.my.id/#portfolio"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": item.title,
-        "item": `https://agitrahadian.my.id/portfolio/${item.id}`
-      }
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://agitrahadian.my.id/" },
+      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://agitrahadian.my.id/#portfolio" },
+      { "@type": "ListItem", "position": 3, "name": item.title, "item": `https://agitrahadian.my.id/portfolio/${item.id}` }
     ]
   };
 
-  // Combined schema array
   const structuredData = [projectSchema, breadcrumbSchema];
 
   return (
@@ -84,11 +68,11 @@ function DetailPortfolio() {
         canonical={`/portfolio/${item.id}`}
         structuredData={structuredData}
       >
-        {/* Add any additional meta tags specific to portfolio detail pages */}
         <meta name="robots" content="index, follow" />
       </SEO>
+
       <Navbar />
-      <section id="detail-portfolio">
+      <section id="detail-portfolio" className="detail-portfolio">
         <div className="container">
           <div className="detail-header">
             <a

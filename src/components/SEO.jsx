@@ -6,16 +6,16 @@ function SEO({
   description, 
   keywords, 
   ogImage, 
-  ogType = "website",
+  ogType = 'website',
   canonical,
   structuredData,
   children
 }) {
   // Base URL
-  const siteUrl = "https://agitrahadian.my.id";
+  const siteUrl = 'https://agitrahadian.my.id';
   
   // Default image if none provided
-  const image = ogImage || `${siteUrl}/assets/profile-picture.webp`;
+  const image = ogImage || `${siteUrl}/android-chrome-512x512.png`;
   
   // Canonical URL
   const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
@@ -23,16 +23,16 @@ function SEO({
   return (
     <Helmet>
       {/* Basic Metadata */}
-      <title>{title ? `${title} - Agit Rahadian` : "Agit Rahadian - Full-Stack Web Developer"}</title>
+      <title>{title ? `${title} - Agit Rahadian` : 'Agit Rahadian - Full-Stack Web Developer'}</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content={`Agit Rahadian, Full-Stack Developer, Web Developer, Programmer, ${keywords}`} />
+      <meta name="keywords" content={`Agit Rahadian, Full-Stack Developer, Web Developer, Programmer${keywords ? `, ${keywords}` : ''}`} />
       <meta name="author" content="Agit Rahadian" />
       <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:title" content={title ? `${title} - Agit Rahadian` : "Agit Rahadian - Full-Stack Web Developer"} />
+      <meta property="og:title" content={title ? `${title} - Agit Rahadian` : 'Agit Rahadian - Full-Stack Web Developer'} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:site_name" content="Agit Rahadian" />
@@ -40,14 +40,14 @@ function SEO({
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title ? `${title} - Agit Rahadian` : "Agit Rahadian - Full-Stack Web Developer"} />
+      <meta name="twitter:title" content={title ? `${title} - Agit Rahadian` : 'Agit Rahadian - Full-Stack Web Developer'} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
 
       {/* Structured Data JSON-LD */}
       {structuredData && (
         <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
+          {JSON.stringify(Array.isArray(structuredData) ? structuredData : [structuredData])}
         </script>
       )}
 
@@ -64,8 +64,20 @@ SEO.propTypes = {
   ogImage: PropTypes.string,
   ogType: PropTypes.string,
   canonical: PropTypes.string,
-  structuredData: PropTypes.object,
+  structuredData: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.arrayOf(PropTypes.object)
+  ]),
   children: PropTypes.node
+};
+
+SEO.defaultProps = {
+  keywords: '',
+  ogImage: null,
+  ogType: 'website',
+  canonical: '',
+  structuredData: null,
+  children: null
 };
 
 export default SEO;

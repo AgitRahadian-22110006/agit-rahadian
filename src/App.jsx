@@ -1,5 +1,5 @@
 import './App.css';
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
@@ -22,12 +22,12 @@ function PortfolioPage() {
   const description = project.description
     || 'Detail proyek saya sebagai Full-Stack Web Developer.';
   const imageUrl = project.images?.[0]?.src
-    || 'https://agitrahadian.my.id/og/portfolio1.webp';
+    || 'https://agitrahadian.my.id/og/portfolio1.avif';
   const url = `https://agitrahadian.my.id/portfolio/${id}`;
 
   return (
     <>
-    <SpeedInsights />
+      <SpeedInsights />
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -69,7 +69,7 @@ function App() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://agitrahadian.my.id/" />
-        <meta property="og:image" content="https://agitrahadian.my.id/og/profile-picture.png" />
+        <meta property="og:image" content="https://agitrahadian.my.id/og/profile-picture.avif" />
 
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
@@ -78,7 +78,7 @@ function App() {
             "@type": "Person",
             "name": "Agit Rahadian",
             "url": "https://agitrahadian.my.id/",
-           "logo": "https://agitrahadian.my.id/android-chrome-512x512.png"
+            "logo": "https://agitrahadian.my.id/android-chrome-512x512.png",
             "jobTitle": "Full-Stack Web Developer",
             "email": "mailto:agitrahadian140702@gmail.com",
             "telephone": "+6287758263820",
@@ -196,7 +196,7 @@ function App() {
                       content="Penjelasan detail tugas 1, teknologi yang dipakai, dan hasil implementasinya."
                     />
                     <link rel="canonical" href="https://agitrahadian.my.id/tugas/1" />
-                    <meta property="og:title" content="Detail Tugas 1 – Agit Rahadian" />
+                    <meta property="og<title>Detail Tugas 1 – Agit Rahadian" />
                     <meta
                       property="og:description"
                       content="Penjelasan detail tugas 1, teknologi yang dipakai, dan hasil implementasinya."

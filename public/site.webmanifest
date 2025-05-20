@@ -1,10 +1,10 @@
 {
-  "id": "/?homescreen=1",
+  "id": "/",
   "name": "Agit Rahadian Portfolio",
   "short_name": "AgitRahadian",
   "description": "Portfolio resmi Agit Rahadian, Full-Stack Web Developer dari Garut.",
   "lang": "id",
-  "start_url": "/?homescreen=1",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "display_override": ["fullscreen", "minimal-ui"],
@@ -14,8 +14,9 @@
   "icons": [
     {
       "src": "/favicon.ico",
-      "sizes": "32x32 64x64 128x128",
-      "type": "image/x-icon"
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
     },
     {
       "src": "/android-chrome-192x192.png",
@@ -27,7 +28,7 @@
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "maskable any"
     },
     {
       "src": "/favicon-16x16.png",
@@ -44,7 +45,8 @@
     {
       "src": "/apple-touch-icon.png",
       "sizes": "180x180",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "screenshots": [
@@ -61,5 +63,11 @@
       "form_factor": "narrow"
     }
   ],
-  "categories": ["portfolio", "developer", "webapp"]
+  "categories": ["portfolio", "developer", "webapp"],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.agitrahadian.portfolio"
+    }
+  ]
 }

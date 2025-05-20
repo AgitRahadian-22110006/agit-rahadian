@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import profilepicture from '../assets/profile-picture.avif';
 import {
   FaInstagram,
@@ -12,15 +11,15 @@ import '../styles/Header.css';
 import SEO from './SEO';
 
 function Header() {
-  // Person Schema for structured data
+  // Person schema for structured data
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Agit Rahadian",
     "jobTitle": "Full-Stack Web Developer",
     "description": "Seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly untuk sektor pendidikan di Indonesia.",
-    "url": "https://agitrahadian.my.id",
-    "image": "https://agitrahadian.my.id/assets/profile-picture.png",
+    "url": "https://agitrahadian.my.id/",
+    "image": "https://agitrahadian.my.id/assets/profile-picture.avif",
     "birthDate": "2002-07-14",
     "alumniOf": [
       {
@@ -58,31 +57,30 @@ function Header() {
       <SEO
         title="Full-Stack Web Developer | Portfolio Resmi"
         description="Agit Rahadian adalah Full-Stack Web Developer dari Garut yang mengkhususkan diri dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital untuk meningkatkan kualitas pendidikan di Indonesia."
-        keywords="Agit Rahadian, Agit, agit, AGIT, AgitRahadian, Agitrahadian, agitrahadian, AGITRAHADIAN, AGIT RAHADIAN, Portfolio, STMIK MARDIRA INDONESIA, STMIK, MARDIRA, STMIK MARDIRA, Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Clean Code, Responsive Design, Website Sekolah, Aplikasi Madrasah"
+        keywords="Agit Rahadian, Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Responsive Design, Website Sekolah, Aplikasi Pendidikan"
         ogImage="https://agitrahadian.my.id/assets/profile-picture.avif"
         ogType="website"
         canonical="/"
         structuredData={personSchema}
       >
-        {/* Additional meta tags for header */}
         <meta name="robots" content="index, follow" />
         <meta name="twitter:creator" content="@agitrhdn" />
-        <meta name="google-site-verification" content="google-site-verification: google68989f7575251084.html" />
+        <meta name="google-site-verification" content="google68989f7575251084.html" />
         <link rel="preload" as="image" href={profilepicture} />
       </SEO>
 
       <div className="header-jumbotron">
         <img
           src={profilepicture}
-          alt="Agit Rahadian - Full-Stack Web Developer"
+          alt="Agit Rahadian – Full-Stack Web Developer"
           className="profile-img"
-          width="180"
-          height="180"
+          width={180}
+          height={180}
           fetchpriority="high"
         />
 
         <h1>Agit Rahadian</h1>
-        <p className="role">Programmer - Web Developer - Creator</p>
+        <p className="role">Programmer – Web Developer – Creator</p>
 
         <p className="bio">
           Hai, saya <strong>Agit Rahadian</strong>, Full-Stack Web Developer<br />
@@ -125,7 +123,7 @@ function Header() {
             <li>SD Sindangsari 2</li>
             <li>SMP Negeri 1 Leuwigoong</li>
             <li>SMA Negeri 10 Garut (Jurusan IPA)</li>
-            <li>S1 Teknik Informatika - Prodi Sistem Informasi, STMIK Mardira Indonesia</li>
+            <li>S1 Teknik Informatika – Prodi Sistem Informasi, STMIK Mardira Indonesia</li>
           </ul>
         </div>
 
