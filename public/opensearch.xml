@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <!-- Nama pendek yang muncul di daftar mesin pencari browser -->
+  <ShortName>AgitRahadian</ShortName>
+  <!-- Deskripsi mesin pencari -->
+  <Description>Search on Agit Rahadian Portfolio</Description>
+  <!-- Karakter encoding input -->
+  <InputEncoding>UTF-8</InputEncoding>
+  <!-- Icon yang akan muncul di daftar mesin pencari (16×16) -->
+  <Image height="16" width="16" type="image/png">/favicon-16x16.png</Image>
+  <!-- URL template untuk menjalankan pencarian.
+       Ganti `q` dengan parameter yang sesuai jika di backend-mu berbeda -->
+  <Url type="text/html" method="get" template="https://agitrahadian.my.id/?q={searchTerms}"/>
+  <!-- Parameter standar -->
+  <Query role="example" searchTerms="Agit Rahadian"/>
+</OpenSearchDescription>

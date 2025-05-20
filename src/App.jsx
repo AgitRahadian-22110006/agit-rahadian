@@ -78,7 +78,7 @@ function App() {
             "@type": "Person",
             "name": "Agit Rahadian",
             "url": "https://agitrahadian.my.id/",
-            "image": "https://agitrahadian.my.id/og/profile-picture.webp",
+           "logo": "https://agitrahadian.my.id/android-chrome-512x512.png"
             "jobTitle": "Full-Stack Web Developer",
             "email": "mailto:agitrahadian140702@gmail.com",
             "telephone": "+6287758263820",
