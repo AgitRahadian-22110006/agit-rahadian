@@ -246,12 +246,7 @@ function About() {
             Jika Anda memiliki proyek website atau aplikasi untuk institusi pendidikan yang ingin dikembangkan, 
             jangan ragu untuk menghubungi saya. Saya siap membantu mewujudkan solusi digital yang sesuai dengan kebutuhan Anda.
           </p>
-          <a href="/#contact" className="cta-button">Hubungi Saya</a>
         </div>
-
-        <p>
-          Lihat juga <a href="/#portfolio">proyek saya</a> untuk mengetahui lebih lanjut tentang apa yang telah saya kerjakan.
-        </p>
       </div>
     </section>
   );

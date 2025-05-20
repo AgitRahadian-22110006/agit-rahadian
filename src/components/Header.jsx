@@ -20,7 +20,7 @@ function Header() {
     "jobTitle": "Full-Stack Web Developer",
     "description": "Seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly untuk sektor pendidikan di Indonesia.",
     "url": "https://agitrahadian.my.id",
-    "image": "https://agitrahadian.my.id/assets/profile-picture.avif",
+    "image": "https://agitrahadian.my.id/assets/profile-picture.png",
     "birthDate": "2002-07-14",
     "alumniOf": [
       {
