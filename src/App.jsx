@@ -1,8 +1,8 @@
 import './App.css';
 import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
-import { Helmet, HelmetProvider } from 'react-helmet';
-import dataPortfolio from './data/DataPortfolio';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { portfolioList } from './data/DataPortfolio';
 
 const Home = lazy(() => import('./pages/Home'));
 const DetailPortfolio = lazy(() => import('./pages/DetailPortfolio'));
@@ -11,15 +11,16 @@ const About = lazy(() => import('./components/About'));
 const Tugas = lazy(() => import('./pages/Tugas'));
 const Tugas1 = lazy(() => import('./pages/Tugas1'));
 
+// Wrapper for dynamic portfolio page metadata
 function PortfolioPage() {
   const { id } = useParams();
-  const project = dataPortfolio.find(p => p.id.toString() === id) || {};
+  const project = portfolioList.find(p => p.id.toString() === id) || {};
   const title = project.title
     ? `${project.title} – Agit Rahadian`
     : 'Portfolio – Agit Rahadian';
   const description = project.description
     || 'Detail proyek saya sebagai Full-Stack Web Developer.';
-  const imageUrl = project.imageUrl
+  const imageUrl = project.images?.[0]?.src
     || 'https://agitrahadian.my.id/og/portfolio1.webp';
   const url = `https://agitrahadian.my.id/portfolio/${id}`;
 
@@ -29,6 +30,7 @@ function PortfolioPage() {
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={url} />
+        {/* Open Graph */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={url} />
@@ -42,6 +44,7 @@ function PortfolioPage() {
 function App() {
   return (
     <HelmetProvider>
+      {/* Global Default Meta Tags & JSON-LD Schema */}
       <Helmet>
         <meta charSet="utf-8" />
         <meta
@@ -55,6 +58,8 @@ function App() {
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://agitrahadian.my.id/" />
+
+        {/* Open Graph */}
         <meta property="og:title" content="Agit Rahadian – Full-Stack Web Developer" />
         <meta
           property="og:description"
@@ -63,6 +68,8 @@ function App() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://agitrahadian.my.id/" />
         <meta property="og:image" content="https://agitrahadian.my.id/og/profile-picture.png" />
+
+        {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
           {`{
             "@context": "https://schema.org",

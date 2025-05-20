@@ -3,7 +3,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { SiNextdotjs } from "react-icons/si";
 
 function Experience() {

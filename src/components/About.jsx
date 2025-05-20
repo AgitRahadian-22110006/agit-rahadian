@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { FaHtml5 } from 'react-icons/fa';
 import { MdCss } from 'react-icons/md';
 import { FaPhp } from 'react-icons/fa6';
