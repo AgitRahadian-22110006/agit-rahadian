@@ -1,4 +1,5 @@
 import './App.css';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
@@ -26,6 +27,7 @@ function PortfolioPage() {
 
   return (
     <>
+    <SpeedInsights />
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
