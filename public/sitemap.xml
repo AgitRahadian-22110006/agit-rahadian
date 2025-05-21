@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-< xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Halaman Utama -->
   <url>
     <loc>https://agitrahadian.my.id/</loc>
-    <lastmod>2025-05-22</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-05-17T12:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://agitrahadian.my.id/assets/profile-picture.png</image:loc>
+      <image:title>Agit Rahadian - Full-Stack Web Developer</image:title>
+      <image:caption>Foto profil Agit Rahadian, Full-Stack Web Developer</image:caption>
+    </image:image>
   </url>
-  <!-- Tambahkan URL lain dari situs Anda di sini -->
   
   <!-- Halaman Experience -->
   <url>
