@@ -1,12 +1,12 @@
 :root {
-  --primary: #4A90E2;
+  --primary: #00BCD4; /* Lebih cerah & kontras tinggi */
   --secondary: #1F1F1F;
-  --overlay: rgba(0,0,0,0.5);
-  --text: #FFFFFF;
-  --muted: rgba(255,255,255,0.8);
+  --overlay: rgba(0, 0, 0, 0.6); /* lebih gelap untuk kontras */
+  --text: #f2f2f2;
+  --muted: rgba(242, 242, 242, 0.8); /* lebih terang */
   --font-main: 'Inter', sans-serif;
   --font-head: 'Montserrat', sans-serif;
-  --transition: 0.4s;
+  --transition: 0.4s ease;
 }
 
 .header {
@@ -26,7 +26,7 @@
   position: absolute;
   inset: 0;
   background: var(--overlay);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
   z-index: 0;
 }
 
@@ -46,7 +46,7 @@
   object-fit: cover;
   margin: 0 auto 1.5rem;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-  transition: transform var(--transition) ease;
+  transition: transform var(--transition);
 }
 .profile-img:hover {
   transform: scale(1.1) rotate(-2deg);
@@ -112,14 +112,14 @@
   border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-  transition: transform var(--transition) ease, box-shadow var(--transition) ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .contact-btn:hover,
 .header-cta .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* Optional outline variant */
@@ -135,7 +135,7 @@
   font-weight: 600;
   text-decoration: none;
   box-shadow: none;
-  transition: background var(--transition) ease, color var(--transition) ease;
+  transition: background var(--transition), color var(--transition);
 }
 .header-cta .btn-outline:hover {
   background: var(--primary);
@@ -154,14 +154,14 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
   color: var(--text);
-  transition: background var(--transition) ease, transform var(--transition) ease;
+  transition: background var(--transition), transform var(--transition);
 }
 .socialMedia a:hover {
   background: var(--primary);
@@ -186,7 +186,7 @@
 @media (max-width: 768px) {
   .profile-img { width: 140px; height: 140px; }
   .header-jumbotron h1::after { width: 60px; }
-  .header-jumbotron h1 { font-size: clamp(1.5rem,7vw,2.5rem); }
+  .header-jumbotron h1 { font-size: clamp(1.5rem, 7vw, 2.5rem); }
   .role { font-size: 1rem; }
   .bio { font-size: 0.9rem; }
   .contact-btn, .header-cta .btn { padding: 0.5rem 1rem; }

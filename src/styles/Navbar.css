@@ -1,11 +1,11 @@
 /* src/styles/Navbar.css */
 :root {
-  --nav-bg: rgba(34, 40, 49, 0.85);
+  --nav-bg: rgba(34, 40, 49, 0.9);
   --nav-height: 70px;
-  --text-color: #ffffff;
-  --accent: #4A90E2;
+  --text-color: #f1f1f1; /* Lebih terang dari putih kusam */
+  --accent: #00bcd4; /* Lebih cerah & kontras tinggi */
   --blur-amount: 10px;
-  --transition: 0.4s ease;
+  --transition: 0.3s ease;
   --font-main: 'Inter', sans-serif;
 }
 
@@ -118,7 +118,7 @@ nav .hamburger:hover {
     left: 0;
     width: 100%;
     padding: 1rem 0;
-    animation: slideDown 0.5s var(--transition) forwards;
+    animation: slideDown 0.4s var(--transition) forwards;
   }
   nav .menu.active ul {
     display: flex;
