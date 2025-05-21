@@ -1,29 +1,31 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { visualizer } from 'rollup-plugin-visualizer'; // optional, untuk lihat ukuran file
 import path from 'path';
+
+const isProd = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
   plugins: [
     react(),
-    visualizer({
+    // hanya aktifkan visualizer di development atau jika ENV variabel tertentu
+    !isProd && require('rollup-plugin-visualizer')({
       filename: 'dist/stats.html',
-      open: false, // ubah ke true jika ingin langsung buka statistik setelah build
+      open: false,
       gzipSize: true,
       brotliSize: true,
     })
-  ],
+  ].filter(Boolean), // filter plugin false
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'), // shortcut impor, contoh: @/components/Navbar
+      '@': path.resolve(__dirname, './src'),
     },
     extensions: ['.js', '.jsx', '.json']
   },
   build: {
-    sourcemap: false, // matikan jika tidak dibutuhkan di production
-    cssCodeSplit: true, // pisahkan CSS per komponen
-    minify: 'esbuild', // defaultnya, tapi bisa eksplisitkan
-    chunkSizeWarningLimit: 500, // warning jika file > 500kb
+    sourcemap: false,
+    cssCodeSplit: true,
+    minify: 'esbuild',
+    chunkSizeWarningLimit: 500,
     rollupOptions: {
       output: {
         manualChunks(id) {

@@ -11,7 +11,6 @@ import '../styles/Header.css';
 import SEO from './SEO';
 
 function Header() {
-  // Person schema for structured data
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -76,6 +75,7 @@ function Header() {
           className="profile-img"
           width={180}
           height={180}
+          loading="eager"
           fetchpriority="high"
         />
 
@@ -128,7 +128,9 @@ function Header() {
         </div>
 
         <div className="header-cta">
-          <a href="/AgitRahadian_CV.pdf" className="btn">Download CV</a>
+          <a href="/AgitRahadian_CV.pdf" className="btn" download>
+            Download CV
+          </a>
         </div>
 
         <div className="socialMedia">
