@@ -2,7 +2,8 @@
 :root {
   --card-bg: #ffffff;
   --card-shadow: rgba(0, 0, 0, 0.1);
-  --accent-color: #4A90E2;
+  --accent-color: #005f73;        /* Warna aksen gelap teal dengan kontras tinggi */
+  --accent-color-hover: #0a9396;  /* Warna hover aksen */
   --text-dark: #222831;
   --text-muted: #555;
   --transition: 0.3s ease;
@@ -68,24 +69,27 @@
   text-align: center;
 }
 
-
 /* Detail button */
 .grid .item .view-btn {
   margin: 0 1rem 1rem;
   padding: 0.5rem 1rem;
   background: var(--accent-color);
-  color: #fff;
+  color: #ffffff;          /* Putih untuk kontras tinggi */
   border: none;
   border-radius: 25px;
   text-align: center;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
-  transition: background var(--transition), transform var(--transition);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 6px rgba(0, 95, 115, 0.5); /* Shadow agar tombol menonjol */
 }
-.grid .item .view-btn:hover {
+.grid .item .view-btn:hover,
+.grid .item .view-btn:focus-visible {
   transform: translateY(-2px);
-  background: #3a78b8;
+  background: var(--accent-color-hover);
+  outline: none;
+  box-shadow: 0 4px 12px rgba(10, 147, 150, 0.7);
 }
 
 /* Responsive adjustments */
