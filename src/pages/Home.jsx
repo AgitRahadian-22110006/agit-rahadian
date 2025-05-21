@@ -1,63 +1,86 @@
-import React from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+// src/pages/Home.jsx
+import Navbar from "../components/Navbar";
+import Header from "../components/Header";
+import Portfolio from "../components/Portfolio";
+import About from "../components/About";
+import Footer from "../components/Footer";
+import SEO from "../components/SEO"; // Komponen SEO yang memakai react-helmet-async
 
-const Home = () => {
+function Home() {
+  // Organization schema for rich results, termasuk logo
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Agit Rahadian",
+    "url": "https://agitrahadian.my.id/",
+    "logo": "https://agitrahadian.my.id/android-chrome-512x512.png",
+    "image": "https://agitrahadian.my.id/assets/profile-picture.png",
+    "sameAs": [
+      "https://github.com/agitrahadian-22110006",
+      "https://www.instagram.com/agitrhdn",
+      "https://www.tiktok.com/@agitrahadian",
+      "https://www.facebook.com/share/16HuZskNh5/",
+      "https://wa.me/6287758263820"
+    ],
+    "jobTitle": "Full-Stack Web Developer",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "STMIK Mardira Indonesia",
+      "department": "Teknik Informatika - Prodi Sistem Informasi"
+    },
+    "description": "Full-Stack Web Developer dari Garut yang berspesialisasi dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital praktis.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Garut",
+      "addressRegion": "Jawa Barat",
+      "addressCountry": "Indonesia"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://agitrahadian.my.id/"
+    }
+  };
+
+  // Breadcrumb schema for rich results
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://agitrahadian.my.id/"
+      }
+    ]
+  };
+
+  // Gabungkan semua structured data
+  const structuredData = [organizationSchema, breadcrumbSchema];
+
   return (
-    <HelmetProvider>
-      <>
-        <Helmet>
-          <title>Agit Rahadian – Full-Stack Web Developer</title>
-          <meta
-            name="description"
-            content="Portfolio Agit Rahadian - Full-Stack Web Developer berpengalaman dalam pengembangan website sekolah, aplikasi pendidikan & solusi digital modern."
-          />
-          <link rel="canonical" href="https://agitrahadian.my.id/" />
-          {/* Preload gambar profil dengan as="image" */}
-          <link rel="preload" href="/assets/profile-picture.avif" as="image" />
-          {/* Open Graph */}
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://agitrahadian.my.id/" />
-          <meta property="og:title" content="Agit Rahadian – Full-Stack Web Developer" />
-          <meta
-            property="og:description"
-            content="Portfolio resmi Agit Rahadian. Lihat proyek, pengalaman, dan kontak untuk kerja sama."
-          />
-          <meta property="og:image" content="https://agitrahadian.my.id/og/profile-picture.avif" />
-          <meta property="og:image:alt" content="Agit Rahadian – Full-Stack Web Developer" />
+    <>
+      <SEO
+        title="Home – Agit Rahadian"
+        description="Agit Rahadian adalah Full-Stack Web Developer lulusan STMIK Mardira Indonesia yang berspesialisasi dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital praktis. Lihat portfolio dan pengalaman membangun aplikasi dengan teknologi React, Laravel, dan PHP."
+        keywords="Website Sekolah, Aplikasi Pendidikan, React Developer, Laravel Developer, Garut, Jawa Barat, Indonesia"
+        canonical="https://agitrahadian.my.id/"
+        structuredData={structuredData}
+      >
+        {/* Meta tags khusus untuk Home */}
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="google" content="notranslate" />
+        <meta name="revisit-after" content="7 days" />
+      </SEO>
 
-          {/* Twitter Card */}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@agitrhdn" />
-          <meta name="twitter:title" content="Agit Rahadian – Full-Stack Web Developer" />
-          <meta
-            name="twitter:description"
-            content="Portfolio resmi Agit Rahadian. Lihat proyek, pengalaman, dan kontak untuk kerja sama."
-          />
-          <meta name="twitter:image" content="https://agitrahadian.my.id/og/profile-picture.avif" />
-        </Helmet>
-
-        <main style={{ padding: '2rem', fontFamily: "'Nunito Sans', sans-serif" }}>
-          <section style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
-            <h1 style={{ fontFamily: "'Kanit', sans-serif", fontWeight: '700' }}>
-              Halo, saya Agit Rahadian
-            </h1>
-            <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
-              Saya seorang Full-Stack Web Developer dari Garut yang berspesialisasi dalam pengembangan
-              website sekolah, aplikasi pendidikan, dan solusi digital praktis.
-            </p>
-            <img
-              src="/assets/profile-picture.avif"
-              alt="Foto profil Agit Rahadian"
-              width={200}
-              height={200}
-              loading="lazy"
-              style={{ borderRadius: '50%', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }}
-            />
-          </section>
-        </main>
-      </>
-    </HelmetProvider>
+      <Navbar />
+      <Header />
+      <Portfolio />
+      <About />
+      <Footer />
+    </>
   );
-};
+}
 
 export default Home;
