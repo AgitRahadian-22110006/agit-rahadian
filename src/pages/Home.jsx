@@ -1,14 +1,15 @@
 // src/pages/Home.jsx
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import Navbar from '../components/Navbar';
 import Header from '../components/Header';
-import Portfolio from '../components/Portfolio';
-import About from '../components/About';
-import Footer from '../components/Footer';
 import SEO from '../components/SEO'; // Komponen SEO yang memakai react-helmet-async
 
+// Lazy load komponen non-kritis
+const Portfolio = lazy(() => import('../components/Portfolio'));
+const About = lazy(() => import('../components/About'));
+const Footer = lazy(() => import('../components/Footer'));
+
 function Home() {
-  // Person schema for rich results, termasuk logo dan profile image
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -41,7 +42,6 @@ function Home() {
     }
   };
 
-  // Breadcrumb schema for rich results
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -55,7 +55,6 @@ function Home() {
     ]
   };
 
-  // Gabungkan semua structured data
   const structuredData = [personSchema, breadcrumbSchema];
 
   return (
@@ -72,7 +71,6 @@ function Home() {
         <meta name="googlebot" content="index, follow" />
         <meta name="google" content="notranslate" />
         <meta name="revisit-after" content="7 days" />
-        {/* Preload profile image */}
         <link
           rel="preload"
           as="image"
@@ -82,9 +80,18 @@ function Home() {
 
       <Navbar />
       <Header />
-      <Portfolio />
-      <About />
-      <Footer />
+
+      <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading portfolio...</div>}>
+        <Portfolio />
+      </Suspense>
+
+      <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading about...</div>}>
+        <About />
+      </Suspense>
+
+      <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading footer...</div>}>
+        <Footer />
+      </Suspense>
     </>
   );
 }
