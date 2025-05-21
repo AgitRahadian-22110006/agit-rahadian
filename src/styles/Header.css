@@ -1,12 +1,12 @@
 :root {
-  --primary: #00BCD4; /* Lebih cerah & kontras tinggi */
+  --primary: #00BCD4;
   --secondary: #1F1F1F;
-  --overlay: rgba(0, 0, 0, 0.6); /* lebih gelap untuk kontras */
+  --overlay: rgba(0, 0, 0, 0.5);
   --text: #f2f2f2;
-  --muted: rgba(242, 242, 242, 0.8); /* lebih terang */
+  --muted: rgba(242, 242, 242, 0.8);
   --font-main: 'Inter', sans-serif;
   --font-head: 'Montserrat', sans-serif;
-  --transition: 0.4s ease;
+  --transition: 0.3s ease;
 }
 
 .header {
@@ -26,7 +26,6 @@
   position: absolute;
   inset: 0;
   background: var(--overlay);
-  backdrop-filter: blur(6px);
   z-index: 0;
 }
 
@@ -35,160 +34,112 @@
   z-index: 1;
   text-align: center;
   padding: 2rem;
-  animation: fadeInUp 1s ease both;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .profile-img {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
-  border: 4px solid var(--primary);
+  border: 3px solid var(--primary);
   object-fit: cover;
   margin: 0 auto 1.5rem;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
   transition: transform var(--transition);
 }
 .profile-img:hover {
-  transform: scale(1.1) rotate(-2deg);
+  transform: scale(1.05);
 }
 
 .header-jumbotron h1 {
   font-family: var(--font-head);
-  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-size: clamp(2rem, 6vw, 3rem);
   margin: 0.5rem 0;
   letter-spacing: 1px;
   position: relative;
 }
 .header-jumbotron h1::after {
   content: '';
-  width: 80px;
-  height: 4px;
+  width: 60px;
+  height: 3px;
   background: var(--primary);
   position: absolute;
   bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 2px;
-  animation: expandLine 0.8s ease forwards;
 }
 
-.role {
-  font-size: 1.25rem;
-  color: var(--muted);
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: fadeIn 1s 0.5s ease forwards;
-}
-
-.bio {
-  max-width: 640px;
-  margin: 1rem auto;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--muted);
-  opacity: 0;
-  animation: fadeIn 1s 0.8s ease forwards;
-}
-
+.role,
+.bio,
 .contact-buttons,
-.header-cta {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 2rem 0;
+.socialMedia {
   opacity: 0;
-  animation: fadeIn 1s 1.2s ease forwards;
+  animation: fadeIn 1s ease forwards;
 }
+.role { animation-delay: 0.3s; font-size: 1.1rem; color: var(--muted); margin-bottom: 1.5rem; }
+.bio { animation-delay: 0.6s; max-width: 640px; margin: 1rem auto; font-size: 1rem; line-height: 1.6; color: var(--muted); }
+.contact-buttons { animation-delay: 0.9s; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0; }
+.socialMedia { animation-delay: 1.2s; display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
 
 .contact-btn,
 .header-cta .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.65rem 1.2rem;
   background: var(--primary);
   color: #fff;
   border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: var(--transition);
 }
-
 .contact-btn:hover,
 .header-cta .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
 }
 
-/* Optional outline variant */
 .header-cta .btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
   background: transparent;
   color: var(--primary);
   border: 2px solid var(--primary);
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: none;
-  transition: background var(--transition), color var(--transition);
 }
 .header-cta .btn-outline:hover {
   background: var(--primary);
   color: #fff;
 }
 
-.socialMedia {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2.5rem;
-  opacity: 0;
-  animation: fadeIn 1s 1.6s ease forwards;
-}
 .socialMedia a {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--text);
-  transition: background var(--transition), transform var(--transition);
+  transition: var(--transition);
 }
 .socialMedia a:hover {
   background: var(--primary);
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
-/* Keyframes */
+/* Animations */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@keyframes expandLine {
-  from { width: 0; }
-  to { width: 80px; }
-}
 @keyframes fadeIn {
-  from { opacity: 0; }
   to { opacity: 1; }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .profile-img { width: 140px; height: 140px; }
-  .header-jumbotron h1::after { width: 60px; }
-  .header-jumbotron h1 { font-size: clamp(1.5rem, 7vw, 2.5rem); }
+  .profile-img { width: 120px; height: 120px; }
+  .header-jumbotron h1 { font-size: clamp(1.5rem, 6vw, 2.5rem); }
   .role { font-size: 1rem; }
   .bio { font-size: 0.9rem; }
   .contact-btn, .header-cta .btn { padding: 0.5rem 1rem; }
-  .socialMedia a { width: 50px; height: 50px; font-size: 1.2rem; }
+  .socialMedia a { width: 44px; height: 44px; font-size: 1.2rem; }
 }
