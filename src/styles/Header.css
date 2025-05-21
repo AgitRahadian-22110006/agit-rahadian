@@ -1,9 +1,9 @@
 :root {
   --primary: #00BCD4;
   --secondary: #1F1F1F;
-  --overlay: rgba(0, 0, 0, 0.5);
+  --overlay: rgba(0, 0, 0, 0.65);
   --text: #f2f2f2;
-  --muted: rgba(242, 242, 242, 0.8);
+  --muted: rgba(242, 242, 242, 0.85);
   --font-main: 'Inter', sans-serif;
   --font-head: 'Montserrat', sans-serif;
   --transition: 0.3s ease;
@@ -19,7 +19,6 @@
   font-family: var(--font-main);
   color: var(--text);
   overflow: hidden;
-  /* Will-change for smoother animations */
   will-change: transform, opacity;
 }
 
@@ -37,6 +36,10 @@
   text-align: center;
   padding: 2rem;
   animation: fadeInUp 0.8s ease forwards;
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;           /* Tambahan */
+  box-sizing: border-box; /* Penting supaya padding tidak tambah lebar total */
 }
 
 .profile-img {
@@ -111,6 +114,7 @@
 .header-cta .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.65rem 1.2rem;
   background: var(--primary);
@@ -120,10 +124,35 @@
   text-decoration: none;
   transition: var(--transition);
   cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  max-width: 100%; /* Tambahan agar tombol tidak melebar */
+  box-sizing: border-box; /* Tambahan */
 }
+
+/* Tombol Email - Merah */
+.contact-btn.email-btn {
+  background-color: #D93025;
+}
+.contact-btn.email-btn:hover {
+  background-color: #B2221E;
+}
+
+/* Tombol WhatsApp - Hijau */
+.contact-btn.wa-btn {
+  background-color: #25D366;
+}
+.contact-btn.wa-btn:hover {
+  background-color: #1DA851;
+}
+
 .contact-btn:hover,
 .header-cta .btn:hover {
   transform: translateY(-2px);
+}
+
+.header-cta {
+  margin-top: 1.5rem;
 }
 
 .header-cta .btn-outline {
@@ -153,6 +182,30 @@
   transform: scale(1.1);
 }
 
+.contact-info {
+  font-size: 0.95rem;
+  margin-top: 1.2rem;
+  color: var(--muted);
+}
+
+/* Education section */
+.education-info {
+  margin-top: 2rem;
+}
+.education-info h2 {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.education-info ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 1rem;
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {
@@ -172,26 +225,86 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .header-jumbotron {
+    padding: 1.5rem 1rem;
+    max-width: 100%;      /* Tambahan */
+  }
+
   .profile-img {
     width: 120px;
     height: 120px;
   }
+
   .header-jumbotron h1 {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
+
+  .header-jumbotron h1::after {
+    width: 40px;
+    height: 2px;
+  }
+
   .role {
     font-size: 1rem;
   }
+
   .bio {
     font-size: 0.9rem;
+    padding: 0 0.5rem;
+    max-width: 100%;     /* Tambahan agar bio tidak overflow */
+    box-sizing: border-box;
   }
+
+  .contact-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
   .contact-btn,
   .header-cta .btn {
     padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+    font-size: 0.95rem;
   }
+
+  .contact-info {
+    font-size: 0.9rem;
+  }
+
+  .education-info h2 {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+  }
+
+  .education-info ul {
+    font-size: 0.9rem;
+    padding-left: 1.25rem;
+  }
+
+  .socialMedia {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
   .socialMedia a {
     width: 44px;
     height: 44px;
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-jumbotron {
+    padding: 1rem 0.75rem; /* Lebih kecil agar muat */
+  }
+  .bio {
+    font-size: 1rem;
+  }
+  .role {
+    font-size: 1.05rem;
   }
 }

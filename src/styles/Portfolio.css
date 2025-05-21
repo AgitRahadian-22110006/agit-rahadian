@@ -1,80 +1,97 @@
-/* src/styles/Portfolio.css */
 :root {
   --card-bg: #ffffff;
   --card-shadow: rgba(0, 0, 0, 0.1);
-  --accent-color: #005f73;        /* Warna aksen gelap teal dengan kontras tinggi */
-  --accent-color-hover: #0a9396;  /* Warna hover aksen */
+  --accent-color: #005f73;
+  --accent-color-hover: #0a9396;
   --text-dark: #222831;
   --text-muted: #555;
   --transition: 0.3s ease;
   --font-heading: "Montserrat", sans-serif;
 }
 
-/* Original grid layout with three columns and generous gap */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 25px;
-  justify-content: center;
-  margin-top: 2rem;
+/* Scope hanya untuk komponen Portfolio */
+#portfolio .wrapper {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+  box-sizing: border-box;
 }
 
-/* Card container */
-.grid .item {
+#portfolio h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+#portfolio > .wrapper > p {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.5;
+}
+
+#portfolio .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+#portfolio .grid .item {
   overflow: hidden;
   border-radius: 10px;
   background: var(--card-bg);
   box-shadow: 0 4px 15px var(--card-shadow);
   transition: transform var(--transition), box-shadow var(--transition);
 }
-.grid .item:hover {
-  transform: scale(1.05);
+#portfolio .grid .item:hover {
+  transform: scale(1.03);
   box-shadow: 0 8px 25px var(--card-shadow);
 }
 
-/* Card content */
-.grid .item .box {
+#portfolio .grid .item .box {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-/* Image styling, maintain original aspect ratio and limit size */
-.grid .item img {
+#portfolio .grid .item img {
   width: 100%;
   height: auto;
   aspect-ratio: 600 / 281;
-  max-height: 200px; /* adjust height for clarity */
-  border-radius: 10px;
+  max-height: 200px;
+  border-radius: 10px 10px 0 0;
   object-fit: cover;
   transition: transform var(--transition);
 }
-.grid .item:hover img {
-  transform: scale(1.05);
+#portfolio .grid .item:hover img {
+  transform: scale(1.03);
 }
 
-/* Project title */
-.grid .item h2 {
+#portfolio .grid .item h2 {
   margin: 10px 0 5px;
   font-size: 1.2rem;
   color: var(--text-dark);
   font-family: var(--font-heading);
-}
-
-/* Description text */
-.grid .item .description {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin: 0 1rem 1rem;
-  line-height: 1.4;
   text-align: center;
 }
 
-/* Detail button */
-.grid .item .view-btn {
+#portfolio .grid .item .description {
+  font-size: 0.95rem;
+  color: var(--text-muted);
   margin: 0 1rem 1rem;
-  padding: 0.5rem 1rem;
+  line-height: 1.5;
+  text-align: center;
+  flex-grow: 1;
+}
+
+#portfolio .grid .item .view-btn {
+  margin: 0 1rem 1rem;
+  padding: 0.6rem 1.2rem;
   background: var(--accent-color);
-  color: #ffffff;          /* Putih untuk kontras tinggi */
+  color: #fff;
   border: none;
   border-radius: 25px;
   text-align: center;
@@ -82,37 +99,55 @@
   font-weight: 600;
   font-size: 0.9rem;
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-  box-shadow: 0 2px 6px rgba(0, 95, 115, 0.5); /* Shadow agar tombol menonjol */
+  box-shadow: 0 2px 6px rgba(0, 95, 115, 0.5);
+  display: inline-block;
 }
-.grid .item .view-btn:hover,
-.grid .item .view-btn:focus-visible {
+#portfolio .grid .item .view-btn:hover,
+#portfolio .grid .item .view-btn:focus-visible {
   transform: translateY(-2px);
   background: var(--accent-color-hover);
   outline: none;
   box-shadow: 0 4px 12px rgba(10, 147, 150, 0.7);
 }
 
-/* Responsive adjustments */
-@media only screen and (max-width: 1000px) {
-  .grid {
+/* Responsive tablet */
+@media (max-width: 1000px) {
+  #portfolio .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media only screen and (max-width: 600px) {
-  .grid {
+
+/* Responsive mobile */
+@media (max-width: 600px) {
+  #portfolio h1 {
+    font-size: 1.5rem;
+  }
+
+  #portfolio > .wrapper > p {
+    font-size: 0.95rem;
+    margin: 0 auto 1.5rem;
+  }
+
+  #portfolio .grid {
     grid-template-columns: 1fr;
   }
-  .grid .item .box {
+
+  #portfolio .grid .item .box {
     padding: 10px;
   }
-  .grid .item h2 {
+
+  #portfolio .grid .item h2 {
     font-size: 1rem;
+    margin: 0.5rem 0;
   }
-  .grid .item .description {
+
+  #portfolio .grid .item .description {
     font-size: 0.85rem;
+    margin: 0 0.75rem 1rem;
   }
-  .grid .item .view-btn {
-    padding: 0.4rem 0.8rem;
+
+  #portfolio .grid .item .view-btn {
+    padding: 0.5rem 1rem;
     font-size: 0.85rem;
   }
 }

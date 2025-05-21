@@ -50,7 +50,7 @@ function Experience() {
       />
 
       <Navbar />
-      <div className="wrapper">
+      <div className="experience-wrapper">
         <h1>Pengalaman Kerja</h1>
 
         <div className="timeline">
