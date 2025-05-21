@@ -150,7 +150,7 @@ nav .hamburger:hover {
   }
 
   nav .menu ul {
-    gap: 0; /* rapatkan item di menu */
+    gap: 1; /* rapatkan item di menu */
   }
 }
 
