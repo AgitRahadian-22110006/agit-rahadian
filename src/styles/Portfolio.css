@@ -1,76 +1,114 @@
+/* src/styles/Portfolio.css */
+:root {
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --accent-color: #4A90E2;
+  --text-dark: #222831;
+  --text-muted: #555;
+  --transition: 0.3s ease;
+  --font-heading: "Montserrat", sans-serif;
+}
+
+/* Original grid layout with three columns and generous gap */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Gunakan repeat untuk fleksibilitas */
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px;
   justify-content: center;
+  margin-top: 2rem;
 }
 
-/* Styling kotak pembungkus */
-.grid > .item > .box {
-  border: 1px solid #ddd;
+/* Card container */
+.grid .item {
+  overflow: hidden;
   border-radius: 10px;
-  padding: 15px;
-  background-color: #fff;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--card-bg);
+  box-shadow: 0 4px 15px var(--card-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
-
-.grid > .item > .box:hover {
+.grid .item:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px var(--card-shadow);
 }
 
-/* Gambar di dalam box */
-.grid > .item > .box > a > img {
+/* Card content */
+.grid .item .box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image styling, maintain original aspect ratio and limit size */
+.grid .item img {
   width: 100%;
   height: auto;
   aspect-ratio: 600 / 281;
+  max-height: 200px; /* adjust height for clarity */
   border-radius: 10px;
-  display: block;
-  transition: transform 0.3s ease;
   object-fit: cover;
+  transition: transform var(--transition);
 }
-
-.grid > .item > .box > a > img:hover {
+.grid .item:hover img {
   transform: scale(1.05);
 }
 
-/* Judul di dalam box */
-.grid > .item > .box > h2 {
+/* Project title */
+.grid .item h2 {
   margin: 10px 0 5px;
   font-size: 1.2rem;
-  color: #222;
+  color: var(--text-dark);
+  font-family: var(--font-heading);
 }
 
-/* Deskripsi di bawah gambar */
-.grid > .item > .box > .description {
+/* Description text */
+.grid .item .description {
   font-size: 0.9rem;
-  color: #555;
-  margin-top: 5px;
+  color: var(--text-muted);
+  margin: 0 1rem 1rem;
+  line-height: 1.4;
+  text-align: center;
 }
 
-/* Responsivitas untuk layar sedang */
+
+/* Detail button */
+.grid .item .view-btn {
+  margin: 0 1rem 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background var(--transition), transform var(--transition);
+}
+.grid .item .view-btn:hover {
+  transform: translateY(-2px);
+  background: #3a78b8;
+}
+
+/* Responsive adjustments */
 @media only screen and (max-width: 1000px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* Responsivitas untuk layar kecil */
 @media only screen and (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr;
   }
-
-  .grid > .item > .box {
+  .grid .item .box {
     padding: 10px;
   }
-
-  .grid > .item > .box > h2 {
+  .grid .item h2 {
     font-size: 1rem;
   }
-
-  .grid > .item > .box > .description {
+  .grid .item .description {
+    font-size: 0.85rem;
+  }
+  .grid .item .view-btn {
+    padding: 0.4rem 0.8rem;
     font-size: 0.85rem;
   }
 }

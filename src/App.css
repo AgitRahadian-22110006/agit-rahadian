@@ -1,54 +1,71 @@
-html,
-body {
+/* src/App.css */
+:root {
+  --bg-light: #f7f7f7;
+  --text-dark: #222831;
+  --primary-accent: #4A90E2;
+  --section-padding: 3rem;
+  --font-base: "Inter", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
+}
+
+html, body {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  font-family: "Nunito Sans", "Kanit", sans-serif;
+  font-family: var(--font-base);
   scroll-behavior: smooth;
-  background-color: #dedede;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
 }
 
-/* Wrapper utama untuk konten */
+/* Global container */
 .wrapper {
-  width: 1024px;
-  margin: auto;
-  padding: 20px 0;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* Section spacing */
 section {
-  padding: 50px 0;
+  padding: var(--section-padding) 0;
 }
 
-/* Heading utama di dalam wrapper */
-.wrapper > h3,
-.wrapper > h1 {
+/* Section headings */
+.wrapper > h1,
+.wrapper > h2,
+.wrapper > h3 {
   text-align: center;
-  font-size: 2.2rem;
-  margin: 0 0 30px 0;
-  padding: 0;
-  font-family: "Kanit", "Nunito Sans", sans-serif;
-  color: #222831;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  border-bottom: 5px solid #cccccc;
-}
-
-/* Garis bawah merah pada heading */
-.wrapper > h3::after,
-.wrapper > h1::after {
-  content: "";
-  display: block;
-  border-bottom: 5px solid #aa392d;
-  width: 25%;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1.5rem;
   position: relative;
-  bottom: -5px;
-  margin: auto;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-dark);
 }
 
-/* Responsif untuk tablet dan mobile */
-@media only screen and (max-width: 1000px) {
+/* Underline accent for headings */
+.wrapper > h1::after,
+.wrapper > h2::after,
+.wrapper > h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary-accent);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .wrapper {
-    width: 75%;
+    width: 95%;
+  }
+  .wrapper > h1,
+  .wrapper > h2,
+  .wrapper > h3 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
 }

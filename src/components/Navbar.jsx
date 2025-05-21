@@ -5,27 +5,22 @@ import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import '../styles/Navbar.css';
 
-function Navbar() {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen((open) => !open);
+  const toggleMenu = () => setMenuOpen(prev => !prev);
   const closeMenu = () => setMenuOpen(false);
 
-  // Helper to apply active class for hash links
-  const isHashActive = (hash) => {
-    return window.location.hash === hash ? 'active' : '';
-  };
-
   return (
-    <nav role="navigation" aria-label="Main Navigation" className="navbar">
+    <nav role="navigation" aria-label="Main Navigation">
       <div className="wrapper">
         {/* Logo */}
-        <div className="logo" style={{ color: '#ffffff' }}>
-          <FaBriefcase className="logo-icon" />
-          AGITRAHADIAN
-        </div>
+        <NavLink to="/" className="logo" onClick={closeMenu}>
+          <FaBriefcase className="logo-icon" aria-hidden="true" />
+          AgitRahadian
+        </NavLink>
 
-        {/* Hamburger */}
+        {/* Hamburger Button */}
         <button
           className="hamburger"
           onClick={toggleMenu}
@@ -35,55 +30,32 @@ function Navbar() {
           {menuOpen ? <IoCloseSharp /> : <FaBars />}
         </button>
 
-        {/* Menu */}
-        <div className={`menu ${menuOpen ? 'tampil' : ''}`}>
+        {/* Navigation Menu */}
+        <div className={`menu ${menuOpen ? 'active' : ''}`}>
           <ul>
             <li>
-              <NavLink
-                to="/"
-                end
-                className={({ isActive }) => (isActive ? 'active' : '')}
-                onClick={closeMenu}
-              >
+              <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>
                 Home
               </NavLink>
             </li>
             <li>
-              <HashLink
-                to="/#portfolio"
-                smooth
-                className={isHashActive('#portfolio')}
-                onClick={closeMenu}
-              >
+              <HashLink to="/#portfolio" smooth className="" onClick={closeMenu}>
                 Portfolio
               </HashLink>
             </li>
             <li>
-              <HashLink
-                to="/#about"
-                smooth
-                className={isHashActive('#about')}
-                onClick={closeMenu}
-              >
+              <HashLink to="/#about" smooth className="" onClick={closeMenu}>
                 About
               </HashLink>
             </li>
             <li>
-              <NavLink
-                to="/experience"
-                className={({ isActive }) => (isActive ? 'active' : '')}
-                onClick={closeMenu}
-              >
+              <NavLink to="/experience" className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>
                 Experience
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/tugas"
-                className={({ isActive }) => (isActive ? 'active' : '')}
-                onClick={closeMenu}
-              >
-                Tugas
+              <NavLink to="/tugas" className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>
+                AI Assignment
               </NavLink>
             </li>
           </ul>
@@ -92,5 +64,3 @@ function Navbar() {
     </nav>
   );
 }
-
-export default Navbar;

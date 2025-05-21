@@ -1,91 +1,111 @@
 .tugas-page {
-  padding-top: 1rem;
-  background: #0d0d15;
-  color: #f0f0f5;
+  padding: 1rem;
+  background: #0d1220;
+  color: #e0f0ff;
 }
 
 .tugas-hero {
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .judul-wrapper {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .judul-tugas {
   font-family: 'Playfair Display', serif;
   font-weight: 800;
-  color: #ffe156;
-  flex: 1;
-  font-size: 2.8rem;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  color: #4da6ff;
+  font-size: 2.5rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  text-align: center;
 }
 
-.foto-putri {
-  width: 150px;
-  height: 150px;
+.foto-agit {
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 4px 20px rgba(255, 225, 86, 0.7);
-  border: 3px solid #ffe156;
+  box-shadow: 0 4px 20px rgba(77, 166, 255, 0.6);
+  border: 2px solid #4da6ff;
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(18px);
-  border-radius: 20px;
-  border: 2px solid rgba(255, 225, 86, 0.4);
-  box-shadow: 0 10px 36px rgba(255, 225, 86, 0.2);
-  padding: 2rem 2.5rem;
-  margin-bottom: 3rem;
-  color: #e5e5f7;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-.glass-card:hover {
-  box-shadow: 0 14px 48px rgba(255, 225, 86, 0.5);
-  transform: translateY(-3px);
-}
-
-.tugas1-card {
-  background: #ffe156;
-  color: #1a1a1a;
-  border-radius: 20px;
-  padding: 2rem 2.5rem;
-  font-weight: 700;
-  font-size: 1.3rem;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
-  box-shadow: 0 10px 30px rgba(255, 225, 86, 0.7);
-  border: 2px solid #cfae52;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  border: 1.5px solid rgba(77, 166, 255, 0.3);
+  box-shadow: 0 8px 30px rgba(77, 166, 255, 0.2);
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  width: 100%;
   transition: all 0.3s ease;
 }
-.tugas1-card:hover {
-  background: #f5c700;
-  box-shadow: 0 16px 48px rgba(255, 225, 86, 0.9);
-  transform: scale(1.01);
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(77, 166, 255, 0.4);
+}
+
+.tugas-card h2 {
+  color: #4da6ff;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.tugas-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d0e7ff;
 }
 
 .btn-profil {
-  background: linear-gradient(135deg, #ffe156, #cfae52);
-  padding: 14px 40px;
-  border-radius: 50px;
-  font-weight: 800;
-  font-size: 1.15rem;
-  color: #302000;
-  box-shadow: 0 10px 28px rgba(255, 225, 86, 0.6);
+  background: linear-gradient(135deg, #4da6ff, #0066cc);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
   border: none;
   cursor: pointer;
-  user-select: none;
-  transition: all 0.3s ease;
-  text-shadow: 0 1px 1px #b3952e;
-  letter-spacing: 1.3px;
+  text-shadow: 0 1px 1px #003366;
+  box-shadow: 0 8px 20px rgba(77, 166, 255, 0.4);
   display: inline-block;
   margin-top: 1rem;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  text-align: center;
 }
 .btn-profil:hover {
-  background: linear-gradient(135deg, #cfae52, #ffe156);
-  box-shadow: 0 14px 40px rgba(255, 225, 86, 0.8);
+  background: linear-gradient(135deg, #0066cc, #4da6ff);
   transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(77, 166, 255, 0.6);
+}
+
+@media (max-width: 600px) {
+  .judul-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .judul-tugas {
+    font-size: 2rem;
+  }
+
+  .foto-agit {
+    width: 100px;
+    height: 100px;
+  }
+
+  .glass-card {
+    padding: 1.5rem;
+  }
 }

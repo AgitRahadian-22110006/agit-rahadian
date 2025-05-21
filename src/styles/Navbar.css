@@ -1,115 +1,135 @@
 /* src/styles/Navbar.css */
+:root {
+  --nav-bg: rgba(34, 40, 49, 0.85);
+  --nav-height: 70px;
+  --text-color: #ffffff;
+  --accent: #4A90E2;
+  --blur-amount: 10px;
+  --transition: 0.4s ease;
+  --font-main: 'Inter', sans-serif;
+}
+
 nav {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(34, 40, 49, 0.75);
-  backdrop-filter: blur(8px);
-  transition: background 0.3s;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  text-transform: uppercase;
+  width: 100%;
+  height: var(--nav-height);
+  background: var(--nav-bg);
+  backdrop-filter: blur(var(--blur-amount));
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  font-family: var(--font-main);
+  transition: background var(--transition);
 }
 
-/* Scope wrapper hanya di dalam nav */
-nav > .wrapper {
+nav .wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 100%;
 }
 
 /* Logo */
-nav .logo a {
-  font-size: 1.2rem; /* Ukuran font lebih besar */
-  font-weight: 800; /* Font lebih tebal */
-  letter-spacing: 4px; /* Jarak antar huruf lebih rapat */
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
   text-decoration: none;
-  color: #f0f0f0; /* Warna logo yang lebih lembut (putih) */
-  transition: color 0.3s ease;
-}
-
-nav .logo a:hover,
-nav .logo a:focus {
-  color: #aaa; /* Warna abu-abu saat hover */
-}
-
-/* Menu container */
-nav .menu {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+  transition: color var(--transition);
+}
+nav .logo:hover {
+  color: var(--accent);
 }
 
-/* Daftar link */
+/* Menu */
 nav .menu ul {
+  list-style: none;
   display: flex;
   gap: 2rem;
   margin: 0;
   padding: 0;
 }
 
-/* Link item */
-nav .menu ul li a {
+nav .menu ul li {
   position: relative;
-  color: #f0f0f0; /* Warna link putih */
-  text-decoration: none;
-  padding-bottom: 4px;
-  transition: color 0.3s;
 }
 
-/* Efek garis bawah pada hover */
+nav .menu ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem;
+  transition: color var(--transition);
+}
+nav .menu ul li a:hover,
+nav .menu ul li a.active {
+  color: var(--accent);
+}
+
+/* Underline effect */
 nav .menu ul li a::after {
   content: '';
   position: absolute;
+  bottom: -4px;
   left: 50%;
-  bottom: 0;
   width: 0;
   height: 2px;
-  background: #aaa; /* Warna abu-abu untuk garis */
-  transition: width 0.3s ease, left 0.3s ease;
+  background: var(--accent);
+  transition: width var(--transition), left var(--transition);
 }
-
-nav .menu ul li a:hover::after {
+nav .menu ul li a:hover::after,
+nav .menu ul li a.active::after {
   width: 100%;
   left: 0;
 }
 
-/* Hamburger button */
+/* Hamburger */
 nav .hamburger {
+  display: none;
   background: none;
   border: none;
+  font-size: 1.8rem;
+  color: var(--text-color);
   cursor: pointer;
-  display: none;
-  color: #f0f0f0;
-  font-size: 1.5rem;
+  transition: color var(--transition);
+}
+nav .hamburger:hover {
+  color: var(--accent);
 }
 
-/* Responsif */
-@media only screen and (max-width: 1000px) {
-  /* Tampilkan hamburger */
+/* Responsive */
+@media (max-width: 1024px) {
   nav .hamburger {
     display: block;
   }
-  /* Sembunyikan link default */
   nav .menu ul {
     display: none;
-  }
-  /* Ketika aktif, tampilkan sebagai dropdown */
-  nav .menu.tampil ul {
-    display: flex;
     flex-direction: column;
-    background: rgba(0,0,0,0.9);
-    position: fixed;
-    top: 60px;
+    background: var(--nav-bg);
+    backdrop-filter: blur(var(--blur-amount));
+    position: absolute;
+    top: var(--nav-height);
     left: 0;
     width: 100%;
-    margin: 0;
+    padding: 1rem 0;
+    animation: slideDown 0.5s var(--transition) forwards;
   }
-  /* Padding tiap link di mobile */
-  nav .menu.tampil ul li a {
-    display: block;
-    padding: 15px 20px;
+  nav .menu.active ul {
+    display: flex;
   }
+  nav .menu ul li a {
+    padding: 0.75rem 2rem;
+  }
+}
+
+/* Animations */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

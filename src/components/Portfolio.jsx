@@ -17,18 +17,18 @@ function Portfolio() {
   const listSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Portfolio - Agit Rahadian",
+    name: "Portfolio – Agit Rahadian",
     description:
-      "Lihat proyek-proyek portofolio Agit Rahadian, termasuk pengembangan website, aplikasi internal, dan solusi digital lainnya.",
+      "Lihat proyek-proyek portofolio Agit Rahadian: website sekolah, aplikasi madrasah, dan sistem informasi akademik.",
     itemListElement: itemListElements,
   };
 
   return (
     <section id="portfolio">
       <SEO
-        title="Portfolio"
-        description="Lihat portfolio Agit Rahadian, seorang Full-Stack Developer dari Garut. Koleksi proyek pengembangan website sekolah, aplikasi madrasah, dan sistem informasi akademik."
-        keywords="Portfolio, Proyek Web Development, Agit Rahadian, Website Sekolah, Aplikasi Madrasah, Sistem Informasi Akademik"
+        title="Portfolio – Agit Rahadian"
+        description="Lihat portfolio Agit Rahadian, Full-Stack Developer dari Garut: koleksi proyek website sekolah, aplikasi madrasah, dan sistem informasi akademik."
+        keywords="Portfolio, Web Development, Agit Rahadian, Aplikasi Pendidikan, Sistem Informasi Akademik"
         ogImage="https://agitrahadian.my.id/assets/portfolio1.webp"
         canonical="/portfolio"
         structuredData={listSchema}
@@ -37,14 +37,19 @@ function Portfolio() {
       <div className="wrapper">
         <h1>Project Portfolio Agit Rahadian</h1>
         <p>
-          Berikut adalah beberapa proyek yang telah saya, <strong>Agit Rahadian</strong>, kerjakan. Portofolio ini mencakup pengembangan website profil sekolah, aplikasi internal madrasah, dan sistem informasi akademik yang dirancang untuk memenuhi kebutuhan khusus klien saya.
+          Temukan berbagai proyek yang telah saya kerjakan: profil sekolah, sistem akademik,
+          dan aplikasi internal madrasah, dengan fokus clean code dan performa optimal.
         </p>
 
         <div className="grid">
           {portfolioList.map((item) => (
             <div className="item" key={item.id}>
-              <div className="box">
-                <Link to={`/portfolio/${item.id}`}>
+              <article className="box">
+                <Link
+                  to={`/portfolio/${item.id}`}
+                  className="image-link"
+                  aria-label={`Lihat detail ${item.title}`}
+                >
                   <img
                     src={item.images[0].src}
                     alt={`Proyek ${item.title} oleh Agit Rahadian`}
@@ -53,9 +58,18 @@ function Portfolio() {
                     height={281}
                   />
                 </Link>
+
                 <h2>{item.title}</h2>
                 <p className="description">{item.description}</p>
-              </div>
+
+                <Link
+                  to={`/portfolio/${item.id}`}
+                  className="view-btn"
+                  aria-label={`Lihat detail ${item.title}`}
+                >
+                  Lihat Detail
+                </Link>
+              </article>
             </div>
           ))}
         </div>

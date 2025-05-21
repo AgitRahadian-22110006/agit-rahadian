@@ -1,43 +1,43 @@
 // src/pages/Tugas1.jsx
 import React from 'react';
-import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
-
+import SEO from '../components/SEO';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/IsiTugas.css';
+import tugasList from '../data/TugasData';
 
 export default function Tugas1() {
-  // Breadcrumb schema
+  const tugas = tugasList.find((item) => item.id === 1);
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://agitrahadian.my.id/" },
       { "@type": "ListItem", "position": 2, "name": "Tugas", "item": "https://agitrahadian.my.id/tugas" },
-      { "@type": "ListItem", "position": 3, "name": "Detail Tugas 1", "item": "https://agitrahadian.my.id/tugas/1" }
+      { "@type": "ListItem", "position": 3, "name": tugas.title, "item": `https://agitrahadian.my.id${tugas.link}` }
     ]
   };
 
-  // WebPage schema
   const webpageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://agitrahadian.my.id/tugas/1",
-    "url": "https://agitrahadian.my.id/tugas/1",
-    "name": "Detail Tugas 1 – Agit Rahadian",
-    "description": "Detail tugas pertama: Pelajari Logika First Order, menuliskan ekspresi, dan konversi kalimat ke FOL."
+    "@id": `https://agitrahadian.my.id${tugas.link}`,
+    "url": `https://agitrahadian.my.id${tugas.link}`,
+    "name": `Detail ${tugas.title} – Agit Rahadian`,
+    "description": tugas.description
   };
 
-  const structuredData = [breadcrumbSchema, webpageSchema];
+  const structuredData = [breadcrumbSchema, webpageSchema, tugas.structuredData];
 
   return (
     <>
       <SEO
-        title="Detail Tugas 1"
-        description="Detail tugas pertama: Pelajari Logika First Order, menuliskan ekspresi, dan konversi kalimat ke FOL."
+        title={`Detail ${tugas.title}`}
+        description={tugas.description}
         keywords="Logika First Order, FOL, Tugas 1, Agit Rahadian"
-        canonical="/tugas/1"
+        canonical={tugas.link}
         structuredData={structuredData}
       />
 
@@ -46,14 +46,9 @@ export default function Tugas1() {
       <main className="tugas1-page container" role="main">
         <h1 className="tugas1-title">Tugas 1: Logika First Order</h1>
 
-        {/* 1 */}
         <section className="tugas1-content">
-          <h2>
-            <i className="fas fa-lightbulb" /> 1. Pelajari Logika First Order dan Contoh Kasusnya
-          </h2>
-          <p>
-            <strong>Pengertian:</strong> Logika First Order (First Order Logic/FOL) adalah sistem logika yang menggunakan predikat, kuantor, dan variabel untuk menyatakan fakta tentang objek di dunia nyata.
-          </p>
+          <h2><i className="fas fa-lightbulb" /> 1. Pelajari Logika First Order dan Contoh Kasusnya</h2>
+          <p><strong>Pengertian:</strong> Logika First Order (First Order Logic/FOL) adalah sistem logika yang menggunakan predikat, kuantor, dan variabel untuk menyatakan fakta tentang objek di dunia nyata.</p>
           <h3>Ciri-ciri utama:</h3>
           <ul>
             <li>Memiliki kuantor universal (∀) dan eksistensial (∃)</li>
@@ -67,11 +62,8 @@ export default function Tugas1() {
           </ul>
         </section>
 
-        {/* 2 */}
         <section className="tugas1-content">
-          <h2>
-            <i className="fas fa-pencil-alt" /> 2. Menuliskan Ekspresi dalam Logika First Order
-          </h2>
+          <h2><i className="fas fa-pencil-alt" /> 2. Menuliskan Ekspresi dalam Logika First Order</h2>
           <p><strong>Pernyataan:</strong></p>
           <ol>
             <li>Semua mahasiswa informatika suka kecerdasan buatan</li>
@@ -91,16 +83,11 @@ export default function Tugas1() {
             <li>∀x (P(x) → C(x))</li>
             <li><strong>Kesimpulan:</strong> ∀x (K(x) → P(x))</li>
           </ul>
-          <p>
-            <strong>Evaluasi Kesimpulan:</strong> Tidak valid, karena premis hanya menyatakan siapa yang menyukai kecerdasan buatan, bukan hubungan langsung antara mahasiswa ilmu komputer dan pemrograman.
-          </p>
+          <p><strong>Evaluasi Kesimpulan:</strong> Tidak valid, karena premis hanya menyatakan siapa yang menyukai kecerdasan buatan, bukan hubungan langsung antara mahasiswa ilmu komputer dan pemrograman.</p>
         </section>
 
-        {/* 3 */}
         <section className="tugas1-content">
-          <h2>
-            <i className="fas fa-exchange-alt" /> 3. Konversi Kalimat ke FOL dan Pembuktian
-          </h2>
+          <h2><i className="fas fa-exchange-alt" /> 3. Konversi Kalimat ke FOL dan Pembuktian</h2>
           <p><strong>Pernyataan:</strong></p>
           <ol>
             <li>Setiap apel atau pear adalah buah</li>
@@ -125,9 +112,7 @@ export default function Tugas1() {
             <li>¬∃x (R(x) ∧ M(x))</li>
             <li>¬∃x (S(x) ∧ H(x))</li>
           </ul>
-          <p>
-            <strong>Pembuktian:</strong> Berdasarkan premis, pear tidak berwarna merah dan buah manis tidak berwarna hijau. Maka, buah manis hanya mungkin berwarna kuning atau merah, dan pear hanya mungkin kuning atau hijau. Tidak ada kontradiksi jika tidak disimpulkan lebih jauh.
-          </p>
+          <p><strong>Pembuktian:</strong> Berdasarkan premis, pear tidak berwarna merah dan buah manis tidak berwarna hijau. Maka, buah manis hanya mungkin berwarna kuning atau merah, dan pear hanya mungkin kuning atau hijau.</p>
         </section>
 
         <div className="back-link">

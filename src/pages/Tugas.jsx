@@ -1,15 +1,14 @@
 // src/pages/Tugas.jsx
 import React from 'react';
-import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
-
+import SEO from '../components/SEO';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/tugas.css';
 import profileImg from '../assets/profile-picture.avif';
+import tugasList from '../data/TugasData';
 
 export default function Tugas() {
-  // Breadcrumb schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -19,7 +18,6 @@ export default function Tugas() {
     ]
   };
 
-  // WebPage schema
   const webpageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -46,31 +44,35 @@ export default function Tugas() {
       <main className="tugas-page container" role="main">
         <section className="tugas-hero" aria-labelledby="judul-tugas">
           <div className="judul-wrapper">
-            <h1 id="judul-tugas" className="judul-tugas">TugasKu</h1>
+            <h1 id="judul-tugas" className="judul-tugas">Tugas Kecerdasan Buatan</h1>
             <img
               src={profileImg}
               alt="Foto Agit Rahadian"
-              className="foto-putri"
+              className="foto-agit"
               width="140"
               height="140"
             />
           </div>
 
-          <article className="glass-card tugas1-card" tabIndex="0" aria-label="Tugas 1">
-            <h2>Tugas 1</h2>
-            <p>
-              Ini adalah deskripsi singkat untuk Tugas 1. Tambahkan detail
-              seperti instruksi, deadline, atau materi pendukung di sini.
-            </p>
-            <Link
-              to="/tugas/1"
-              className="btn-profil"
-              role="button"
-              aria-label="Lihat detail Tugas 1"
+          {tugasList.map((tugas) => (
+            <article
+              key={tugas.id}
+              className="glass-card tugas-card"
+              tabIndex="0"
+              aria-label={tugas.title}
             >
-              Lihat Detail
-            </Link>
-          </article>
+              <h2>{tugas.title}</h2>
+              <p>{tugas.description}</p>
+              <Link
+                to={tugas.link}
+                className="btn-profil"
+                role="button"
+                aria-label={`Lihat detail ${tugas.title}`}
+              >
+                Lihat Detail
+              </Link>
+            </article>
+          ))}
         </section>
       </main>
 

@@ -28,7 +28,7 @@
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "maskable"
     },
     {
       "src": "/favicon-16x16.png",
@@ -57,9 +57,9 @@
       "form_factor": "wide"
     },
     {
-      "src": "/screenshots/homepage-square.png",
+      "src": "/screenshots/homepage-square.jpg",
       "sizes": "720x720",
-      "type": "image/png",
+      "type": "image/jpg",
       "form_factor": "narrow"
     }
   ],

@@ -1,33 +1,32 @@
 :root {
-  --primary-color: #aa392d;
-  --secondary-color: #222831;
-  --text-color: #fff;
-  --font-family: "Kanit", sans-serif;
+  --primary: #4A90E2;
+  --secondary: #1F1F1F;
+  --overlay: rgba(0,0,0,0.5);
+  --text: #FFFFFF;
+  --muted: rgba(255,255,255,0.8);
+  --font-main: 'Inter', sans-serif;
+  --font-head: 'Montserrat', sans-serif;
+  --transition: 0.4s;
 }
 
 .header {
-  background-color: #222831;
-  background-image: url('../assets/background.webp');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   position: relative;
-  font-family: var(--font-family);
-  letter-spacing: 2px;
-  color: #fff;
-  text-shadow: 0 0 2px #000;
-  overflow: hidden;
   min-height: 100vh;
+  background: url('../assets/background.webp') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-main);
+  color: var(--text);
+  overflow: hidden;
 }
 
 .header::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: var(--overlay);
+  backdrop-filter: blur(4px);
   z-index: 0;
 }
 
@@ -35,229 +34,161 @@
   position: relative;
   z-index: 1;
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+  padding: 2rem;
+  animation: fadeInUp 1s ease both;
 }
 
 .profile-img {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.6);
+  border: 4px solid var(--primary);
   object-fit: cover;
-  margin: 0 auto 20px;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-  transition: transform 0.3s ease;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition) ease;
 }
-
 .profile-img:hover {
-  transform: scale(1.05);
+  transform: scale(1.1) rotate(-2deg);
 }
 
 .header-jumbotron h1 {
-  font-size: 3rem;
-  margin: 10px 0;
-  text-transform: uppercase;
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin: 0.5rem 0;
+  letter-spacing: 1px;
+  position: relative;
+}
+.header-jumbotron h1::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  animation: expandLine 0.8s ease forwards;
 }
 
 .role {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeIn 1s 0.5s ease forwards;
 }
 
 .bio {
-  max-width: 600px;
-  margin: 20px auto;
+  max-width: 640px;
+  margin: 1rem auto;
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
+  color: var(--muted);
+  opacity: 0;
+  animation: fadeIn 1s 0.8s ease forwards;
 }
 
-.contact-buttons {
+.contact-buttons,
+.header-cta {
   display: flex;
+  gap: 1rem;
   justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
-  margin: 20px 0;
+  margin: 2rem 0;
+  opacity: 0;
+  animation: fadeIn 1s 1.2s ease forwards;
 }
 
-.contact-btn {
+.contact-btn,
+.header-cta .btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: bold;
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  transition: transform var(--transition) ease, box-shadow var(--transition) ease;
 }
 
-.contact-btn:focus {
-  outline: 2px solid #fff;
-  outline-offset: 4px;
+.contact-btn:hover,
+.header-cta .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
 }
 
-.email-btn {
-  background-color: #007bff;
-  color: white;
-}
-
-.email-btn:hover {
-  background-color: #0056b3;
-}
-
-.wa-btn {
-  background-color: #25d366;
-  color: white;
-}
-
-.wa-btn:hover {
-  background-color: #1ebe5c;
-}
-
-.contact-info div,
-.contact-info a {
-  font-size: 1rem;
-  margin: 5px 0;
-  color: rgba(255, 255, 255, 0.9);
-  display: flex;
-  justify-content: center;
+/* Optional outline variant */
+.header-cta .btn-outline {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.education-info {
-  margin-top: 20px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.education-info h4 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.education-info ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.education-info li {
-  margin-bottom: 5px;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.header-cta {
-  margin: 25px 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.btn,
-.btn-outline {
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.btn {
-  background-color: var(--primary-color);
-  color: white;
-}
-
-.btn:hover {
-  background-color: #871f18;
-}
-
-.btn-outline {
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
   background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: none;
+  transition: background var(--transition) ease, color var(--transition) ease;
 }
-
-.btn-outline:hover {
-  background-color: var(--primary-color);
-  color: white;
+.header-cta .btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
 }
 
 .socialMedia {
-  margin-top: 30px;
   display: flex;
+  gap: 1rem;
   justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  opacity: 0;
+  animation: fadeIn 1s 1.6s ease forwards;
 }
-
 .socialMedia a {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background-color: var(--secondary-color);
-  color: white;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 32px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--text);
+  transition: background var(--transition) ease, transform var(--transition) ease;
 }
-
 .socialMedia a:hover {
-  transform: scale(1.1);
-  background-color: var(--primary-color);
+  background: var(--primary);
+  transform: scale(1.2);
 }
 
-@media screen and (max-width: 768px) {
-  .header {
-    min-height: 60vh;
-    background-size: cover;
-    background-position: center;
-  }
-  .profile-img {
-    width: 120px;
-    height: 120px;
-  }
-  .header-jumbotron {
-    padding: 12px;
-  }
-  .header-jumbotron h1 {
-    font-size: 1.5rem;
-  }
-  .role {
-    font-size: 1rem;
-  }
-  .bio {
-    font-size: 0.9rem;
-  }
-  .socialMedia a {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-  }
+/* Keyframes */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes expandLine {
+  from { width: 0; }
+  to { width: 80px; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@media screen and (max-width: 480px) {
-  .header {
-    min-height: 40vh;
-    background-size: cover;
-    background-position: center;
-  }
-  .header-jumbotron h1 {
-    font-size: 1.1rem;
-  }
-  .bio {
-    font-size: 0.8rem;
-  }
-  .contact-btn {
-    padding: 8px 12px;
-    font-size: 0.8rem;
-  }
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-img { width: 140px; height: 140px; }
+  .header-jumbotron h1::after { width: 60px; }
+  .header-jumbotron h1 { font-size: clamp(1.5rem,7vw,2.5rem); }
+  .role { font-size: 1rem; }
+  .bio { font-size: 0.9rem; }
+  .contact-btn, .header-cta .btn { padding: 0.5rem 1rem; }
+  .socialMedia a { width: 50px; height: 50px; font-size: 1.2rem; }
 }
