@@ -1,67 +1,120 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    
+    <!-- Title - Keep it under 60 characters for optimal display -->
     <title>Agit Rahadian – Full-Stack Web Developer</title>
-
-    <!-- Standard Favicons -->
+    
+    <!-- Primary Meta Tags - Keep description between 150-160 characters -->
+    <meta name="description" content="Portfolio Agit Rahadian - Full-Stack Web Developer berpengalaman dalam pengembangan website sekolah, aplikasi pendidikan & solusi digital modern." />
+    <meta name="keywords" content="Agit Rahadian, Full-Stack Developer, Web Developer, Programmer, Solusi Digital, Portfolio, Responsive Design" />
+    <meta name="author" content="Agit Rahadian" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://agitrahadian.my.id/" />
+    
+    <!-- Preload Favicon untuk kecepatan loading -->
+    <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon">
+    
+    <!-- Favicon Implementation - Prioritized for search engines -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
     <!-- Android Chrome Icons -->
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials" />
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
-
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
+    
     <!-- Theme Color -->
-    <meta name="theme-color" content="#ffffff" />
-
-    <!-- SEO Meta -->
-    <meta name="description" content="Portofolio Agit Rahadian, Full-Stack Web Developer yang berfokus pada solusi digital modern dan responsif." />
-    <meta name="keywords" content="Agit Rahadian, Full-Stack Developer, Web Developer, Programmer, Solusi Digital, Portofolio, Responsive Design" />
-    <meta name="author" content="Agit Rahadian" />
-    <meta name="robots" content="index, follow" />
-
+    <meta name="theme-color" content="#222831" />
+    <meta name="msapplication-TileColor" content="#222831" />
+    <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    
     <!-- Open Graph Meta (WA/FB/IG/TikTok previews) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agitrahadian.my.id/" />
     <meta property="og:title" content="Agit Rahadian – Full-Stack Web Developer" />
     <meta property="og:description" content="Portfolio resmi Agit Rahadian. Lihat proyek, pengalaman, dan kontak untuk kerja sama." />
-    <meta property="og:url" content="https://agitrahadian.my.id/" />
-    <meta property="og:image" content="https://agitrahadian.my.id/og/profile-picture.png" />
-    <meta property="og:type" content="website" />
-
-    <!-- Font Optimization -->
+    <meta property="og:image" content="https://agitrahadian.my.id/og/profile-picture.avif" />
+    <meta property="og:image:alt" content="Agit Rahadian – Full-Stack Web Developer" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="Agit Rahadian" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@agitrhdn" />
+    <meta name="twitter:creator" content="@agitrhdn" />
+    <meta name="twitter:title" content="Agit Rahadian – Full-Stack Web Developer" />
+    <meta name="twitter:description" content="Portfolio resmi Agit Rahadian. Lihat proyek, pengalaman, dan kontak untuk kerja sama." />
+    <meta name="twitter:image" content="https://agitrahadian.my.id/og/profile-picture.avif" />
+    
+    <!-- Fonts Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css?family=Kanit&display=swap"
-      onload="this.rel='stylesheet'"
-    />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css?family=Nunito+Sans:opsz,wght@6..12,300&display=swap"
-      onload="this.rel='stylesheet'"
-    />
-    <noscript>
-      <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:opsz,wght@6..12,300&display=swap" rel="stylesheet" />
-    </noscript>
-
-    <!-- CSS Bundle (generated by Vite/Webpack) -->
-    <link rel="preload" href="/assets/index-BWjNLATw.css" as="style" onload="this.rel='stylesheet'" />
-    <noscript>
-      <link rel="stylesheet" href="/assets/index-BWjNLATw.css" />
-    </noscript>
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:opsz,wght@6..12,300&display=swap" rel="stylesheet" />
+    
+    <!-- JSON-LD Structured Data yang Lebih Lengkap -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Agit Rahadian",
+        "url": "https://agitrahadian.my.id/",
+        "image": "https://agitrahadian.my.id/og/profile-picture.avif",
+        "sameAs": [
+          "https://github.com/agitrahadian-22110006",
+          "https://www.instagram.com/agitrhdn",
+          "https://www.tiktok.com/@agitrahadian",
+          "https://www.facebook.com/share/16HuZskNh5/"
+        ],
+        "jobTitle": "Full-Stack Web Developer",
+        "description": "Full-Stack Web Developer dari Garut yang berspesialisasi dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital praktis.",
+        "knowsAbout": ["Web Development", "JavaScript", "React", "Node.js", "PHP", "Laravel", "MySQL"],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "STMIK ANTAR BANGSA"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Garut",
+          "addressRegion": "Jawa Barat",
+          "addressCountry": "ID"
+        },
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://agitrahadian.my.id/"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Agit Rahadian",
+        "url": "https://agitrahadian.my.id/",
+        "description": "Portfolio Agit Rahadian - Full-Stack Web Developer berpengalaman dalam pengembangan website sekolah, aplikasi pendidikan & solusi digital modern.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://agitrahadian.my.id/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
   </head>
   <body>
+    <!-- Konten website Anda -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

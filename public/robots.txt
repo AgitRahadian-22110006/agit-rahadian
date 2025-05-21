@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# Sitemaps
 Sitemap: https://agitrahadian.my.id/sitemap.xml
