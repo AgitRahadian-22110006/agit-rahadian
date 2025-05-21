@@ -2,7 +2,7 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Agit Rahadian – Full-Stack Web Developer</title>
 
@@ -60,38 +60,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="preload"
-      as="style"
       href="https://fonts.googleapis.com/css?family=Kanit&display=swap"
-      onload="this.rel='stylesheet'"
+      rel="stylesheet"
     />
     <link
-      rel="preload"
-      as="style"
       href="https://fonts.googleapis.com/css?family=Nunito+Sans:opsz,wght@6..12,300&display=swap"
-      onload="this.rel='stylesheet'"
+      rel="stylesheet"
     />
-    <noscript>
-      <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:opsz,wght@6..12,300&display=swap" rel="stylesheet" />
-    </noscript>
 
-    <!-- CSS Bundle (Vite/Webpack) -->
-    <link
-      rel="preload"
-      href="/assets/index-BWjNLATw.css"
-      as="style"
-      onload="this.rel='stylesheet'"
-    />
-    <noscript>
-      <link rel="stylesheet" href="/assets/index-BWjNLATw.css" />
-    </noscript>
-
-    <!-- (Optional) Prefetch main script if not using code-splitting -->
-    <!-- <link rel="prefetch" href="/src/main.jsx" as="script"> -->
+    <!-- NOTE: Jangan preload atau link CSS build manual! 
+         Vite akan inject file CSS otomatis saat build produksi -->
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Untuk development mode -->
     <script type="module" src="/src/main.jsx"></script>
+
   </body>
 </html>
