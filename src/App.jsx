@@ -29,7 +29,6 @@ function PortfolioPage() {
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={url} />
-        {/* Open Graph */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={url} />
@@ -43,7 +42,6 @@ function PortfolioPage() {
 function App() {
   return (
     <HelmetProvider>
-      {/* Global Meta */}
       <Helmet>
         <html lang="id" />
         <meta charSet="utf-8" />
@@ -55,8 +53,6 @@ function App() {
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://agitrahadian.my.id/" />
-
-        {/* Open Graph */}
         <meta property="og:title" content="Agit Rahadian – Full-Stack Web Developer" />
         <meta
           property="og:description"
@@ -65,8 +61,6 @@ function App() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://agitrahadian.my.id/" />
         <meta property="og:image" content="https://agitrahadian.my.id/og/profile-picture.avif" />
-
-        {/* JSON-LD structured data */}
         <script type="application/ld+json">
           {`{
             "@context": "https://schema.org",
@@ -94,7 +88,7 @@ function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/about" element={<About />} />
             <Route path="/tugas" element={<Tugas />} />
-            <Route path="/tugas1" element={<Tugas1 />} />
+            <Route path="/tugas/:id" element={<Tugas1 />} /> 
           </Routes>
         </BrowserRouter>
       </Suspense>
