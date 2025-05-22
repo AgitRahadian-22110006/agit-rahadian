@@ -1,10 +1,9 @@
-// src/pages/DetailPortfolio.jsx
 import { useParams } from 'react-router-dom';
 import { portfolioList } from '../data/DataPortfolio';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
-import SEO from '../components/SEO'; // Komponen SEO menggunakan react-helmet-async
+import SEO from '../components/SEO';
 import '../styles/DetailPortfolio.css';
 
 function DetailPortfolio() {
@@ -17,24 +16,27 @@ function DetailPortfolio() {
         <SEO
           title="Portfolio Tidak Ditemukan"
           description="Halaman portfolio yang Anda cari tidak ditemukan. Silakan kembali ke halaman utama untuk melihat proyek lainnya."
-          canonical="/404"
+          canonical="https://agitrahadian.my.id/404"
         >
           <meta name="robots" content="noindex, follow" />
         </SEO>
         <Navbar />
-        <main className="not-found">
+        <main className="not-found" role="main" aria-label="Halaman Tidak Ditemukan">
           <h1>Portfolio tidak ditemukan.</h1>
         </main>
         <Footer />
+        <ScrollToTop />
       </>
     );
   }
 
-  // Schema untuk proyek
+  // Schema: CreativeWork + Breadcrumb
   const projectSchema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
+    "@id": `https://agitrahadian.my.id/portfolio/${item.id}`,
     "name": item.title,
+    "headline": item.title,
     "description": item.description,
     "image": item.images[0]?.src,
     "url": `https://agitrahadian.my.id/portfolio/${item.id}`,
@@ -45,13 +47,12 @@ function DetailPortfolio() {
     }
   };
 
-  // Breadcrumb schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://agitrahadian.my.id/" },
-      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://agitrahadian.my.id/#portfolio" },
+      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://agitrahadian.my.id/portfolio" },
       { "@type": "ListItem", "position": 3, "name": item.title, "item": `https://agitrahadian.my.id/portfolio/${item.id}` }
     ]
   };
@@ -65,40 +66,46 @@ function DetailPortfolio() {
         description={`${item.description} Lihat detail proyek ${item.title} oleh Agit Rahadian, Full-Stack Web Developer asal Garut yang berspesialisasi dalam pengembangan solusi digital.`}
         keywords={`${item.title}, Web Development, Portofolio, Agit Rahadian, Garut`}
         ogImage={item.images[0]?.src}
-        canonical={`/portfolio/${item.id}`}
+        canonical={`https://agitrahadian.my.id/portfolio/${item.id}`}
         structuredData={structuredData}
       >
         <meta name="robots" content="index, follow" />
       </SEO>
 
       <Navbar />
-      <section id="detail-portfolio" className="detail-portfolio">
+      <main id="detail-portfolio" className="detail-portfolio" role="main" aria-label={`Detail Portofolio: ${item.title}`}>
         <div className="container">
-          <div className="detail-header">
+          <article className="detail-header">
             <a
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-visit"
+              aria-label={`Kunjungi proyek ${item.title}`}
             >
               Kunjungi Situs
             </a>
-            <h2 className="detail-title">{item.title}</h2>
+            <h1 className="detail-title">{item.title}</h1>
             <p className="detail-description">{item.description}</p>
-          </div>
+          </article>
 
-          <div className="gallery">
+          <section className="gallery" aria-label={`Galeri Gambar untuk proyek ${item.title}`}>
             {item.images.map((img, idx) => (
-              <div className="gallery-item" key={idx}>
+              <figure className="gallery-item" key={idx}>
                 <div className="image-card">
-                  <img src={img.src} alt={img.alt} />
-                  <div className="card-caption">{img.caption}</div>
+                  <img
+                    src={img.src}
+                    alt={img.alt || `Gambar proyek ${item.title}`}
+                    loading="lazy"
+                    width="100%"
+                  />
+                  {img.caption && <figcaption className="card-caption">{img.caption}</figcaption>}
                 </div>
-              </div>
+              </figure>
             ))}
-          </div>
+          </section>
         </div>
-      </section>
+      </main>
       <Footer />
       <ScrollToTop />
     </>

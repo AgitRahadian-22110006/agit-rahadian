@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Navbar from '../components/Navbar';
@@ -42,11 +41,13 @@ export default function Tugas1() {
 
       <Navbar />
 
-      <main className="tugas1-page container" role="main">
-        <h1 className="tugas1-title">Tugas 1: Logika First Order</h1>
+      <main className="tugas1-page container" role="main" aria-labelledby="judul-tugas1">
+        <header className="tugas1-header">
+          <h1 id="judul-tugas1" className="tugas1-title">Tugas 1: Logika First Order</h1>
+        </header>
 
-        <section className="tugas1-content">
-          <h2><i className="fas fa-lightbulb" /> 1. Pelajari Logika First Order dan Contoh Kasusnya</h2>
+        <section className="tugas1-content" aria-labelledby="section-1">
+          <h2 id="section-1"><i className="fas fa-lightbulb" /> 1. Pelajari Logika First Order dan Contoh Kasusnya</h2>
           <p><strong>Pengertian:</strong> Logika First Order (First Order Logic/FOL) adalah sistem logika yang menggunakan predikat, kuantor, dan variabel untuk menyatakan fakta tentang objek di dunia nyata.</p>
           <h3>Ciri-ciri utama:</h3>
           <ul>
@@ -61,8 +62,8 @@ export default function Tugas1() {
           </ul>
         </section>
 
-        <section className="tugas1-content">
-          <h2><i className="fas fa-pencil-alt" /> 2. Menuliskan Ekspresi dalam Logika First Order</h2>
+        <section className="tugas1-content" aria-labelledby="section-2">
+          <h2 id="section-2"><i className="fas fa-pencil-alt" /> 2. Menuliskan Ekspresi dalam Logika First Order</h2>
           <p><strong>Pernyataan:</strong></p>
           <ol>
             <li>Semua mahasiswa informatika suka kecerdasan buatan</li>
@@ -85,8 +86,8 @@ export default function Tugas1() {
           <p><strong>Evaluasi Kesimpulan:</strong> Tidak valid, karena premis hanya menyatakan siapa yang menyukai kecerdasan buatan, bukan hubungan langsung antara mahasiswa ilmu komputer dan pemrograman.</p>
         </section>
 
-        <section className="tugas1-content">
-          <h2><i className="fas fa-exchange-alt" /> 3. Konversi Kalimat ke FOL dan Pembuktian</h2>
+        <section className="tugas1-content" aria-labelledby="section-3">
+          <h2 id="section-3"><i className="fas fa-exchange-alt" /> 3. Konversi Kalimat ke FOL dan Pembuktian</h2>
           <p><strong>Pernyataan:</strong></p>
           <ol>
             <li>Setiap apel atau pear adalah buah</li>
@@ -114,11 +115,11 @@ export default function Tugas1() {
           <p><strong>Pembuktian:</strong> Berdasarkan premis, pear tidak berwarna merah dan buah manis tidak berwarna hijau. Maka, buah manis hanya mungkin berwarna kuning atau merah, dan pear hanya mungkin kuning atau hijau.</p>
         </section>
 
-        <div className="back-link">
+        <nav className="back-link" aria-label="Navigasi kembali ke daftar tugas">
           <Link to="/tugas" className="btn-back">
             ← Kembali ke Daftar Tugas
           </Link>
-        </div>
+        </nav>
       </main>
 
       <Footer />

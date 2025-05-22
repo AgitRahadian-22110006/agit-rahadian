@@ -1,4 +1,5 @@
-import { Helmet } from 'react-helmet-async';
+import React from 'react';
+import SEO from '../components/SEO'; // Pastikan sudah ada komponen SEO reusable ini
 import { FaHtml5, FaPhp, FaReact, FaLaravel, FaGithub } from 'react-icons/fa';
 import { MdCss } from 'react-icons/md';
 import { IoLogoJavascript } from 'react-icons/io';
@@ -56,6 +57,8 @@ function About() {
       "addressRegion": "Jawa Barat",
       "addressCountry": "Indonesia"
     },
+    "email": "mailto:agitrahadian140702@gmail.com",
+    "telephone": "+6287758263820",
     "sameAs": [
       "https://github.com/agitrahadian-22110006",
       "https://www.instagram.com/agitrhdn"
@@ -63,13 +66,12 @@ function About() {
   };
 
   return (
-    <section id="about">
-      <Helmet>
-        <title>About Agit Rahadian - Full-Stack Developer Indonesia</title>
-        <meta name="description" content="Profil lengkap Agit Rahadian, Full-Stack Web Developer dari Garut yang mengembangkan sistem informasi dan aplikasi pendidikan digital." />
-        <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+    <section id="about" role="main" aria-label="Tentang Agit Rahadian">
+      <SEO
+        title="About Agit Rahadian - Full-Stack Developer Indonesia"
+        description="Profil lengkap Agit Rahadian, Full-Stack Web Developer dari Garut yang mengembangkan sistem informasi dan aplikasi pendidikan digital."
+        structuredData={[personSchema, faqSchema]}
+      />
 
       <div className="about-wrapper">
         <h1 className="gradient-title">Tentang Saya</h1>

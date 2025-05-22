@@ -1,3 +1,4 @@
+// src/App.jsx
 import './App.css';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Suspense, lazy } from 'react';
@@ -12,17 +13,13 @@ const About = lazy(() => import('./components/About'));
 const Tugas = lazy(() => import('./pages/Tugas'));
 const Tugas1 = lazy(() => import('./pages/Tugas1'));
 
-// Wrapper for dynamic portfolio page metadata
+// Dynamic portfolio page with metadata
 function PortfolioPage() {
   const { id } = useParams();
   const project = portfolioList.find(p => p.id.toString() === id) || {};
-  const title = project.title
-    ? `${project.title} – Agit Rahadian`
-    : 'Portfolio – Agit Rahadian';
-  const description = project.description
-    || 'Detail proyek saya sebagai Full-Stack Web Developer.';
-  const imageUrl = project.images?.[0]?.src
-    || 'https://agitrahadian.my.id/og/portfolio1.avif';
+  const title = project.title ? `${project.title} – Agit Rahadian` : 'Portfolio – Agit Rahadian';
+  const description = project.description || 'Detail proyek saya sebagai Full-Stack Web Developer.';
+  const imageUrl = project.images?.[0]?.src || 'https://agitrahadian.my.id/og/portfolio1.avif';
   const url = `https://agitrahadian.my.id/portfolio/${id}`;
 
   return (
@@ -46,13 +43,11 @@ function PortfolioPage() {
 function App() {
   return (
     <HelmetProvider>
-      {/* Global Default Meta Tags & JSON-LD Schema */}
+      {/* Global Meta */}
       <Helmet>
+        <html lang="id" />
         <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
         <title>Agit Rahadian – Full-Stack Web Developer</title>
         <meta
           name="description"
@@ -71,7 +66,7 @@ function App() {
         <meta property="og:url" content="https://agitrahadian.my.id/" />
         <meta property="og:image" content="https://agitrahadian.my.id/og/profile-picture.avif" />
 
-        {/* JSON-LD Structured Data */}
+        {/* JSON-LD structured data */}
         <script type="application/ld+json">
           {`{
             "@context": "https://schema.org",
@@ -80,8 +75,6 @@ function App() {
             "url": "https://agitrahadian.my.id/",
             "logo": "https://agitrahadian.my.id/android-chrome-512x512.png",
             "jobTitle": "Full-Stack Web Developer",
-            "email": "mailto:agitrahadian140702@gmail.com",
-            "telephone": "+6287758263820",
             "sameAs": [
               "https://github.com/agitrahadian-22110006",
               "https://www.instagram.com/agitrhdn",
@@ -93,123 +86,18 @@ function App() {
         </script>
       </Helmet>
 
-      <BrowserRouter>
-        <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="loading">Loading...</div>}>
+        <BrowserRouter>
           <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Helmet>
-                    <title>Home – Agit Rahadian</title>
-                    <meta
-                      name="description"
-                      content="Selamat datang di portfolio Agit Rahadian. Temukan proyek terbaru dan pengalaman saya sebagai Full-Stack Developer."
-                    />
-                    <link rel="canonical" href="https://agitrahadian.my.id/" />
-                    <meta property="og:title" content="Home – Agit Rahadian" />
-                    <meta
-                      property="og:description"
-                      content="Selamat datang di portfolio Agit Rahadian. Temukan proyek terbaru dan pengalaman saya sebagai Full-Stack Developer."
-                    />
-                    <meta property="og:url" content="https://agitrahadian.my.id/" />
-                  </Helmet>
-                  <Home />
-                </>
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <>
-                  <Helmet>
-                    <title>Tentang Saya – Agit Rahadian</title>
-                    <meta
-                      name="description"
-                      content="Profil lengkap Agit Rahadian, keahlian, dan latar belakang sebagai Full-Stack Web Developer."
-                    />
-                    <link rel="canonical" href="https://agitrahadian.my.id/about" />
-                    <meta property="og:title" content="Tentang Saya – Agit Rahadian" />
-                    <meta
-                      property="og:description"
-                      content="Profil lengkap Agit Rahadian, keahlian, dan latar belakang sebagai Full-Stack Web Developer."
-                    />
-                    <meta property="og:url" content="https://agitrahadian.my.id/about" />
-                  </Helmet>
-                  <About />
-                </>
-              }
-            />
+            <Route path="/" element={<Home />} />
             <Route path="/portfolio/:id" element={<PortfolioPage />} />
-            <Route
-              path="/experience"
-              element={
-                <>
-                  <Helmet>
-                    <title>Pengalaman – Agit Rahadian</title>
-                    <meta
-                      name="description"
-                      content="Detail pengalaman kerja dan proyek yang pernah saya kerjakan sebagai Full-Stack Developer."
-                    />
-                    <link rel="canonical" href="https://agitrahadian.my.id/experience" />
-                    <meta property="og:title" content="Pengalaman – Agit Rahadian" />
-                    <meta
-                      property="og:description"
-                      content="Detail pengalaman kerja dan proyek yang pernah saya kerjakan sebagai Full-Stack Developer."
-                    />
-                    <meta property="og:url" content="https://agitrahadian.my.id/experience" />
-                  </Helmet>
-                  <Experience />
-                </>
-              }
-            />
-            <Route
-              path="/tugas"
-              element={
-                <>
-                  <Helmet>
-                    <title>Daftar Tugas – Agit Rahadian</title>
-                    <meta
-                      name="description"
-                      content="Koleksi tugas dan proyek kecil yang telah saya kerjakan."
-                    />
-                    <link rel="canonical" href="https://agitrahadian.my.id/tugas" />
-                    <meta property="og:title" content="Daftar Tugas – Agit Rahadian" />
-                    <meta
-                      property="og:description"
-                      content="Koleksi tugas dan proyek kecil yang telah saya kerjakan."
-                    />
-                    <meta property="og:url" content="https://agitrahadian.my.id/tugas" />
-                  </Helmet>
-                  <Tugas />
-                </>
-              }
-            />
-            <Route
-              path="/tugas/1"
-              element={
-                <>
-                  <Helmet>
-                    <title>Detail Tugas 1 – Agit Rahadian</title>
-                    <meta
-                      name="description"
-                      content="Penjelasan detail tugas 1, teknologi yang dipakai, dan hasil implementasinya."
-                    />
-                    <link rel="canonical" href="https://agitrahadian.my.id/tugas/1" />
-                    <meta property="og<title>Detail Tugas 1 – Agit Rahadian" />
-                    <meta
-                      property="og:description"
-                      content="Penjelasan detail tugas 1, teknologi yang dipakai, dan hasil implementasinya."
-                    />
-                    <meta property="og:url" content="https://agitrahadian.my.id/tugas/1" />
-                  </Helmet>
-                  <Tugas1 />
-                </>
-              }
-            />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/tugas" element={<Tugas />} />
+            <Route path="/tugas1" element={<Tugas1 />} />
           </Routes>
-        </Suspense>
-      </BrowserRouter>
+        </BrowserRouter>
+      </Suspense>
     </HelmetProvider>
   );
 }

@@ -4,10 +4,10 @@ import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import { SiNextdotjs } from "react-icons/si";
-import '../styles/Experience.css';  // path disesuaikaport CSS timeline custom
+import '../styles/Experience.css';
 
 function Experience() {
-  // Breadcrumb schema
+  // Breadcrumb schema JSON-LD
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -27,7 +27,7 @@ function Experience() {
     ]
   };
 
-  // WebPage schema
+  // WebPage schema JSON-LD
   const webpageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -50,12 +50,13 @@ function Experience() {
       />
 
       <Navbar />
-      <div className="experience-wrapper">
+
+      <main className="experience-wrapper" role="main" aria-label="Pengalaman Kerja Agit Rahadian">
         <h1>Pengalaman Kerja</h1>
 
-        <div className="timeline">
-          <div className="timeline-element">
-            <div className="date">2023 - Sekarang</div>
+        <section className="timeline" aria-label="Timeline Pengalaman Kerja">
+          <article className="timeline-element" tabIndex={0}>
+            <time className="date" dateTime="2023">2023 - Sekarang</time>
             <h3>
               <SiNextdotjs 
                 style={{ verticalAlign: 'middle', marginRight: 6, color: '#00adb5' }} 
@@ -72,10 +73,10 @@ function Experience() {
               <li>Aplikasi PPDB Online & Sistem Informasi Akademik</li>
               <li>Website profil sekolah dan landing page edukasi</li>
             </ul>
-          </div>
+          </article>
 
-          <div className="timeline-element">
-            <div className="date">2021 - 2023</div>
+          <article className="timeline-element" tabIndex={0}>
+            <time className="date" dateTime="2021">2021 - 2023</time>
             <h3>
               <SiNextdotjs 
                 style={{ verticalAlign: 'middle', marginRight: 6, color: '#00adb5' }} 
@@ -92,9 +93,9 @@ function Experience() {
               <li>Integrasi API dan deployment ke server kampus</li>
               <li>Maintenance dan update sistem internal</li>
             </ul>
-          </div>
-        </div>
-      </div>
+          </article>
+        </section>
+      </main>
 
       <Footer />
       <ScrollToTop />

@@ -1,16 +1,14 @@
-// src/data/TugasData.jsx
-
 const tugasList = [
   {
     id: 1,
-    title: 'Tugas 1',
-    description: 'Pelajari Logika First Order, menuliskan ekspresi, dan konversi kalimat ke FOL.',
+    title: 'Tugas 1: Logika First Order',
+    description: 'Pelajari Logika First Order, ekspresi logika, konversi kalimat ke FOL, dan pembuktian logika formal.',
     link: '/tugas/1',
     structuredData: {
       "@context": "https://schema.org",
       "@type": "LearningResource",
       "name": "Tugas 1: Logika First Order",
-      "description": "Pelajari Logika First Order, ekspresi formal, dan konversi kalimat ke FOL.",
+      "description": "Materi pembelajaran mengenai logika First Order, termasuk ekspresi simbolik, konversi pernyataan logis, dan pembuktian logika formal.",
       "educationalLevel": "Perguruan Tinggi",
       "inLanguage": "id",
       "url": "https://agitrahadian.my.id/tugas/1",

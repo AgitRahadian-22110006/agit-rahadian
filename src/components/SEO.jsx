@@ -1,83 +1,73 @@
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 
-function SEO({ 
-  title, 
-  description, 
-  keywords, 
-  ogImage, 
-  ogType = 'website',
+const SEO = ({
+  title,
+  description,
+  keywords,
   canonical,
   structuredData,
-  children
-}) {
-  // Base URL
-  const siteUrl = 'https://agitrahadian.my.id';
-  
-  // Default image if none provided
-  const image = ogImage || `${siteUrl}/android-chrome-512x512.png`;
-  
-  // Canonical URL
-  const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+  favicon = "/favicon.ico", // default favicon path di public/
+}) => {
+  // Jika keywords array, gabung jadi string
+  const keywordsContent = Array.isArray(keywords) ? keywords.join(', ') : keywords;
+
+  // Structured data JSON-LD harus berupa string
+  const jsonLd = Array.isArray(structuredData)
+    ? structuredData.map((data, i) => (
+        <script
+          key={`jsonld-${i}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+        />
+      ))
+    : (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      );
 
   return (
     <Helmet>
-      {/* Basic Metadata */}
-      <title>{title ? `${title} - Agit Rahadian` : 'Agit Rahadian - Full-Stack Web Developer'}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={`Agit Rahadian, Full-Stack Developer, Web Developer, Programmer${keywords ? `, ${keywords}` : ''}`} />
-      <meta name="author" content="Agit Rahadian" />
-      <link rel="canonical" href={canonicalUrl} />
+      <title>{title}</title>
 
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:title" content={title ? `${title} - Agit Rahadian` : 'Agit Rahadian - Full-Stack Web Developer'} />
+      <meta name="description" content={description} />
+      {keywordsContent && <meta name="keywords" content={keywordsContent} />}
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href={canonical} />
+
+      {/* Favicon */}
+      <link rel="icon" href={favicon} />
+
+      {/* Open Graph for social media */}
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
-      <meta property="og:site_name" content="Agit Rahadian" />
-      <meta property="og:locale" content="id_ID" />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:type" content="website" />
 
       {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title ? `${title} - Agit Rahadian` : 'Agit Rahadian - Full-Stack Web Developer'} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
 
-      {/* Structured Data JSON-LD */}
-      {structuredData && (
-        <script type="application/ld+json">
-          {JSON.stringify(Array.isArray(structuredData) ? structuredData : [structuredData])}
-        </script>
-      )}
-
-      {/* Additional meta tags */}
-      {children}
+      {/* Structured data JSON-LD */}
+      {jsonLd}
     </Helmet>
   );
-}
-
-SEO.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string.isRequired,
-  keywords: PropTypes.string,
-  ogImage: PropTypes.string,
-  ogType: PropTypes.string,
-  canonical: PropTypes.string,
-  structuredData: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.arrayOf(PropTypes.object)
-  ]),
-  children: PropTypes.node
 };
 
-SEO.defaultProps = {
-  keywords: '',
-  ogImage: null,
-  ogType: 'website',
-  canonical: '',
-  structuredData: null,
-  children: null
+SEO.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  keywords: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  canonical: PropTypes.string.isRequired,
+  structuredData: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.arrayOf(PropTypes.object),
+  ]),
+  favicon: PropTypes.string,
 };
 
 export default SEO;

@@ -1,52 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  
-  <!-- Halaman Utama -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://agitrahadian.my.id/</loc>
-    <lastmod>2025-05-17T12:00:00+07:00</lastmod>
+    <lastmod>2025-05-21T23:53:35.881Z</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://agitrahadian.my.id/assets/profile-picture.png</image:loc>
-      <image:title>Agit Rahadian - Full-Stack Web Developer</image:title>
-      <image:caption>Foto profil Agit Rahadian, Full-Stack Web Developer</image:caption>
-    </image:image>
+    <priority>1</priority>
   </url>
-  
-  <!-- Halaman Experience -->
   <url>
     <loc>https://agitrahadian.my.id/experience</loc>
-    <lastmod>2025-05-17T12:00:00+07:00</lastmod>
+    <lastmod>2025-05-21T23:53:35.881Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Halaman Tugas -->
   <url>
     <loc>https://agitrahadian.my.id/tugas</loc>
-    <lastmod>2025-05-17T12:00:00+07:00</lastmod>
+    <lastmod>2025-05-21T23:53:35.881Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- Halaman Detail Tugas 1 -->
   <url>
     <loc>https://agitrahadian.my.id/tugas/1</loc>
-    <lastmod>2025-05-17T12:00:00+07:00</lastmod>
+    <lastmod>2025-05-21T23:53:35.881Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
-  <!-- CV Download -->
   <url>
     <loc>https://agitrahadian.my.id/AgitRahadian_CV.pdf</loc>
-    <lastmod>2025-05-17T12:00:00+07:00</lastmod>
+    <lastmod>2025-05-21T23:53:35.881Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

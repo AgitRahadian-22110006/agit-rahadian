@@ -1,77 +1,77 @@
 // src/pages/Home.jsx
-import Navbar from "../components/Navbar";
-import Header from "../components/Header";
-import Portfolio from "../components/Portfolio";
-import About from "../components/About";
-import Footer from "../components/Footer";
-import SEO from "../components/SEO"; // Komponen SEO yang memakai react-helmet-async
+import Navbar from '../components/Navbar';
+import Header from '../components/Header';
+import Portfolio from '../components/Portfolio';
+import About from '../components/About';
+import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 function Home() {
-  // Organization schema for rich results, termasuk logo
+  const siteUrl = 'https://agitrahadian.my.id';
+
+  // Organization / Person JSON-LD schema
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Agit Rahadian",
-    "url": "https://agitrahadian.my.id/",
-    "logo": "https://agitrahadian.my.id/android-chrome-512x512.png",
-    "image": "https://agitrahadian.my.id/assets/profile-picture.png",
-    "sameAs": [
+    name: "Agit Rahadian",
+    url: siteUrl,
+    logo: `${siteUrl}/android-chrome-512x512.png`,
+    image: `${siteUrl}/android-chrome-512x512.png`,
+    sameAs: [
       "https://github.com/agitrahadian-22110006",
       "https://www.instagram.com/agitrhdn",
       "https://www.tiktok.com/@agitrahadian",
       "https://www.facebook.com/share/16HuZskNh5/",
-      "https://wa.me/6287758263820"
+      "https://wa.me/6287758263820",
     ],
-    "jobTitle": "Full-Stack Web Developer",
-    "alumniOf": {
+    jobTitle: "Full-Stack Web Developer",
+    alumniOf: {
       "@type": "EducationalOrganization",
-      "name": "STMIK Mardira Indonesia",
-      "department": "Teknik Informatika - Prodi Sistem Informasi"
+      name: "STMIK Mardira Indonesia",
+      department: "Teknik Informatika - Prodi Sistem Informasi",
     },
-    "description": "Full-Stack Web Developer dari Garut yang berspesialisasi dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital praktis.",
-    "address": {
+    description:
+      "Full-Stack Web Developer dari Garut yang berspesialisasi dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital praktis.",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Garut",
-      "addressRegion": "Jawa Barat",
-      "addressCountry": "Indonesia"
+      addressLocality: "Garut",
+      addressRegion: "Jawa Barat",
+      addressCountry: "Indonesia",
     },
-    "mainEntityOfPage": {
+    mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://agitrahadian.my.id/"
-    }
+      "@id": siteUrl,
+    },
   };
 
-  // Breadcrumb schema for rich results
+  // Breadcrumb schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Beranda",
-        "item": "https://agitrahadian.my.id/"
-      }
-    ]
+        position: 1,
+        name: "Beranda",
+        item: siteUrl,
+      },
+    ],
   };
 
-  // Gabungkan semua structured data
   const structuredData = [organizationSchema, breadcrumbSchema];
 
   return (
     <>
       <SEO
-        title="Home – Agit Rahadian"
+        title="Home"
         description="Agit Rahadian adalah Full-Stack Web Developer lulusan STMIK Mardira Indonesia yang berspesialisasi dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital praktis. Lihat portfolio dan pengalaman membangun aplikasi dengan teknologi React, Laravel, dan PHP."
         keywords="Website Sekolah, Aplikasi Pendidikan, React Developer, Laravel Developer, Garut, Jawa Barat, Indonesia"
-        canonical="https://agitrahadian.my.id/"
+        canonical={siteUrl}
         structuredData={structuredData}
       >
-        {/* Meta tags khusus untuk Home */}
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
         <meta name="google" content="notranslate" />
-        <meta name="revisit-after" content="7 days" />
       </SEO>
 
       <Navbar />

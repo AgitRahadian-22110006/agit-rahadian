@@ -17,10 +17,12 @@ function Portfolio() {
   const listSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Portfolio – Agit Rahadian",
-    description:
+    "@id": "https://agitrahadian.my.id/portfolio#ItemList",
+    "url": "https://agitrahadian.my.id/portfolio",
+    "name": "Portfolio – Agit Rahadian",
+    "description":
       "Lihat proyek-proyek portofolio Agit Rahadian: website sekolah, aplikasi madrasah, dan sistem informasi akademik.",
-    itemListElement: itemListElements,
+    "itemListElement": itemListElements,
   };
 
   return (
@@ -30,7 +32,7 @@ function Portfolio() {
         description="Lihat portfolio Agit Rahadian, Full-Stack Developer dari Garut: koleksi proyek website sekolah, aplikasi madrasah, dan sistem informasi akademik."
         keywords="Portfolio, Web Development, Agit Rahadian, Aplikasi Pendidikan, Sistem Informasi Akademik"
         ogImage="https://agitrahadian.my.id/assets/portfolio1.webp"
-        canonical="/portfolio"
+        canonical="https://agitrahadian.my.id/portfolio"
         structuredData={listSchema}
       />
 
@@ -43,7 +45,7 @@ function Portfolio() {
 
         <div className="grid">
           {portfolioList.map((item) => (
-            <div className="item" key={item.id}>
+            <div className="item" key={item.id} itemProp="itemListElement">
               <article className="box">
                 <Link
                   to={`/portfolio/${item.id}`}

@@ -24,12 +24,12 @@ function Header() {
       {
         "@type": "EducationalOrganization",
         "name": "STMIK Mardira Indonesia",
-        "department": "Teknik Informatika - Prodi Sistem Informasi"
+        "department": "Teknik Informatika – Sistem Informasi"
       },
       {
         "@type": "EducationalOrganization",
         "name": "SMA Negeri 10 Garut",
-        "department": "Jurusan IPA"
+        "department": "IPA"
       }
     ],
     "knowsAbout": ["Web Development", "React", "Laravel", "PHP", "MySQL", "JavaScript", "CSS3", "HTML5"],
@@ -41,7 +41,7 @@ function Header() {
       "@type": "PostalAddress",
       "addressLocality": "Garut",
       "addressRegion": "Jawa Barat",
-      "addressCountry": "Indonesia"
+      "addressCountry": "ID"
     },
     "sameAs": [
       "https://github.com/agitrahadian-22110006",
@@ -56,7 +56,7 @@ function Header() {
       <SEO
         title="Full-Stack Web Developer | Portfolio Resmi"
         description="Agit Rahadian adalah Full-Stack Web Developer dari Garut yang mengkhususkan diri dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital untuk meningkatkan kualitas pendidikan di Indonesia."
-        keywords="Agit Rahadian, Full-Stack Developer, Web Developer, Programmer, Digital Solutions, Responsive Design, Website Sekolah, Aplikasi Pendidikan"
+        keywords="Agit Rahadian, Full-Stack Developer, Web Developer, Programmer, Website Sekolah, Aplikasi Pendidikan, Freelance Developer"
         ogImage="https://agitrahadian.my.id/assets/profile-picture.avif"
         ogType="website"
         canonical="/"
@@ -85,10 +85,9 @@ function Header() {
         <p className="bio">
           Hai, saya <strong>Agit Rahadian</strong>, Full-Stack Web Developer<br />
           yang fokus menciptakan solusi digital praktis dan user-friendly.<br />
-          Dengan pengalaman membangun situs profil sekolah hingga aplikasi internal,<br />
-          saya mengutamakan clean code, performa optimal, dan desain responsif<br />
-          yang meningkatkan engagement pengguna.<br />
-          Ayo wujudkan ide digitalmu bersama saya!
+          Pengalaman saya meliputi pengembangan situs profil sekolah hingga aplikasi internal<br />
+          dengan fokus pada clean code, performa optimal, dan desain responsif.<br />
+          Mari wujudkan ide digital Anda bersama saya!
         </p>
 
         <div className="contact-buttons">
@@ -122,8 +121,8 @@ function Header() {
           <ul>
             <li>SD Sindangsari 2</li>
             <li>SMP Negeri 1 Leuwigoong</li>
-            <li>SMA Negeri 10 Garut (Jurusan IPA)</li>
-            <li>S1 Teknik Informatika – Prodi Sistem Informasi, STMIK Mardira Indonesia</li>
+            <li>SMA Negeri 10 Garut (IPA)</li>
+            <li>STMIK Mardira Indonesia (S1 – Sistem Informasi)</li>
           </ul>
         </div>
 
