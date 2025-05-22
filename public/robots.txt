@@ -3,12 +3,4 @@
 User-agent: *
 Allow: /
 
-# Disallow akses ke file sensitif atau internal
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: /vite.config.*
-Disallow: /package*.json
-Disallow: /README.md
-
-# Sitemap location (sangat penting untuk SEO)
 Sitemap: https://agitrahadian.my.id/sitemap.xml
