@@ -12,6 +12,3 @@ Disallow: /README.md
 
 # Sitemap location (sangat penting untuk SEO)
 Sitemap: https://agitrahadian.my.id/sitemap.xml
-
-# Host directive (opsional tapi bermanfaat untuk beberapa crawler)
-Host: https://agitrahadian.my.id
