@@ -40,6 +40,41 @@ function PortfolioPage() {
 }
 
 function App() {
+  const schemaData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Agit Rahadian",
+      "url": "https://agitrahadian.my.id/",
+      "logo": "https://agitrahadian.my.id/android-chrome-512x512.png",
+      "jobTitle": "Full-Stack Web Developer",
+      "sameAs": [
+        "https://github.com/agitrahadian-22110006",
+        "https://www.instagram.com/agitrhdn",
+        "https://www.tiktok.com/@agitrahadian",
+        "https://www.facebook.com/share/16HuZskNh5/",
+        "https://wa.me/6287758263820"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Agit Rahadian",
+      "url": "https://agitrahadian.my.id/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://agitrahadian.my.id/android-chrome-512x512.png"
+      },
+      "sameAs": [
+        "https://github.com/agitrahadian-22110006",
+        "https://www.instagram.com/agitrhdn",
+        "https://www.tiktok.com/@agitrahadian",
+        "https://www.facebook.com/share/16HuZskNh5/",
+        "https://wa.me/6287758263820"
+      ]
+    }
+  ];
+
   return (
     <HelmetProvider>
       <Helmet>
@@ -62,21 +97,7 @@ function App() {
         <meta property="og:url" content="https://agitrahadian.my.id/" />
         <meta property="og:image" content="https://agitrahadian.my.id/og/profile-picture.avif" />
         <script type="application/ld+json">
-          {`{
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Agit Rahadian",
-            "url": "https://agitrahadian.my.id/",
-            "logo": "https://agitrahadian.my.id/android-chrome-512x512.png",
-            "jobTitle": "Full-Stack Web Developer",
-            "sameAs": [
-              "https://github.com/agitrahadian-22110006",
-              "https://www.instagram.com/agitrhdn",
-              "https://www.tiktok.com/@agitrahadian",
-              "https://www.facebook.com/share/16HuZskNh5/",
-              "https://wa.me/6287758263820"
-            ]
-          }`}
+          {JSON.stringify(schemaData)}
         </script>
       </Helmet>
 
@@ -88,7 +109,7 @@ function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/about" element={<About />} />
             <Route path="/tugas" element={<Tugas />} />
-            <Route path="/tugas/:id" element={<Tugas1 />} /> 
+            <Route path="/tugas/:id" element={<Tugas1 />} />
           </Routes>
         </BrowserRouter>
       </Suspense>

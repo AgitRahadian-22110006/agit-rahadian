@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 import '../styles/tugas.css';
 import profileImg from '../assets/profile-picture.avif';
 import tugasList from '../data/TugasData';
@@ -25,7 +26,40 @@ export default function Tugas() {
     "description": "Daftar tugas dan materi yang dibawakan oleh Agit Rahadian, Full-Stack Web Developer."
   };
 
-  const structuredData = [breadcrumbSchema, webpageSchema];
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Agit Rahadian",
+    "url": "https://agitrahadian.my.id",
+    "image": "https://agitrahadian.my.id/assets/profile-picture.avif",
+    "jobTitle": "Full-Stack Web Developer",
+    "alumniOf": "STMIK Mardira Indonesia",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Garut",
+      "addressRegion": "Jawa Barat",
+      "addressCountry": "ID"
+    }
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Agit Rahadian Digital",
+    "url": "https://agitrahadian.my.id",
+    "logo": "https://agitrahadian.my.id/assets/profile-picture.avif",
+    "founder": {
+      "@type": "Person",
+      "name": "Agit Rahadian"
+    }
+  };
+
+  const structuredData = [
+    breadcrumbSchema,
+    webpageSchema,
+    personSchema,
+    organizationSchema
+  ];
 
   return (
     <>
@@ -33,7 +67,7 @@ export default function Tugas() {
         title="Halaman Tugas"
         description="Daftar tugas dan materi yang dibawakan oleh Agit Rahadian, Full-Stack Web Developer."
         keywords="Tugas, Materi, Agit Rahadian, Full-Stack Web Developer"
-        canonical="/tugas"
+        canonical="https://agitrahadian.my.id/tugas"
         structuredData={structuredData}
       />
 
@@ -78,6 +112,7 @@ export default function Tugas() {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

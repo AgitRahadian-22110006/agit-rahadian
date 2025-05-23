@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 import '../styles/IsiTugas.css';
 import tugasList from '../data/TugasData';
 
@@ -27,7 +28,41 @@ export default function Tugas1() {
     "description": tugas.description
   };
 
-  const structuredData = [breadcrumbSchema, webpageSchema, tugas.structuredData];
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Agit Rahadian",
+    "url": "https://agitrahadian.my.id",
+    "image": "https://agitrahadian.my.id/assets/profile-picture.avif",
+    "jobTitle": "Full-Stack Web Developer",
+    "alumniOf": "STMIK Mardira Indonesia",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Garut",
+      "addressRegion": "Jawa Barat",
+      "addressCountry": "ID"
+    }
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Agit Rahadian Digital",
+    "url": "https://agitrahadian.my.id",
+    "logo": "https://agitrahadian.my.id/assets/profile-picture.avif",
+    "founder": {
+      "@type": "Person",
+      "name": "Agit Rahadian"
+    }
+  };
+
+  const structuredData = [
+    breadcrumbSchema,
+    webpageSchema,
+    personSchema,
+    organizationSchema,
+    tugas.structuredData
+  ];
 
   return (
     <>
@@ -35,7 +70,7 @@ export default function Tugas1() {
         title={`Detail ${tugas.title}`}
         description={tugas.description}
         keywords="Logika First Order, FOL, Tugas 1, Agit Rahadian"
-        canonical={tugas.link}
+        canonical={`https://agitrahadian.my.id${tugas.link}`}
         structuredData={structuredData}
       />
 
@@ -127,6 +162,7 @@ export default function Tugas1() {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

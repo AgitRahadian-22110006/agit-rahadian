@@ -9,6 +9,7 @@ import '../styles/DetailPortfolio.css';
 function DetailPortfolio() {
   const { id } = useParams();
   const item = portfolioList.find((p) => p.id === Number(id));
+  const siteUrl = 'https://agitrahadian.my.id';
 
   if (!item) {
     return (
@@ -16,7 +17,7 @@ function DetailPortfolio() {
         <SEO
           title="Portfolio Tidak Ditemukan"
           description="Halaman portfolio yang Anda cari tidak ditemukan. Silakan kembali ke halaman utama untuk melihat proyek lainnya."
-          canonical="https://agitrahadian.my.id/404"
+          canonical={`${siteUrl}/404`}
         >
           <meta name="robots" content="noindex, follow" />
         </SEO>
@@ -30,34 +31,90 @@ function DetailPortfolio() {
     );
   }
 
-  // Schema: CreativeWork + Breadcrumb
+  // Schema: CreativeWork
   const projectSchema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    "@id": `https://agitrahadian.my.id/portfolio/${item.id}`,
+    "@id": `${siteUrl}/portfolio/${item.id}`,
     "name": item.title,
     "headline": item.title,
     "description": item.description,
     "image": item.images[0]?.src,
-    "url": `https://agitrahadian.my.id/portfolio/${item.id}`,
+    "url": `${siteUrl}/portfolio/${item.id}`,
     "author": {
       "@type": "Person",
       "name": "Agit Rahadian",
-      "url": "https://agitrahadian.my.id"
+      "url": siteUrl
     }
   };
 
+  // Schema: BreadcrumbList
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://agitrahadian.my.id/" },
-      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://agitrahadian.my.id/portfolio" },
-      { "@type": "ListItem", "position": 3, "name": item.title, "item": `https://agitrahadian.my.id/portfolio/${item.id}` }
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": `${siteUrl}/` },
+      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": `${siteUrl}/portfolio` },
+      { "@type": "ListItem", "position": 3, "name": item.title, "item": `${siteUrl}/portfolio/${item.id}` }
     ]
   };
 
-  const structuredData = [projectSchema, breadcrumbSchema];
+  // Schema: Person
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Agit Rahadian",
+    url: siteUrl,
+    image: `${siteUrl}/android-chrome-512x512.png`,
+    jobTitle: "Full-Stack Web Developer",
+    sameAs: [
+      "https://github.com/agitrahadian-22110006",
+      "https://www.instagram.com/agitrhdn",
+      "https://www.tiktok.com/@agitrahadian",
+      "https://www.facebook.com/share/16HuZskNh5/",
+      "https://wa.me/6287758263820"
+    ],
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/portfolio/${item.id}`
+    }
+  };
+
+  // Schema: Organization
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Agit Rahadian",
+    url: siteUrl,
+    logo: `${siteUrl}/android-chrome-512x512.png`,
+    sameAs: personSchema.sameAs
+  };
+
+  // Schema: WebSite
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Agit Rahadian",
+    url: siteUrl,
+    logo: `${siteUrl}/android-chrome-512x512.png`,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/?s={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Agit Rahadian"
+    }
+  };
+
+  const structuredData = [
+    projectSchema,
+    breadcrumbSchema,
+    personSchema,
+    organizationSchema,
+    websiteSchema
+  ];
 
   return (
     <>
@@ -66,7 +123,7 @@ function DetailPortfolio() {
         description={`${item.description} Lihat detail proyek ${item.title} oleh Agit Rahadian, Full-Stack Web Developer asal Garut yang berspesialisasi dalam pengembangan solusi digital.`}
         keywords={`${item.title}, Web Development, Portofolio, Agit Rahadian, Garut`}
         ogImage={item.images[0]?.src}
-        canonical={`https://agitrahadian.my.id/portfolio/${item.id}`}
+        canonical={`${siteUrl}/portfolio/${item.id}`}
         structuredData={structuredData}
       >
         <meta name="robots" content="index, follow" />

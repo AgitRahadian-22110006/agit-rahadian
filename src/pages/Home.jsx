@@ -10,7 +10,7 @@ function Home() {
   const siteUrl = 'https://agitrahadian.my.id';
 
   // Schema: Person
-  const organizationSchema = {
+  const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Agit Rahadian",
@@ -43,6 +43,22 @@ function Home() {
     }
   };
 
+  // Schema: Organization (untuk logo Google)
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Agit Rahadian",
+    url: siteUrl,
+    logo: `${siteUrl}/android-chrome-512x512.png`,
+    sameAs: [
+      "https://github.com/agitrahadian-22110006",
+      "https://www.instagram.com/agitrhdn",
+      "https://www.tiktok.com/@agitrahadian",
+      "https://www.facebook.com/share/16HuZskNh5/",
+      "https://wa.me/6287758263820"
+    ]
+  };
+
   // Schema: Breadcrumb
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -57,7 +73,7 @@ function Home() {
     ]
   };
 
-  // Schema: WebSite + logo + search (optional)
+  // Schema: WebSite
   const webSiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -76,7 +92,7 @@ function Home() {
   };
 
   // Combine all schemas
-  const structuredData = [organizationSchema, breadcrumbSchema, webSiteSchema];
+  const structuredData = [personSchema, organizationSchema, breadcrumbSchema, webSiteSchema];
 
   return (
     <>

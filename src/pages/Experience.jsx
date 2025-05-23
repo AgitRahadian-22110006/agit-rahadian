@@ -7,37 +7,113 @@ import { SiNextdotjs } from "react-icons/si";
 import '../styles/Experience.css';
 
 function Experience() {
-  // Breadcrumb schema JSON-LD
+  const siteUrl = 'https://agitrahadian.my.id';
+
+  // Schema: Breadcrumb
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Beranda",
-        "item": "https://agitrahadian.my.id/"
+        position: 1,
+        name: "Beranda",
+        item: siteUrl
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Pengalaman",
-        "item": "https://agitrahadian.my.id/experience"
+        position: 2,
+        name: "Pengalaman",
+        item: `${siteUrl}/experience`
       }
     ]
   };
 
-  // WebPage schema JSON-LD
+  // Schema: WebPage
   const webpageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://agitrahadian.my.id/experience",
-    "url": "https://agitrahadian.my.id/experience",
-    "name": "Pengalaman Kerja – Agit Rahadian",
-    "description": "Lihat pengalaman kerja Agit Rahadian sebagai Full-Stack Web Developer, termasuk pengembangan website sekolah, aplikasi internal, dan kontribusi pada solusi digital pendidikan."
+    "@id": `${siteUrl}/experience`,
+    url: `${siteUrl}/experience`,
+    name: "Pengalaman Kerja – Agit Rahadian",
+    description: "Lihat pengalaman kerja Agit Rahadian sebagai Full-Stack Web Developer, termasuk pengembangan website sekolah, aplikasi internal, dan kontribusi pada solusi digital pendidikan."
   };
 
-  const structuredData = [breadcrumbSchema, webpageSchema];
+  // Schema: Person
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Agit Rahadian",
+    url: siteUrl,
+    logo: `${siteUrl}/android-chrome-512x512.png`,
+    image: `${siteUrl}/android-chrome-512x512.png`,
+    sameAs: [
+      "https://github.com/agitrahadian-22110006",
+      "https://www.instagram.com/agitrhdn",
+      "https://www.tiktok.com/@agitrahadian",
+      "https://www.facebook.com/share/16HuZskNh5/",
+      "https://wa.me/6287758263820"
+    ],
+    jobTitle: "Full-Stack Web Developer",
+    alumniOf: {
+      "@type": "EducationalOrganization",
+      name: "STMIK Mardira Indonesia",
+      department: "Teknik Informatika - Prodi Sistem Informasi"
+    },
+    description: "Full-Stack Web Developer dari Garut yang berspesialisasi dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital praktis.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Garut",
+      addressRegion: "Jawa Barat",
+      addressCountry: "Indonesia"
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/experience`
+    }
+  };
+
+  // Schema: Organization
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Agit Rahadian",
+    url: siteUrl,
+    logo: `${siteUrl}/android-chrome-512x512.png`,
+    sameAs: [
+      "https://github.com/agitrahadian-22110006",
+      "https://www.instagram.com/agitrhdn",
+      "https://www.tiktok.com/@agitrahadian",
+      "https://www.facebook.com/share/16HuZskNh5/",
+      "https://wa.me/6287758263820"
+    ]
+  };
+
+  // Schema: WebSite
+  const webSiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Agit Rahadian",
+    url: siteUrl,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/?s={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Agit Rahadian"
+    },
+    logo: `${siteUrl}/android-chrome-512x512.png`
+  };
+
+  const structuredData = [
+    breadcrumbSchema,
+    webpageSchema,
+    personSchema,
+    organizationSchema,
+    webSiteSchema
+  ];
 
   return (
     <>
@@ -45,7 +121,7 @@ function Experience() {
         title="Pengalaman Kerja – Agit Rahadian"
         description="Lihat pengalaman kerja Agit Rahadian sebagai Full-Stack Web Developer, termasuk pengembangan website sekolah, aplikasi internal, dan kontribusi pada solusi digital pendidikan."
         keywords="Agit Rahadian, pengalaman kerja, Full-Stack Web Developer, React, Laravel, PHP, Pendidikan, Digital Solutions"
-        canonical="https://agitrahadian.my.id/experience"
+        canonical={`${siteUrl}/experience`}
         structuredData={structuredData}
       />
 
