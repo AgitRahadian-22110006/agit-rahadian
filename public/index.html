@@ -79,17 +79,23 @@
     }
     </script>
 
-    <!-- Fonts Optimization -->
+    <!-- Fonts Optimization dengan preload + penggabungan request -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload dan onload stylesheet sekaligus untuk performa lebih cepat -->
     <link
-      href="https://fonts.googleapis.com/css?family=Kanit&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Kanit&family=Nunito+Sans:opsz,wght@6..12,300&display=swap"
+      as="style"
+      onload="this.rel='stylesheet'"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito+Sans:opsz,wght@6..12,300&display=swap"
-      rel="stylesheet"
-    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Kanit&family=Nunito+Sans:opsz,wght@6..12,300&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <!-- NOTE: Jangan preload atau link CSS build manual!
          Vite akan inject file CSS otomatis saat build produksi -->
