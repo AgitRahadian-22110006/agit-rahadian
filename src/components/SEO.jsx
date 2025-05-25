@@ -9,11 +9,12 @@ const SEO = ({
   canonical,
   structuredData,
   favicon = "/favicon.ico", // default favicon path di public/
+  preloadImages = [],       // array url gambar untuk preload
 }) => {
   // Jika keywords array, gabung jadi string
   const keywordsContent = Array.isArray(keywords) ? keywords.join(', ') : keywords;
 
-  // Structured data JSON-LD harus berupa string
+  // Structured data JSON-LD harus berupa string/script tag
   const jsonLd = Array.isArray(structuredData)
     ? structuredData.map((data, i) => (
         <script
@@ -41,7 +42,18 @@ const SEO = ({
       {/* Favicon */}
       <link rel="icon" href={favicon} />
 
-      {/* Open Graph for social media */}
+      {/* Preload images */}
+      {preloadImages.map((imgSrc, i) => (
+        <link
+          key={`preload-img-${i}`}
+          rel="preload"
+          as="image"
+          href={imgSrc}
+          fetchpriority="high"
+        />
+      ))}
+
+      {/* Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
@@ -68,6 +80,7 @@ SEO.propTypes = {
     PropTypes.arrayOf(PropTypes.object),
   ]),
   favicon: PropTypes.string,
+  preloadImages: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default SEO;

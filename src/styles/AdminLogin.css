@@ -1,11 +1,17 @@
-/* styles/AdminLogin.css */
+/* Reset box-sizing untuk konsistensi layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .admin-login-container {
   max-width: 400px;
-  margin: 6rem auto;
-  padding: 2.5rem 2rem;
+  margin: 4rem auto;
+  padding: 2rem;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
   color: #111;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -75,7 +81,7 @@
 .btn-home {
   width: 100%;
   padding: 0.9rem;
-  margin-top: 20px;
+  margin-top: 1rem;
   border: none;
   background-color: #666666;
   color: white;
@@ -89,4 +95,23 @@
 
 .btn-home:hover {
   background-color: #444444;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .admin-login-container {
+    margin: 2rem 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .admin-login-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .admin-login-form input,
+  .admin-login-form button,
+  .btn-home {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
 }

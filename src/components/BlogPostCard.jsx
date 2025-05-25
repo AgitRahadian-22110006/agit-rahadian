@@ -15,8 +15,9 @@ const BlogPostCard = ({ post }) => {
   };
 
   return (
-    <article className="blog-card">
+    <article className="blog-card" aria-label={`Post: ${title}`}>
       <h2 className="blog-card-title">{title}</h2>
+
       <p className="blog-card-excerpt">{excerpt}</p>
 
       <div className="blog-card-meta">
@@ -26,7 +27,7 @@ const BlogPostCard = ({ post }) => {
         </time>
       </div>
 
-      <Link to={`/blog/${slug}`} className="blog-card-button">
+      <Link to={`/blog/${slug}`} className="blog-card-button" aria-label={`Baca selengkapnya tentang ${title}`}>
         Baca Selengkapnya →
       </Link>
     </article>

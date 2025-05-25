@@ -139,6 +139,20 @@
   margin-top: 5rem;
 }
 
+/* Tombol Kembali */
+.back-button {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #00bfff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
 /* Responsive untuk layar kecil */
 @media (max-width: 600px) {
   .post-detail-container {
@@ -147,19 +161,40 @@
   }
 
   .post-title {
-    font-size: 2.2rem;
+    font-size: 1.6rem; /* lebih kecil untuk mobile */
+    margin-bottom: 0.8rem;
   }
 
   .post-meta {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    margin-bottom: 1.8rem;
   }
 
   .post-content {
-    font-size: 1rem;
+    font-size: 0.9rem; /* lebih kecil untuk mobile */
+    line-height: 1.4;
+    margin-bottom: 3rem;
+  }
+
+  .post-content p {
+    margin-bottom: 1.1rem;
+  }
+
+  .back-button {
+    font-size: 0.85rem;
+    padding: 0.45rem 0.9rem;
+  }
+
+  /* Like bar */
+  .post-like-row {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
   }
 }
+
 /* Like bar di bawah judul dan meta */
 .post-like-row {
   display: flex;

@@ -42,28 +42,30 @@ const PostDetail = () => {
   const contentToRender = decodeHtml(post.content);
 
   return (
-    <article className="post-detail-container" itemScope itemType="http://schema.org/Article">
-      <button
-      onClick={() => navigate('/blog')}
-      style={{
-        marginBottom: '1.5rem',
-        padding: '0.5rem 1rem',
-        backgroundColor: '#00bfff',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '8px',
-        cursor: 'pointer',
-        fontWeight: '600',
-      }}
-      aria-label="Kembali ke Blog"
+    <article
+      className="post-detail-container"
+      itemScope
+      itemType="http://schema.org/Article"
     >
-      ← Kembali ke Blog
-    </button>
+      <button
+        onClick={() => navigate('/blog')}
+        className="back-button"
+        aria-label="Kembali ke Blog"
+      >
+        ← Kembali ke Blog
+      </button>
 
       <header>
-        <h1 className="post-title" itemProp="headline">{post.title}</h1>
+        <h1 className="post-title" itemProp="headline">
+          {post.title}
+        </h1>
         <div className="post-meta">
-          <span className="post-author" itemProp="author" itemScope itemType="http://schema.org/Person">
+          <span
+            className="post-author"
+            itemProp="author"
+            itemScope
+            itemType="http://schema.org/Person"
+          >
             Ditulis oleh: <strong itemProp="name">{post.author || 'Anonim'}</strong>
           </span>
           <time className="post-date" dateTime={post.created_at} itemProp="datePublished">
@@ -77,7 +79,7 @@ const PostDetail = () => {
       </header>
 
       {/* Like button */}
-      <div className="like-wrapper">
+      <div className="post-like-row">
         <span className="like-label"></span>
         <LikeButton postId={post.id} />
       </div>
