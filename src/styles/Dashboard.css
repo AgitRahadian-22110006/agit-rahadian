@@ -1,0 +1,267 @@
+/* styles/dashboard.css */
+.admin-dashboard {
+  padding: 2rem;
+  background-color: #111;
+  color: #f9f9f9;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* HEADER */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  flex-grow: 1;
+  min-width: 220px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.admin-actions button {
+  padding: 0.6rem 1.2rem;
+  background: #1f6feb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.admin-actions button:hover {
+  background-color: #144db8;
+}
+
+.admin-actions button.danger {
+  background: #e63946;
+}
+
+.admin-actions button.danger:hover {
+  background-color: #b83139;
+}
+
+/* Tambahan untuk tombol warning */
+.post-actions button.warning {
+  background: #f4a261;
+  color: #222;
+}
+
+.post-actions button.warning:hover {
+  background: #e07a36;
+  color: white;
+}
+
+/* STATS */
+.dashboard-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: #222;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  flex: 1 1 150px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(31, 111, 235, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.stat-box h3 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #1f6feb;
+  font-weight: 700;
+}
+
+.stat-box p {
+  margin: 0.3rem 0 0 0;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* SEARCH BAR */
+.search-bar {
+  position: relative;
+  margin-bottom: 1.5rem;
+  max-width: 400px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.6rem 2.5rem 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+}
+
+/* POST LIST */
+.post-list {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.post-card {
+  background: #222;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(31, 111, 235, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  box-shadow: 0 0 12px rgba(31, 111, 235, 0.8);
+}
+
+.post-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  color: #1f6feb;
+}
+
+.post-card p {
+  color: #ddd;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  min-height: 48px;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.post-actions button {
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: #1f6feb;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.post-actions button:hover {
+  background-color: #144db8;
+}
+
+.post-actions button.danger {
+  background: #e63946;
+}
+
+.post-actions button.danger:hover {
+  background-color: #b83139;
+}
+
+/* COMMENTS MANAGEMENT */
+.comments-management {
+  margin-top: 3rem;
+}
+
+.comments-management h2 {
+  color: #1f6feb;
+  margin-bottom: 1rem;
+}
+
+.comments-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(31, 111, 235, 0.5);
+}
+
+.comment-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #144db8;
+  color: #ddd;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-item div p {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.comment-item div small {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.comment-item button.danger {
+  background: #e63946;
+  border: none;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  align-self: center;
+}
+
+.comment-item button.danger:hover {
+  background-color: #b83139;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .dashboard-stats {
+    flex-direction: column;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+}

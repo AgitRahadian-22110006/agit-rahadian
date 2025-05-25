@@ -1,14 +1,16 @@
 // src/App.jsx
-import './App.css';
-import './styles/blog.css'; // pastikan blog.css kamu import juga
-
-import { SpeedInsights } from '@vercel/speed-insights/react';
-import { Suspense, lazy } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
+import './App.css';
+import './styles/blog.css';
+
+// Data portfolio untuk halaman dinamis portfolio detail
 import { portfolioList } from './data/DataPortfolio';
 
-// Lazy load halaman yang sudah ada
+// Lazy loading halaman portfolio & umum
 const Home = lazy(() => import('./pages/Home'));
 const DetailPortfolio = lazy(() => import('./pages/DetailPortfolio'));
 const Experience = lazy(() => import('./pages/Experience'));
@@ -16,16 +18,17 @@ const About = lazy(() => import('./components/About'));
 const Tugas = lazy(() => import('./pages/Tugas'));
 const Tugas1 = lazy(() => import('./pages/Tugas1'));
 
-// Lazy load halaman baru untuk blog dan admin
+// Lazy loading halaman blog & admin
 const Blog = lazy(() => import('./pages/Blog'));
 const PostDetail = lazy(() => import('./pages/PostDetail'));
 const AdminLogin = lazy(() => import('./pages/Login'));
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
 
-// Dynamic portfolio page with metadata
+// Komponen dinamis untuk halaman portfolio detail dengan SEO metadata
 function PortfolioPage() {
   const { id } = useParams();
   const project = portfolioList.find(p => p.id.toString() === id) || {};
+  
   const title = project.title ? `${project.title} – Agit Rahadian` : 'Portfolio – Agit Rahadian';
   const description = project.description || 'Detail proyek saya sebagai Full-Stack Web Developer.';
   const imageUrl = project.images?.[0]?.src || 'https://agitrahadian.my.id/og/portfolio1.avif';
@@ -71,7 +74,8 @@ function App() {
         <meta property="og:url" content="https://agitrahadian.my.id/" />
         <meta property="og:image" content="https://agitrahadian.my.id/og/profile-picture.avif" />
         <script type="application/ld+json">
-          {`{
+          {`
+          {
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Agit Rahadian",
@@ -85,14 +89,15 @@ function App() {
               "https://www.facebook.com/share/16HuZskNh5/",
               "https://wa.me/6287758263820"
             ]
-          }`}
+          }
+          `}
         </script>
       </Helmet>
 
       <Suspense fallback={<div className="loading">Loading...</div>}>
         <BrowserRouter>
           <Routes>
-            {/* Portfolio & umum */}
+            {/* Halaman utama dan portfolio */}
             <Route path="/" element={<Home />} />
             <Route path="/portfolio/:id" element={<PortfolioPage />} />
             <Route path="/experience" element={<Experience />} />
@@ -100,9 +105,11 @@ function App() {
             <Route path="/tugas" element={<Tugas />} />
             <Route path="/tugas/:id" element={<Tugas1 />} />
 
-            {/* Blog & Admin */}
+            {/* Halaman blog */}
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<PostDetail />} />
+
+            {/* Halaman admin */}
             <Route path="/admin" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
           </Routes>

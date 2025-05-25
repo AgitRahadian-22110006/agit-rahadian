@@ -1,0 +1,92 @@
+/* styles/AdminLogin.css */
+.admin-login-container {
+  max-width: 400px;
+  margin: 6rem auto;
+  padding: 2.5rem 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  color: #111;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-login-container h1 {
+  font-size: 1.9rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.admin-login-form input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  background: #fff;
+  color: #111;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.admin-login-form input::placeholder {
+  color: #999;
+}
+
+.admin-login-form input:focus {
+  border-color: #0070f3;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 112, 243, 0.4);
+}
+
+.admin-login-form button {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  background-color: #0070f3;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: inherit;
+}
+
+.admin-login-form button:hover {
+  background-color: #005bb5;
+}
+
+.error {
+  color: #d93025;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Styling tombol kembali ke Home */
+.btn-home {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 20px;
+  border: none;
+  background-color: #666666;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.3s ease;
+}
+
+.btn-home:hover {
+  background-color: #444444;
+}

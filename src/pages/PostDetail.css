@@ -1,0 +1,176 @@
+/* Container utama, cukup lebar, tanpa card / box shadow */
+.post-detail-container {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+  color: #1e1e2e;
+  background: none; /* polos tanpa background */
+  font-family: 'Georgia', serif;
+  line-height: 1.75;
+  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Judul artikel */
+.post-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #0b1236;
+  text-align: left;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+/* Meta data (penulis & tanggal) */
+.post-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  font-weight: 500;
+}
+
+.post-author {
+  color: #1a1a40;
+}
+
+.post-date {
+  font-style: italic;
+  color: #888;
+}
+
+/* Konten artikel */
+.post-content {
+  font-size: 1.18rem;
+  color: #2c2c3a;
+  white-space: pre-wrap;
+  margin-bottom: 4rem;
+}
+
+/* Paragraf */
+.post-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Heading h2, h3 */
+.post-content h2,
+.post-content h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  color: #151535;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+}
+
+/* Link */
+.post-content a {
+  color: #00bfff;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.post-content a:hover,
+.post-content a:focus {
+  color: #008fcc;
+  outline: none;
+  text-decoration: none;
+}
+
+/* Gambar responsif */
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 8px 15px rgba(0, 191, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.post-content img:hover {
+  transform: scale(1.03);
+}
+
+/* List (unordered dan ordered) */
+.post-content ul,
+.post-content ol {
+  margin-left: 1.75rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  color: #55596e;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* List item */
+.post-content li {
+  margin-bottom: 0.6rem;
+}
+
+/* Blockquote */
+.post-content blockquote {
+  border-left: 5px solid #00bfff;
+  padding-left: 1.2rem;
+  color: #666a8e;
+  font-style: italic;
+  margin: 2rem 0;
+  background-color: #e7f3ff;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 191, 255, 0.1);
+}
+
+/* Like button dan interaksi lain */
+.post-interactions {
+  margin-bottom: 3rem;
+}
+
+/* Loading dan error */
+.post-loading,
+.post-error {
+  color: #888;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 5rem;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 600px) {
+  .post-detail-container {
+    padding: 0 1rem;
+    margin: 1.5rem auto;
+  }
+
+  .post-title {
+    font-size: 2.2rem;
+  }
+
+  .post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .post-content {
+    font-size: 1rem;
+  }
+}
+/* Like bar di bawah judul dan meta */
+.post-like-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Label Like */
+.like-label {
+  font-weight: 600;
+  color: #1e1e2e;
+}

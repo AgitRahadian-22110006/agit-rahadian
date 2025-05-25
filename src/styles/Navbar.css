@@ -1,9 +1,9 @@
 :root {
-  --nav-bg: rgba(34, 40, 49, 0.9);
+  --nav-bg: rgba(24, 28, 35, 0.95);
   --nav-height: 70px;
-  --text-color: #f1f1f1; /* Lebih terang dari putih kusam */
-  --accent: #00bcd4; /* Lebih cerah & kontras tinggi */
-  --blur-amount: 10px;
+  --text-color: #e0e0e0;
+  --accent: #4dd0e1;
+  --blur-amount: 12px;
   --transition: 0.3s ease;
   --font-main: 'Inter', sans-serif;
 }
@@ -15,7 +15,7 @@ nav {
   height: var(--nav-height);
   background: var(--nav-bg);
   backdrop-filter: blur(var(--blur-amount));
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   z-index: 1000;
   font-family: var(--font-main);
   transition: background var(--transition);
@@ -33,7 +33,7 @@ nav .wrapper {
 
 /* Logo */
 nav .logo {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--text-color);
   text-decoration: none;
@@ -41,9 +41,21 @@ nav .logo {
   align-items: center;
   gap: 0.5rem;
   transition: color var(--transition);
-  order: 1; /* Pastikan logo selalu di kiri */
+  order: 1;
+  user-select: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-style: normal;
 }
-nav .logo:hover {
+nav .logo:hover,
+nav .logo:focus {
+  color: var(--accent);
+  outline: none;
+}
+
+/* Logo Icon */
+.logo-icon {
+  font-size: 1.8rem;
   color: var(--accent);
 }
 
@@ -51,38 +63,58 @@ nav .logo:hover {
 nav .menu ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   margin: 0;
   padding: 0;
-  order: 3; /* Pastikan menu berada di tengah */
+  order: 3;
+  user-select: none;
 }
 
 nav .menu ul li {
   position: relative;
 }
 
-nav .menu ul li a {
+/* Link styles */
+nav .menu ul li a,
+nav .menu ul li button.logout-button {
   color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
   transition: color var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  letter-spacing: 0.02em;
+  border-radius: 4px;
 }
+
+/* Hover & active states */
 nav .menu ul li a:hover,
-nav .menu ul li a.active {
+nav .menu ul li a.active,
+nav .menu ul li button.logout-button:hover {
   color: var(--accent);
+  outline-offset: 2px;
+  outline: 2px solid var(--accent);
+  background-color: rgba(77, 208, 225, 0.1);
 }
 
 /* Underline effect */
 nav .menu ul li a::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -5px;
   left: 50%;
   width: 0;
   height: 2px;
   background: var(--accent);
+  border-radius: 2px;
   transition: width var(--transition), left var(--transition);
+  pointer-events: none;
 }
 nav .menu ul li a:hover::after,
 nav .menu ul li a.active::after {
@@ -90,23 +122,29 @@ nav .menu ul li a.active::after {
   left: 0;
 }
 
-/* Hamburger */
+/* Hamburger button */
 nav .hamburger {
   display: none;
   background: none;
   border: none;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   color: var(--text-color);
   cursor: pointer;
   transition: color var(--transition);
-  order: 2; /* Pastikan hamburger di kanan */
-  z-index: 1100; /* Supaya di atas menu */
+  order: 2;
+  z-index: 1100;
+  user-select: none;
+  padding: 0.25rem;
+  border-radius: 6px;
 }
-nav .hamburger:hover {
+nav .hamburger:hover,
+nav .hamburger:focus {
   color: var(--accent);
+  outline-offset: 2px;
+  outline: 2px solid var(--accent);
 }
 
-/* Responsive */
+/* Responsive menu */
 @media (max-width: 1024px) {
   nav .wrapper {
     padding: 0 1rem;
@@ -117,9 +155,6 @@ nav .hamburger:hover {
   }
 
   nav .menu ul {
-    /* Jangan pakai display:none untuk animasi lebih halus */
-    opacity: 0;
-    visibility: hidden;
     flex-direction: column;
     background: var(--nav-bg);
     backdrop-filter: blur(var(--blur-amount));
@@ -127,16 +162,20 @@ nav .hamburger:hover {
     top: var(--nav-height);
     left: 0;
     width: 100%;
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
     margin: 0;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-    transform: translateY(-10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.4s var(--transition), transform 0.4s var(--transition), visibility 0.4s;
-    order: 3;
+    transition:
+      opacity 0.4s var(--transition),
+      transform 0.4s var(--transition),
+      visibility 0.4s;
+    gap: 0;
   }
 
-  /* Menu tampil ketika aktif */
   nav .menu.active ul {
     opacity: 1;
     visibility: visible;
@@ -144,13 +183,14 @@ nav .hamburger:hover {
     pointer-events: auto;
   }
 
-  nav .menu ul li a {
-    padding: 1rem 1.5rem;
-    font-size: 1.1rem;
+  nav .menu ul li a,
+  nav .menu ul li button.logout-button {
+    padding: 1rem 2rem;
+    font-size: 1.15rem;
   }
 
   nav .menu ul {
-    gap: 1; /* rapatkan item di menu */
+    gap: 0.5rem;
   }
 }
 
@@ -162,24 +202,60 @@ nav .hamburger:hover {
   nav .wrapper {
     padding-left: 1rem;
     padding-right: 1rem;
-    box-sizing: border-box; /* pastikan padding tidak menambah lebar */
   }
   nav .logo {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   nav .hamburger {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
   nav .menu ul {
-    flex-wrap: wrap; /* agar menu bisa pindah baris jika terlalu panjang */
+    flex-wrap: nowrap;
   }
-  nav .menu ul li a {
-    padding: 0.75rem 1.25rem;
+  nav .menu ul li a,
+  nav .menu ul li button.logout-button {
+    padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
 }
 
+/* Accessibility focus styles */
+nav .menu ul li a:focus,
+nav .menu ul li button.logout-button:focus,
+nav .logo:focus,
+nav .hamburger:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(77, 208, 225, 0.6);
+  border-radius: 6px;
+}
+
+/* Logout button specific focus & hover improvements */
+nav .menu ul li button.logout-button {
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  transition: background-color var(--transition), color var(--transition), box-shadow var(--transition);
+}
+
+nav .menu ul li button.logout-button:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+nav .menu ul li button.logout-button:focus {
+  background-color: rgba(77, 208, 225, 0.15);
+  color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(77, 208, 225, 0.7);
+  border-radius: 8px;
+}
+
+/* Animation for menu show */
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
