@@ -1,261 +1,118 @@
 :root {
-  --nav-bg: rgba(24, 28, 35, 0.95);
-  --nav-height: 70px;
-  --text-color: #e0e0e0;
+  --nav-height: 64px;
+  --nav-bg: rgba(20, 24, 28, 0.92);
+  --text-color: #eaeaea;
   --accent: #4dd0e1;
-  --blur-amount: 12px;
   --transition: 0.3s ease;
   --font-main: 'Inter', sans-serif;
 }
 
-nav {
+.navbar {
   position: sticky;
   top: 0;
   width: 100%;
-  height: var(--nav-height);
   background: var(--nav-bg);
-  backdrop-filter: blur(var(--blur-amount));
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
   z-index: 1000;
+  height: var(--nav-height);
   font-family: var(--font-main);
-  transition: background var(--transition);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-nav .wrapper {
+.navbar-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
 }
 
-/* Logo */
-nav .logo {
-  font-size: 1.6rem;
+.navbar-logo {
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-color);
-  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: color var(--transition);
-  order: 1;
-  user-select: none;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  font-style: normal;
-}
-nav .logo:hover,
-nav .logo:focus {
-  color: var(--accent);
-  outline: none;
-}
-
-/* Logo Icon */
-.logo-icon {
-  font-size: 1.8rem;
-  color: var(--accent);
-}
-
-/* Menu */
-nav .menu ul {
-  list-style: none;
-  display: flex;
-  gap: 2.5rem;
-  margin: 0;
-  padding: 0;
-  order: 3;
-  user-select: none;
-}
-
-nav .menu ul li {
-  position: relative;
-}
-
-/* Link styles */
-nav .menu ul li a,
-nav .menu ul li button.logout-button {
-  color: var(--text-color);
   text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 0;
-  font-size: 1rem;
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: color var(--transition);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  letter-spacing: 0.02em;
-  border-radius: 4px;
 }
 
-/* Hover & active states */
-nav .menu ul li a:hover,
-nav .menu ul li a.active,
-nav .menu ul li button.logout-button:hover {
+.logo-icon {
+  font-size: 1.7rem;
   color: var(--accent);
-  outline-offset: 2px;
-  outline: 2px solid var(--accent);
-  background-color: rgba(77, 208, 225, 0.1);
 }
 
-/* Underline effect */
-nav .menu ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 2px;
-  transition: width var(--transition), left var(--transition);
-  pointer-events: none;
-}
-nav .menu ul li a:hover::after,
-nav .menu ul li a.active::after {
-  width: 100%;
-  left: 0;
-}
-
-/* Hamburger button */
-nav .hamburger {
+.navbar-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   color: var(--text-color);
   cursor: pointer;
-  transition: color var(--transition);
-  order: 2;
-  z-index: 1100;
-  user-select: none;
-  padding: 0.25rem;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu li a,
+.logout-button {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 6px;
+  transition: background var(--transition), color var(--transition);
+  border: none;
+  background: none;
+  cursor: pointer;
 }
-nav .hamburger:hover,
-nav .hamburger:focus {
+
+.navbar-menu li a:hover,
+.navbar-menu li a.active,
+.logout-button:hover {
   color: var(--accent);
-  outline-offset: 2px;
-  outline: 2px solid var(--accent);
+  background: rgba(77, 208, 225, 0.1);
 }
 
-/* Responsive menu */
-@media (max-width: 1024px) {
-  nav .wrapper {
-    padding: 0 1rem;
-  }
-
-  nav .hamburger {
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+  .navbar-toggle {
     display: block;
   }
 
-  nav .menu ul {
-    flex-direction: column;
-    background: var(--nav-bg);
-    backdrop-filter: blur(var(--blur-amount));
+  .navbar-menu {
     position: absolute;
     top: var(--nav-height);
     left: 0;
     width: 100%;
-    padding: 0.75rem 0;
-    margin: 0;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-    transform: translateY(-20px);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition:
-      opacity 0.4s var(--transition),
-      transform 0.4s var(--transition),
-      visibility 0.4s;
-    gap: 0;
-  }
-
-  nav .menu.active ul {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-
-  nav .menu ul li a,
-  nav .menu ul li button.logout-button {
-    padding: 1rem 2rem;
-    font-size: 1.15rem;
-  }
-
-  nav .menu ul {
+    flex-direction: column;
+    background: var(--nav-bg);
+    padding: 1rem 0;
     gap: 0.5rem;
+    display: none;
   }
-}
 
-/* Smaller screens (mobile phones) */
-@media (max-width: 500px) {
-  nav {
-    height: 60px;
+  .navbar-menu.active {
+    display: flex;
   }
-  nav .wrapper {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  nav .logo {
-    font-size: 1.3rem;
-  }
-  nav .hamburger {
-    font-size: 1.7rem;
-  }
-  nav .menu ul {
-    flex-wrap: nowrap;
-  }
-  nav .menu ul li a,
-  nav .menu ul li button.logout-button {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-  }
-}
 
-/* Accessibility focus styles */
-nav .menu ul li a:focus,
-nav .menu ul li button.logout-button:focus,
-nav .logo:focus,
-nav .hamburger:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(77, 208, 225, 0.6);
-  border-radius: 6px;
-}
-
-/* Logout button specific focus & hover improvements */
-nav .menu ul li button.logout-button {
-  border-radius: 8px;
-  padding: 0.4rem 0.8rem;
-  transition: background-color var(--transition), color var(--transition), box-shadow var(--transition);
-}
-
-nav .menu ul li button.logout-button:hover {
-  background-color: var(--accent);
-  color: white;
-}
-
-nav .menu ul li button.logout-button:focus {
-  background-color: rgba(77, 208, 225, 0.15);
-  color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(77, 208, 225, 0.7);
-  border-radius: 8px;
-}
-
-/* Animation for menu show */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .navbar-menu li a,
+  .logout-button {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
   }
 }

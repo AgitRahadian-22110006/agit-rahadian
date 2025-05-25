@@ -3,7 +3,7 @@ import { FaBriefcase, FaBars } from 'react-icons/fa';
 import { IoCloseSharp } from 'react-icons/io5';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import { supabase } from '../services/supabaseClient'; // pastikan path benar
+import { supabase } from '../services/supabaseClient';
 import '../styles/Navbar.css';
 
 export default function Navbar() {
@@ -11,13 +11,11 @@ export default function Navbar() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  // Cek status login user saat komponen mount
   useEffect(() => {
-    const session = supabase.auth.getSession().then(({ data }) => {
+    supabase.auth.getSession().then(({ data }) => {
       setUser(data.session?.user ?? null);
     });
 
-    // Listening jika user login/logout
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null);
     });
@@ -30,93 +28,77 @@ export default function Navbar() {
   const toggleMenu = () => setMenuOpen(prev => !prev);
   const closeMenu = () => setMenuOpen(false);
 
-  // Logout function
   const handleLogout = async () => {
     await supabase.auth.signOut();
     setUser(null);
     closeMenu();
-    navigate('/'); // Redirect ke homepage setelah logout
+    navigate('/');
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    closeMenu();
   };
 
   return (
-    <nav role="navigation" aria-label="Main Navigation">
-      <div className="wrapper">
-        <NavLink to="/" className="logo" onClick={closeMenu} aria-label="Homepage">
+    <nav className="navbar" aria-label="Main navigation">
+      <div className="navbar-wrapper">
+        <NavLink to="/" className="navbar-logo" onClick={scrollToTop}>
           <FaBriefcase className="logo-icon" aria-hidden="true" />
           AgitRahadian
         </NavLink>
 
         <button
-          className="hamburger"
+          className="navbar-toggle"
           onClick={toggleMenu}
-          aria-label={menuOpen ? 'Tutup Menu' : 'Buka Menu'}
+          aria-label={menuOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi'}
           aria-expanded={menuOpen}
-          aria-controls="primary-navigation"
+          aria-controls="navbar-menu"
         >
           {menuOpen ? <IoCloseSharp /> : <FaBars />}
         </button>
 
-        <div
-          id="primary-navigation"
-          className={`menu ${menuOpen ? 'active' : ''}`}
-          role="menu"
-          onClick={closeMenu}
+        <ul
+          id="navbar-menu"
+          className={`navbar-menu ${menuOpen ? 'active' : ''}`}
+          role="menubar"
         >
-          <ul>
-            <li role="none">
-              <NavLink to="/" end className={({ isActive }) => (isActive ? 'active' : '')} role="menuitem" aria-current={({ isActive }) => (isActive ? 'page' : undefined)}>
-                Home
-              </NavLink>
-            </li>
-            <li role="none">
-              <HashLink to="/#portfolio" smooth className={({ isActive }) => (isActive ? 'active' : '')} role="menuitem">
-                Portfolio
-              </HashLink>
-            </li>
-            <li role="none">
-              <HashLink to="/#about" smooth className={({ isActive }) => (isActive ? 'active' : '')} role="menuitem">
-                About
-              </HashLink>
-            </li>
-            <li role="none">
-              <NavLink to="/experience" className={({ isActive }) => (isActive ? 'active' : '')} role="menuitem" aria-current={({ isActive }) => (isActive ? 'page' : undefined)}>
-                Experience
-              </NavLink>
-            </li>
-            <li role="none">
-              <NavLink to="/tugas" className={({ isActive }) => (isActive ? 'active' : '')} role="menuitem" aria-current={({ isActive }) => (isActive ? 'page' : undefined)}>
-                AI Assignment
-              </NavLink>
-            </li>
-            <li role="none">
-              <NavLink to="/blog" className={({ isActive }) => (isActive ? 'active' : '')} role="menuitem" aria-current={({ isActive }) => (isActive ? 'page' : undefined)}>
-                Blog
-              </NavLink>
-            </li>
+          <li role="none">
+            <NavLink to="/" end role="menuitem" onClick={scrollToTop}>Home</NavLink>
+          </li>
+          <li role="none">
+            <HashLink to="/#portfolio" smooth role="menuitem" onClick={closeMenu}>Portfolio</HashLink>
+          </li>
+          <li role="none">
+            <HashLink to="/#about" smooth role="menuitem" onClick={closeMenu}>About</HashLink>
+          </li>
+          <li role="none">
+            <NavLink to="/experience" role="menuitem" onClick={closeMenu}>Experience</NavLink>
+          </li>
+          <li role="none">
+            <NavLink to="/tugas" role="menuitem" onClick={closeMenu}>AI Assignment</NavLink>
+          </li>
+          <li role="none">
+            <NavLink to="/blog" role="menuitem" onClick={closeMenu}>Blog</NavLink>
+          </li>
 
-            {/* Bagian Login / Dashboard / Logout */}
-            {!user ? (
+          {!user ? (
+            <li role="none">
+              <NavLink to="/admin" role="menuitem" onClick={closeMenu}>Login Admin</NavLink>
+            </li>
+          ) : (
+            <>
               <li role="none">
-                <NavLink to="/admin" className={({ isActive }) => (isActive ? 'active' : '')} role="menuitem" aria-current={({ isActive }) => (isActive ? 'page' : undefined)}>
-                  Login Admin
-                </NavLink>
+                <NavLink to="/admin/dashboard" role="menuitem" onClick={closeMenu}>Dashboard</NavLink>
               </li>
-            ) : (
-              <>
-                <li role="none">
-                  <NavLink to="/admin/dashboard" className={({ isActive }) => (isActive ? 'active' : '')} role="menuitem" aria-current={({ isActive }) => (isActive ? 'page' : undefined)}>
-                    Admin Dashboard
-                  </NavLink>
-                </li>
-                <li role="none">
-                  <button onClick={handleLogout} className="logout-button" role="menuitem" aria-label="Logout dari admin">
-                    Logout
-                  </button>
-                </li>
-              </>
-            )}
-          </ul>
-        </div>
+              <li role="none">
+                <button className="logout-button" role="menuitem" onClick={handleLogout}>
+                  Logout
+                </button>
+              </li>
+            </>
+          )}
+        </ul>
       </div>
     </nav>
   );
