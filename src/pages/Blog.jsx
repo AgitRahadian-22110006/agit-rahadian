@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { supabase } from '../services/supabaseClient';
 import BlogPostCard from '../components/BlogPostCard';
 import Navbar from '../components/Navbar';
-import '../styles/Blog.css';
+import './Blog.css';
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);

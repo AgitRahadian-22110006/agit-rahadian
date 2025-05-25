@@ -5,7 +5,6 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import './App.css';
-import './styles/blog.css';
 
 // Data portfolio untuk halaman dinamis portfolio detail
 import { portfolioList } from './data/DataPortfolio';
