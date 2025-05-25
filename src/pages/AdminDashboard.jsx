@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../services/supabaseClient';
 import { Helmet } from 'react-helmet-async';
-import '../styles/dashboard.css';
+import './Dashboard.css';
 import { FaPlus, FaSignOutAlt, FaSearch } from 'react-icons/fa';
 import DashboardPostForm from '../components/DashboardPostForm';
 
