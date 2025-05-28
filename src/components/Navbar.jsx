@@ -89,7 +89,7 @@ export default function Navbar() {
           ) : (
             <>
               <li role="none">
-                <NavLink to="/admin/dashboard" role="menuitem" onClick={closeMenu}>Dashboard</NavLink>
+                <NavLink to="/admin/dashboard" role="menuitem" onClick={closeMenu}>Admin</NavLink>
               </li>
               <li role="none">
                 <button className="logout-button" role="menuitem" onClick={handleLogout}>

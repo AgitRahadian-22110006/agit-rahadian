@@ -1,11 +1,12 @@
 /* Halaman utama */
 .tugas-page {
   padding: 1rem;
-  background: #0d1220;
-  color: #e0f0ff;
+  background: #f8f9fb;
+  color: #222;
   overflow-x: hidden;
   min-height: 100vh;
   box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 /* Hero section */
@@ -20,7 +21,7 @@
 .judul-wrapper {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
   justify-content: center;
@@ -29,78 +30,68 @@
 
 .judul-tugas {
   font-family: 'Playfair Display', serif;
-  font-weight: 800;
-  color: #4da6ff;
-  font-size: 2.5rem;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 2.3rem;
   max-width: 90%;
 }
 
 .foto-agit {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 4px 20px rgba(77, 166, 255, 0.6);
-  border: 2px solid #4da6ff;
+  border: 2px solid #2c3e50;
 }
 
 /* Card tugas */
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border-radius: 18px;
-  border: 1.5px solid rgba(77, 166, 255, 0.3);
-  box-shadow: 0 8px 30px rgba(77, 166, 255, 0.2);
-  padding: 1.8rem 2rem;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem 1.8rem;
   margin-bottom: 2rem;
   max-width: 800px;
-  width: 100%;
-  transition: all 0.3s ease;
+  width: 95%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
   box-sizing: border-box;
 }
 
 .glass-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 40px rgba(77, 166, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .tugas-card h2 {
-  color: #4da6ff;
-  font-size: 1.5rem;
-  margin-bottom: 0.8rem;
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
 }
 
 .tugas-card p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #d0e7ff;
-  margin-bottom: 0.5rem;
+  color: #444;
+  margin-bottom: 0.4rem;
 }
 
 /* Tombol profil */
 .btn-profil {
-  background: linear-gradient(135deg, #4da6ff, #0066cc);
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-weight: 700;
+  background-color: #2c3e50;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
   font-size: 1rem;
-  color: #ffffff;
+  color: #fff;
   border: none;
   cursor: pointer;
-  text-shadow: 0 1px 1px #003366;
-  box-shadow: 0 8px 20px rgba(77, 166, 255, 0.4);
   display: inline-block;
   margin-top: 1rem;
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
-  text-align: center;
+  transition: background 0.3s ease;
 }
 
 .btn-profil:hover {
-  background: linear-gradient(135deg, #0066cc, #4da6ff);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(77, 166, 255, 0.6);
+  background-color: #1a252f;
 }
 
 /* Responsive mobile */
@@ -111,13 +102,13 @@
   }
 
   .judul-tugas {
-    font-size: 2rem;
+    font-size: 1.9rem;
     max-width: 95%;
   }
 
   .foto-agit {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
 
   .glass-card {
@@ -126,7 +117,7 @@
   }
 
   .tugas-card h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .tugas-card p {
@@ -134,7 +125,7 @@
   }
 
   .btn-profil {
-    padding: 10px 24px;
     font-size: 0.95rem;
+    padding: 9px 20px;
   }
 }

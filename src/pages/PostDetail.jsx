@@ -78,7 +78,6 @@ const PostDetail = () => {
         </div>
       </header>
 
-      {/* Like button */}
       <div className="post-like-row">
         <span className="like-label"></span>
         <LikeButton postId={post.id} />
