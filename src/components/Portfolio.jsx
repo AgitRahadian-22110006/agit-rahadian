@@ -4,7 +4,6 @@ import SEO from '../components/SEO';
 import '../styles/Portfolio.css';
 
 function Portfolio() {
-  // Bangun ItemList schema secara dinamis
   const itemListElements = portfolioList.map((item, index) => ({
     "@type": "ListItem",
     position: index + 1,
@@ -46,23 +45,33 @@ function Portfolio() {
         <div className="grid">
           {portfolioList.map((item) => (
             <div className="item" key={item.id} itemProp="itemListElement">
-              <article className="box">
+              <article
+                className="box"
+                itemScope
+                itemType="https://schema.org/CreativeWork"
+              >
                 <Link
                   to={`/portfolio/${item.id}`}
                   className="image-link"
                   aria-label={`Lihat detail ${item.title}`}
+                  itemProp="url"
                 >
                   <img
-                    src={item.images[0].src}
-                    alt={`Proyek ${item.title} oleh Agit Rahadian`}
+                    src={item.images[0]?.src}
+                    alt={item.images[0]?.alt || `Gambar proyek ${item.title}`}
                     loading="lazy"
                     width={600}
                     height={281}
+                    itemProp="image"
                   />
                 </Link>
 
-                <h2>{item.title}</h2>
-                <p className="description">{item.description}</p>
+                <h2 itemProp="name">{item.title}</h2>
+                <p className="description" itemProp="description">
+                  {item.description.length > 180
+                    ? item.description.slice(0, 180) + '...'
+                    : item.description}
+                </p>
 
                 <Link
                   to={`/portfolio/${item.id}`}
