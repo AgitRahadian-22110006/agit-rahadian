@@ -1,13 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import { visualizer } from 'rollup-plugin-visualizer';
+import { visualizer } from 'rollup-plugin-visualizer'; // ✅ pakai import
 
 const isProd = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
   plugins: [
     react(),
+    // hanya aktifkan visualizer saat development
     !isProd && visualizer({
       filename: 'dist/stats.html',
       open: false,
@@ -22,7 +23,6 @@ export default defineConfig({
     extensions: ['.js', '.jsx', '.json']
   },
   build: {
-    target: 'es2015',
     sourcemap: false,
     cssCodeSplit: true,
     minify: 'esbuild',
