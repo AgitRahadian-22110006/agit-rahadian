@@ -89,7 +89,7 @@ function Header() {
           dengan fokus pada clean code, performa optimal, dan desain responsif.<br />
           Mari wujudkan ide digital Anda bersama saya!
         </p>
-
+<h2>HUBUNGI :</h2>
         <div className="contact-buttons">
           <a
             href="mailto:agitrahadian140702@gmail.com?subject=Permintaan Kerja Sama atau Jasa Pembuatan Website"
@@ -131,7 +131,7 @@ function Header() {
             Download CV
           </a>
         </div>
-
+<h2>Social Media</h2>
         <div className="socialMedia">
           <a
             href="https://www.instagram.com/agitrhdn"
