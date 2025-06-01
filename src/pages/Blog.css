@@ -6,9 +6,9 @@
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #222222;
   line-height: 1.65;
-  background-color: #ffffff;
+  background-color: #0c0c0ce0;
   border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.808);
   transition: box-shadow 0.3s ease;
 }
 

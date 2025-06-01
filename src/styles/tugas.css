@@ -1,8 +1,8 @@
 /* Halaman utama */
 .tugas-page {
   padding: 1rem;
-  background: #f8f9fb;
-  color: #222;
+  background: #111111;
+  color: #e9dfdf;
   overflow-x: hidden;
   min-height: 100vh;
   box-sizing: border-box;
@@ -31,7 +31,7 @@
 .judul-tugas {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  color: #2c3e50;
+  color: #2c7ac9;
   font-size: 2.3rem;
   max-width: 90%;
 }

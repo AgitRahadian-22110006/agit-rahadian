@@ -76,13 +76,13 @@ export default function Tugas1() {
 
       <Navbar />
 
-      <main className="tugas1-page container" role="main" aria-labelledby="judul-tugas1">
-        <header className="tugas1-header">
-          <h1 id="judul-tugas1" className="tugas1-title">Tugas 1: Logika First Order</h1>
-        </header>
+      <main className="detail-tugas-page container" role="main" aria-labelledby="judul-tugas1">
+  <header className="detail-tugas-header">
+    <h1 id="judul-tugas1" className="detail-tugas-title">Tugas 1: Logika First Order</h1>
+  </header>
 
         {/* Bagian 1 */}
-        <section className="tugas1-content" aria-labelledby="section-1">
+        <section className="detail-tugas-content" aria-labelledby="section-1">
           <h2 id="section-1"><i className="fas fa-lightbulb" /> 1. Pelajari Logika First Order dan Contoh Kasusnya</h2>
           <p><strong>Pengertian:</strong> Logika First Order (First Order Logic/FOL) adalah sistem logika yang menggunakan predikat, kuantor, dan variabel untuk menyatakan fakta tentang objek di dunia nyata.</p>
           <h3>Ciri-ciri utama:</h3>

@@ -33,6 +33,41 @@ const tugasList = [
         }
       }
     }
+  },
+  {
+    id: 2,
+    title: 'Tugas 2: Coming Soon',
+    description:
+      'Materi dan tugas kedua masih belum diberikan. Nantikan update terbaru di halaman ini.',
+    link: '/tugas/2',
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Tugas 2: Coming Soon",
+      "description":
+        "Materi dan tugas kedua masih belum diberikan. Nantikan update terbaru di halaman ini.",
+      "educationalLevel": "Perguruan Tinggi",
+      "inLanguage": "id",
+      "url": "https://agitrahadian.my.id/tugas/2",
+      "datePublished": "2025-05-31",
+      "dateModified": "2025-05-31",
+      "educationalUse": "Pembelajaran",
+      "learningResourceType": "Tugas Mahasiswa",
+      "author": {
+        "@type": "Person",
+        "name": "Agit Rahadian",
+        "url": "https://agitrahadian.my.id"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Agit Rahadian Personal Website",
+        "url": "https://agitrahadian.my.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://agitrahadian.my.id/logo192.png"
+        }
+      }
+    }
   }
 ];
 

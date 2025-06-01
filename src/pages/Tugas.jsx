@@ -84,8 +84,13 @@ export default function Tugas() {
               width="140"
               height="140"
               loading="lazy"
+              
             />
           </header>
+           <h1>Nama : Agit Rahadian</h1>
+           <p>NIM : 22110006</p>
+           <p>Kelas : E2022</p>
+            <h2>Dosen : Dani Rohpandi, M. Kom.</h2>
 
           <section className="tugas-list" aria-label="Daftar Tugas">
             {tugasList.map((tugas) => (

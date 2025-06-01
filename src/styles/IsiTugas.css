@@ -1,5 +1,5 @@
 /* Halaman konten utama */
-.tugas1-page {
+.detail-tugas-page {
   max-width: 760px;
   margin: 2rem auto;
   padding: 2rem 1.5rem;
@@ -13,7 +13,7 @@
 }
 
 /* Judul utama */
-.tugas1-title {
+.detail-tugas-title {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   font-size: 2.4rem;
@@ -23,8 +23,8 @@
 }
 
 /* Heading section */
-.tugas1-content h2,
-.tugas1-content h3 {
+.detail-tugas-content h2,
+.detail-tugas-content h3 {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   color: #2c3e50;
@@ -34,27 +34,27 @@
 }
 
 /* Paragraf & List */
-.tugas1-content p,
-.tugas1-content ul,
-.tugas1-content ol {
+.detail-tugas-content p,
+.detail-tugas-content ul,
+.detail-tugas-content ol {
   color: #444;
   margin-bottom: 1.2rem;
   font-size: 1rem;
 }
 
-.tugas1-content ul,
-.tugas1-content ol {
+.detail-tugas-content ul,
+.detail-tugas-content ol {
   padding-left: 1.5rem;
 }
 
-.tugas1-content ul li,
-.tugas1-content ol li {
+.detail-tugas-content ul li,
+.detail-tugas-content ol li {
   margin-bottom: 0.6rem;
   list-style-position: inside;
 }
 
 /* Highlight kode */
-.tugas1-content code {
+.detail-tugas-content code {
   background: #f2f2f2;
   padding: 0.3rem 0.5rem;
   border-radius: 4px;
@@ -90,23 +90,23 @@
 
 /* Responsif */
 @media (max-width: 600px) {
-  .tugas1-page {
+  .detail-tugas-page {
     margin: 1rem;
     padding: 1.2rem 1rem;
   }
 
-  .tugas1-title {
+  .detail-tugas-title {
     font-size: 2rem;
   }
 
-  .tugas1-content h2,
-  .tugas1-content h3 {
+  .detail-tugas-content h2,
+  .detail-tugas-content h3 {
     font-size: 1.35rem;
   }
 
-  .tugas1-content p,
-  .tugas1-content ul,
-  .tugas1-content ol {
+  .detail-tugas-content p,
+  .detail-tugas-content ul,
+  .detail-tugas-content ol {
     font-size: 0.95rem;
   }
 

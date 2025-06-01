@@ -3,31 +3,28 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-
 import './App.css';
 
-// Data portfolio untuk halaman dinamis portfolio detail
+// Data portfolio
 import { portfolioList } from './data/DataPortfolio';
 
-// Lazy loading halaman portfolio & umum
+// Lazy loading
 const Home = lazy(() => import('./pages/Home'));
 const DetailPortfolio = lazy(() => import('./pages/DetailPortfolio'));
 const Experience = lazy(() => import('./pages/Experience'));
 const About = lazy(() => import('./components/About'));
 const Tugas = lazy(() => import('./pages/Tugas'));
 const Tugas1 = lazy(() => import('./pages/Tugas1'));
-
-// Lazy loading halaman blog & admin
+const Tugas2 = lazy(() => import('./pages/Tugas2'));
 const Blog = lazy(() => import('./pages/Blog'));
 const PostDetail = lazy(() => import('./pages/PostDetail'));
 const AdminLogin = lazy(() => import('./pages/Login'));
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
 
-// Komponen dinamis untuk halaman portfolio detail dengan SEO metadata
+// Komponen dinamis untuk halaman portfolio detail
 function PortfolioPage() {
   const { id } = useParams();
   const project = portfolioList.find(p => p.id.toString() === id) || {};
-  
   const title = project.title ? `${project.title} – Agit Rahadian` : 'Portfolio – Agit Rahadian';
   const description = project.description || 'Detail proyek saya sebagai Full-Stack Web Developer.';
   const imageUrl = project.images?.[0]?.src || 'https://agitrahadian.my.id/og/portfolio1.avif';
@@ -96,13 +93,14 @@ function App() {
       <Suspense fallback={<div className="loading">Loading...</div>}>
         <BrowserRouter>
           <Routes>
-            {/* Halaman utama dan portfolio */}
             <Route path="/" element={<Home />} />
             <Route path="/portfolio/:id" element={<PortfolioPage />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/about" element={<About />} />
             <Route path="/tugas" element={<Tugas />} />
-            <Route path="/tugas/:id" element={<Tugas1 />} />
+            {/* Tambahkan path spesifik untuk Tugas1 dan Tugas2 */}
+            <Route path="/tugas/1" element={<Tugas1 />} />
+            <Route path="/tugas/2" element={<Tugas2 />} />
 
             {/* Halaman blog */}
             <Route path="/blog" element={<Blog />} />
