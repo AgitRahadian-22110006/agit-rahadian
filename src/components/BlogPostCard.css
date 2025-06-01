@@ -74,6 +74,40 @@
   text-decoration: underline;
 }
 
+/* 🔥 Like & Comment Stats */
+.blog-card-engagement {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.blog-card-like,
+.blog-card-comment {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  background-color: #ffeaea;
+  color: #d62828;
+  transition: transform 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.blog-card-comment {
+  background-color: #e0f1ff;
+  color: #0077cc;
+}
+
+.blog-card-like:hover,
+.blog-card-comment:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .blog-card {
@@ -91,5 +125,16 @@
 
   .blog-card-button {
     font-size: 0.9rem;
+  }
+
+  .blog-card-engagement {
+    font-size: 1rem;
+    gap: 1rem;
+  }
+
+  .blog-card-like,
+  .blog-card-comment {
+    font-size: 1rem;
+    padding: 0.2rem 0.6rem;
   }
 }
