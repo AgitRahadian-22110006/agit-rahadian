@@ -1,63 +1,86 @@
 /* Experience.css */
 
-/* Wrapper timeline */
+/* Box‐sizing global to avoid unexpected overflows */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Wrapper for the entire experience section */
 .experience-wrapper {
+  width: 100%;
   max-width: 960px;
   margin: 2rem auto 4rem;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   background: #f8f9fa;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   transition: all 0.3s ease;
 }
 
-/* Title */
-.experience-wrapper h1 {
+/* Page title */
+.experience-title {
   font-size: 2.25rem;
   font-weight: 700;
-  margin-bottom: 2.5rem;
+  margin: 2rem 0 2rem;
   color: #222831;
   text-align: center;
-  padding-top: 2rem;
+  line-height: 1.2;
 }
 
 /* Timeline container */
 .timeline {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
-  border-left: 3px solid #00adb5;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-/* Timeline element as card */
+/* Vertical line on left */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #00adb5;
+  border-radius: 2px;
+}
+
+/* Individual timeline card */
 .timeline-element {
   position: relative;
   background: #ffffff;
   border-radius: 12px;
-  padding: 1.5rem 2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
+/* Hover effect */
 .timeline-element:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
-/* Timeline icon */
+/* Icon bubble on left of each card */
 .timeline-element::before {
-  content: '';
+  content: "";
   position: absolute;
-  left: -32px;
+  left: -26px;
   top: 1.2rem;
   width: 18px;
   height: 18px;
   background: #ffffff;
   border-radius: 50%;
   border: 3px solid #00adb5;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .timeline-element:hover::before {
@@ -66,81 +89,186 @@
   border-color: #ffffff;
 }
 
-/* Date */
+/* Date styling */
 .timeline-element .date {
+  display: block;
   font-size: 0.95rem;
   font-weight: 600;
   color: #00adb5;
   margin-bottom: 0.5rem;
 }
 
-/* Title */
-.timeline-element h3 {
-  margin: 0;
+/* Job role/title */
+.timeline-element .role {
+  display: flex;
+  align-items: center;
   font-size: 1.35rem;
+  font-weight: 700;
   color: #222831;
+  margin: 0.25rem 0 0.75rem;
 }
 
-/* Subtitle */
-.timeline-element h4 {
-  margin: 0.25rem 0 1rem;
-  font-weight: 500;
+/* Icon inside role */
+.timeline-icon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  color: #00adb5;
+}
+
+/* Company / project name */
+.timeline-element .company {
+  margin: 0 0 1rem;
+  font-weight: 600;
   color: #555;
   font-size: 1.05rem;
+  line-height: 1.4;
 }
 
-/* Description */
-.timeline-element p {
+/* Paragraph description */
+.timeline-element .description {
   font-size: 1rem;
   color: #444;
   line-height: 1.6;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
-/* List */
-.timeline-element ul {
-  margin-left: 1rem;
+/* Bullet‐point details */
+.timeline-element .details-list {
+  margin: 0;
   padding-left: 1rem;
-  color: #222831;
   list-style-type: disc;
+  color: #222831;
 }
 
-/* Responsive - mobile */
+.timeline-element .details-list li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+/* Subsection title (“Pengalaman Kerja Lainnya”) */
+.subsection-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #222831;
+  margin: 2.5rem 0 1.5rem;
+  text-align: center;
+}
+
+/* -------- Responsive: tablets (max-width 768px) -------- */
 @media (max-width: 768px) {
   .experience-wrapper {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
+    margin: 1.5rem auto 3rem;
+  }
+
+  .experience-title {
+    font-size: 2rem;
+    margin: 1.5rem 0 1.5rem;
   }
 
   .timeline {
-    padding-left: 1.5rem;
-    border-left-width: 2px;
+    padding-left: 1rem;
   }
 
   .timeline-element {
-    padding: 1.25rem 1.5rem;
+    padding: 1rem 1rem 1rem 1.5rem;
   }
 
   .timeline-element::before {
-    left: -24px;
+    left: -20px;
     width: 14px;
     height: 14px;
     top: 1rem;
     border-width: 2px;
   }
 
-  .experience-wrapper h1 {
-    font-size: 2rem;
+  .timeline-element .date {
+    font-size: 0.9rem;
   }
 
-  .timeline-element h3 {
+  .timeline-element .role {
     font-size: 1.2rem;
   }
 
-  .timeline-element h4 {
-    font-size: 1rem;
+  .timeline-icon {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
   }
 
-  .timeline-element p {
+  .timeline-element .company {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-element .description {
     font-size: 0.95rem;
+  }
+
+  .timeline-element .details-list li {
+    font-size: 0.9rem;
+  }
+
+  .subsection-title {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+  }
+}
+
+/* -------- Responsive: small phones (max-width 480px) -------- */
+@media (max-width: 480px) {
+  .experience-wrapper {
+    margin: 1rem auto 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .experience-title {
+    font-size: 1.75rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  .timeline-element {
+    padding: 0.75rem 0.75rem 0.75rem 1rem;
+  }
+
+  .timeline-element::before {
+    left: -16px;
+    width: 12px;
+    height: 12px;
+    top: 0.8rem;
+    border-width: 2px;
+  }
+
+  .timeline-element .date {
+    font-size: 0.85rem;
+  }
+
+  .timeline-element .role {
+    font-size: 1.1rem;
+  }
+
+  .timeline-icon {
+    font-size: 1.1rem;
+    margin-right: 0.3rem;
+  }
+
+  .timeline-element .company {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .timeline-element .description {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .timeline-element .details-list li {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .subsection-title {
+    font-size: 1.25rem;
+    margin: 1.5rem 0 1rem;
   }
 }
