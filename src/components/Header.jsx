@@ -122,7 +122,7 @@ function Header() {
             <li>SD Sindangsari 2</li>
             <li>SMP Negeri 1 Leuwigoong</li>
             <li>SMA Negeri 10 Garut (IPA)</li>
-            <li>STMIK Mardira Indonesia (S1 – Sistem Informasi)</li>
+            <li>STMIK Mardira Indonesia (S1 – Teknik Informatika- Sistem Informasi)</li>
           </ul>
         </div>
 
