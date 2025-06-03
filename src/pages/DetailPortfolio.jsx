@@ -1,5 +1,4 @@
 // src/pages/DetailPortfolio.jsx
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import { portfolioList } from '../data/DataPortfolio';
 import Navbar from '../components/Navbar';

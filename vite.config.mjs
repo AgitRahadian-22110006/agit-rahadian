@@ -1,3 +1,4 @@
+// vite.config.mjs
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
@@ -34,7 +35,15 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) return 'react-vendor';
+            if (id.match(/react|react-dom/)) {
+              return 'react-vendor';
+            }
+            if (id.includes('react-icons')) {
+              return 'icons-vendor';
+            }
+            if (id.includes('@supabase')) {
+              return 'supabase-vendor';
+            }
             return 'vendor';
           }
         },

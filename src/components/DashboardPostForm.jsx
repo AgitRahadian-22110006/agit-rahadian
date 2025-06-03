@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
 import { supabase } from '../services/supabaseClient';
 import 'react-quill/dist/quill.snow.css';

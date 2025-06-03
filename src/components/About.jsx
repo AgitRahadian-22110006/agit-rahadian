@@ -1,4 +1,3 @@
-import React from 'react';
 import SEO from '../components/SEO'; // Pastikan sudah ada komponen SEO reusable ini
 import { FaHtml5, FaPhp, FaReact, FaLaravel, FaGithub } from 'react-icons/fa';
 import { MdCss } from 'react-icons/md';

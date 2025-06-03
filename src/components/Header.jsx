@@ -76,9 +76,8 @@ function Header() {
       >
         <meta name="robots" content="index, follow" />
         <meta name="twitter:creator" content="@agitrhdn" />
-        {/* Jika perlu verifikasi Google Search Console */}
         <meta name="google-site-verification" content="google68989f7575251084.html" />
-        <link rel="preload" as="image" href={profilepicture} />
+        <link rel="preload" as="image" href={profilepicture} fetchpriority="high" />
       </SEO>
 
       <div className="header-jumbotron">
@@ -148,38 +147,10 @@ function Header() {
 
         <h2>Social Media</h2>
         <div className="socialMedia">
-          <a
-            href="https://www.instagram.com/agitrhdn"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram Agit Rahadian"
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href="https://www.tiktok.com/@agitrahadian"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="TikTok Agit Rahadian"
-          >
-            <FaTiktok />
-          </a>
-          <a
-            href="https://github.com/agitrahadian-22110006"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub Agit Rahadian"
-          >
-            <IoLogoGithub />
-          </a>
-          <a
-            href="https://www.facebook.com/share/16HuZskNh5/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook Agit Rahadian"
-          >
-            <FaFacebook />
-          </a>
+          <a href="https://www.instagram.com/agitrhdn" target="_blank" rel="noopener noreferrer" aria-label="Instagram Agit Rahadian"><FaInstagram /></a>
+          <a href="https://www.tiktok.com/@agitrahadian" target="_blank" rel="noopener noreferrer" aria-label="TikTok Agit Rahadian"><FaTiktok /></a>
+          <a href="https://github.com/agitrahadian-22110006" target="_blank" rel="noopener noreferrer" aria-label="GitHub Agit Rahadian"><IoLogoGithub /></a>
+          <a href="https://www.facebook.com/share/16HuZskNh5/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Agit Rahadian"><FaFacebook /></a>
         </div>
       </div>
     </header>

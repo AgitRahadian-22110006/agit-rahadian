@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { supabase } from '../services/supabaseClient';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import './LikeButton.css';

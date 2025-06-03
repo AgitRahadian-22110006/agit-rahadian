@@ -1,5 +1,5 @@
 // src/pages/PostDetail.jsx
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../services/supabaseClient';
 import LikeButton from '../components/LikeButton';

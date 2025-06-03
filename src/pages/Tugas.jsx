@@ -1,5 +1,4 @@
 // src/pages/Tugas.jsx
-import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Navbar from '../components/Navbar';
