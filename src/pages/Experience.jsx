@@ -138,7 +138,7 @@ function Experience() {
                 className="timeline-icon"
                 aria-label="Next.js Icon" 
               /> 
-              Web Developer (Tim UI/UX & Backend) – MA AS-SIROJI
+              Web Developer (Tim UI/UX) – MA AS-SIROJI
             </h3>
             <h4 className="company">Website MA-AS-SIROJI (maassiroji.sch.id)</h4>
             <p className="description">
@@ -179,27 +179,30 @@ function Experience() {
           <h2 className="subsection-title">Pengalaman Kerja Lainnya</h2>
 
           <article className="timeline-element" tabIndex={0}>
-            <time className="date" dateTime="2021">2021</time>
-            <h3 className="role">
-              <SiNextdotjs
-                className="timeline-icon"
-                aria-label="Game Developer Icon"
-              />
-              Game Developer – Farming House Gaming
-            </h3>
-            <h4 className="company">Farming House Gaming, Cimahi</h4>
-            <p className="description">
-              Bekerja pada proyek “World of Warcraft Farming” untuk mengoptimasi mekanisme produksi sumber daya in-game. 
-              Fokus pada automasi skrip farming dan balancing ekonomi pemain.
-            </p>
-            <ul className="details-list">
-              <li>Mendesain mekanisme farming item langka dan sumber daya di World of Warcraft</li>
-              <li>Mengembangkan skrip automasi farming NPC dan event dengan Lua scripting</li>
-              <li>Menjaga keseimbangan ekonomi in-game melalui spawn rate & harga pasar yang sesuai</li>
-              <li>Berkoordinasi dengan tim QA untuk memperbaiki bug farming dan mencegah exploit</li>
-              <li>Mengelola komunitas pemain serta mengumpulkan masukan untuk pembaruan berkala</li>
-            </ul>
-          </article>
+  <time className="date" dateTime="2021">2021</time>
+  <h3>
+    <SiNextdotjs
+      style={{ verticalAlign: 'middle', marginRight: 6, color: '#00adb5' }}
+      aria-label="Game Farming Icon"
+    />
+    Game Farmer (World of Warcraft)
+  </h3>
+  <h4>Farming House Gaming, Cimahi</h4>
+  <p>
+    Bekerja sebagai “Game Farmer” untuk proyek World of Warcraft bersama Farming House Gaming di Cimahi. 
+    Bertugas mengumpulkan dan memproduksi item langka yang dapat ditukarkan oleh pemain, memastikan 
+    suplai sumber daya terpenuhi, sekaligus membantu ekonomi in-game dengan mekanisme farming yang efisien.
+  </p>
+  <ul>
+    <li>Mengeksploitasi spawn point terbaik untuk bahan crafting (herbs, ores, kulit) di berbagai zona.</li>
+    <li>Mengelola rotasi farming harian dan mingguan untuk mengumpulkan item langka seperti Arcane Crystal dan Black Lotus.</li>
+    <li>Menjual hasil farming di auction house—menyusun strategi harga sesuai permintaan pasar in-game.</li>
+    <li>Berkoordinasi dengan tim crafting untuk memproduksi consumable (potions, flasks, elixirs) yang diminati raid guild.</li>
+    <li>Test dan optimasi addons (GatherMate2, Auctioneer) untuk mempercepat dan memonitor proses farming secara real-time.</li>
+    <li>Mendokumentasikan rute farming paling efisien dan membagikannya kepada komunitas pemain melalui forum dan grup Discord.</li>
+  </ul>
+</article>
+
 
           <article className="timeline-element" tabIndex={0}>
             <time className="date" dateTime="2021">2021</time>
