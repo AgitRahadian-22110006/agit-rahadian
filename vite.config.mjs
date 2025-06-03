@@ -9,7 +9,7 @@ const isProd = process.env.NODE_ENV === 'production';
 export default defineConfig({
   plugins: [
     react(),
-    // Hanya aktifkan visualizer saat development
+    // Aktifkan visualizer hanya saat development
     !isProd &&
       visualizer({
         filename: 'dist/stats.html',
@@ -27,6 +27,7 @@ export default defineConfig({
   },
 
   build: {
+    target: 'es2020',          // Jangan transpile down ke ES5 untuk browser modern
     sourcemap: false,
     cssCodeSplit: true,
     minify: 'esbuild',
