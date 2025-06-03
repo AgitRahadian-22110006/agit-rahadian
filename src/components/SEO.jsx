@@ -1,3 +1,4 @@
+// src/components/SEO.jsx
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
@@ -8,13 +9,15 @@ const SEO = ({
   keywords,
   canonical,
   structuredData,
-  favicon = "/favicon.ico", // default favicon path di public/
-  preloadImages = [],       // array url gambar untuk preload
+  ogImage = null,     // URL gambar Open Graph / Twitter Card jika ada
+  ogType = 'website', // default type untuk Open Graph
+  favicon = "/favicon.ico",
+  preloadImages = [], // array URL gambar untuk preload
 }) => {
   // Jika keywords array, gabung jadi string
   const keywordsContent = Array.isArray(keywords) ? keywords.join(', ') : keywords;
 
-  // Structured data JSON-LD harus berupa string/script tag
+  // Siapkan JSON-LD untuk structuredData
   const jsonLd = Array.isArray(structuredData)
     ? structuredData.map((data, i) => (
         <script
@@ -32,8 +35,10 @@ const SEO = ({
 
   return (
     <Helmet>
+      {/* Title */}
       <title>{title}</title>
 
+      {/* Meta dasar */}
       <meta name="description" content={description} />
       {keywordsContent && <meta name="keywords" content={keywordsContent} />}
       <meta name="robots" content="index, follow" />
@@ -41,6 +46,19 @@ const SEO = ({
 
       {/* Favicon */}
       <link rel="icon" href={favicon} />
+
+      {/* Open Graph */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:type" content={ogType} />
+      {ogImage && <meta property="og:image" content={ogImage} />}
+
+      {/* Twitter Card */}
+      <meta name="twitter:card" content={ogImage ? "summary_large_image" : "summary"} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      {ogImage && <meta name="twitter:image" content={ogImage} />}
 
       {/* Preload images */}
       {preloadImages.map((imgSrc, i) => (
@@ -53,18 +71,7 @@ const SEO = ({
         />
       ))}
 
-      {/* Open Graph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={canonical} />
-      <meta property="og:type" content="website" />
-
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-
-      {/* Structured data JSON-LD */}
+      {/* Structured Data JSON-LD */}
       {jsonLd}
     </Helmet>
   );
@@ -79,6 +86,8 @@ SEO.propTypes = {
     PropTypes.object,
     PropTypes.arrayOf(PropTypes.object),
   ]),
+  ogImage: PropTypes.string,
+  ogType: PropTypes.string,
   favicon: PropTypes.string,
   preloadImages: PropTypes.arrayOf(PropTypes.string),
 };

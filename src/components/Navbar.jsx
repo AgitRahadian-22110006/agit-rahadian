@@ -1,3 +1,4 @@
+// src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { FaBriefcase, FaBars } from 'react-icons/fa';
 import { IoCloseSharp } from 'react-icons/io5';

@@ -1,3 +1,5 @@
+// src/components/Header.jsx
+import React from 'react';
 import profilepicture from '../assets/profile-picture.avif';
 import {
   FaInstagram,
@@ -14,36 +16,46 @@ function Header() {
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Agit Rahadian",
-    "jobTitle": "Full-Stack Web Developer",
-    "description": "Seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly untuk sektor pendidikan di Indonesia.",
-    "url": "https://agitrahadian.my.id/",
-    "image": "https://agitrahadian.my.id/assets/profile-picture.avif",
-    "birthDate": "2002-07-14",
-    "alumniOf": [
+    name: "Agit Rahadian",
+    jobTitle: "Full-Stack Web Developer",
+    description:
+      "Seorang Full-Stack Web Developer yang fokus menciptakan solusi digital praktis dan user-friendly untuk sektor pendidikan di Indonesia.",
+    url: "https://agitrahadian.my.id/",
+    image: "https://agitrahadian.my.id/assets/profile-picture.avif",
+    birthDate: "2002-07-14",
+    alumniOf: [
       {
         "@type": "EducationalOrganization",
-        "name": "STMIK Mardira Indonesia",
-        "department": "Teknik Informatika – Sistem Informasi"
+        name: "STMIK Mardira Indonesia",
+        department: "Teknik Informatika – Sistem Informasi"
       },
       {
         "@type": "EducationalOrganization",
-        "name": "SMA Negeri 10 Garut",
-        "department": "IPA"
+        name: "SMA Negeri 10 Garut",
+        department: "IPA"
       }
     ],
-    "knowsAbout": ["Web Development", "React", "Laravel", "PHP", "MySQL", "JavaScript", "CSS3", "HTML5"],
-    "worksFor": {
+    knowsAbout: [
+      "Web Development",
+      "React",
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "CSS3",
+      "HTML5"
+    ],
+    worksFor: {
       "@type": "Organization",
-      "name": "Freelance Web Developer"
+      name: "Freelance Web Developer"
     },
-    "address": {
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Garut",
-      "addressRegion": "Jawa Barat",
-      "addressCountry": "ID"
+      addressLocality: "Garut",
+      addressRegion: "Jawa Barat",
+      addressCountry: "ID"
     },
-    "sameAs": [
+    sameAs: [
       "https://github.com/agitrahadian-22110006",
       "https://www.instagram.com/agitrhdn",
       "https://www.tiktok.com/@agitrahadian",
@@ -57,13 +69,14 @@ function Header() {
         title="Full-Stack Web Developer | Portfolio Resmi"
         description="Agit Rahadian adalah Full-Stack Web Developer dari Garut yang mengkhususkan diri dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital untuk meningkatkan kualitas pendidikan di Indonesia."
         keywords="Agit Rahadian, Full-Stack Developer, Web Developer, Programmer, Website Sekolah, Aplikasi Pendidikan, Freelance Developer"
+        canonical="https://agitrahadian.my.id/"
         ogImage="https://agitrahadian.my.id/assets/profile-picture.avif"
         ogType="website"
-        canonical="/"
         structuredData={personSchema}
       >
         <meta name="robots" content="index, follow" />
         <meta name="twitter:creator" content="@agitrhdn" />
+        {/* Jika perlu verifikasi Google Search Console */}
         <meta name="google-site-verification" content="google68989f7575251084.html" />
         <link rel="preload" as="image" href={profilepicture} />
       </SEO>
@@ -89,7 +102,8 @@ function Header() {
           dengan fokus pada clean code, performa optimal, dan desain responsif.<br />
           Mari wujudkan ide digital Anda bersama saya!
         </p>
-<h2>HUBUNGI :</h2>
+
+        <h2>HUBUNGI :</h2>
         <div className="contact-buttons">
           <a
             href="mailto:agitrahadian140702@gmail.com?subject=Permintaan Kerja Sama atau Jasa Pembuatan Website"
@@ -122,7 +136,7 @@ function Header() {
             <li>SD Sindangsari 2</li>
             <li>SMP Negeri 1 Leuwigoong</li>
             <li>SMA Negeri 10 Garut (IPA)</li>
-            <li>STMIK Mardira Indonesia (S1 – Teknik Informatika- Sistem Informasi)</li>
+            <li>STMIK Mardira Indonesia (S1 – Teknik Informatika – Sistem Informasi)</li>
           </ul>
         </div>
 
@@ -131,7 +145,8 @@ function Header() {
             Download CV
           </a>
         </div>
-<h2>Social Media</h2>
+
+        <h2>Social Media</h2>
         <div className="socialMedia">
           <a
             href="https://www.instagram.com/agitrhdn"

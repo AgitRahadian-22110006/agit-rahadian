@@ -1,3 +1,5 @@
+// src/pages/Tugas1.jsx
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Navbar from '../components/Navbar';
@@ -7,55 +9,61 @@ import '../styles/IsiTugas.css';
 import tugasList from '../data/TugasData';
 
 export default function Tugas1() {
+  const siteUrl = 'https://agitrahadian.my.id';
   const tugas = tugasList.find((item) => item.id === 1);
 
+  // BreadcrumbList JSON-LD
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://agitrahadian.my.id/" },
-      { "@type": "ListItem", "position": 2, "name": "Tugas", "item": "https://agitrahadian.my.id/tugas" },
-      { "@type": "ListItem", "position": 3, "name": tugas.title, "item": `https://agitrahadian.my.id${tugas.link}` }
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Beranda", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Tugas", item: `${siteUrl}/tugas` },
+      { "@type": "ListItem", position: 3, name: tugas.title, item: `${siteUrl}${tugas.link}` }
     ]
   };
 
+  // WebPage JSON-LD
   const webpageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `https://agitrahadian.my.id${tugas.link}`,
-    "url": `https://agitrahadian.my.id${tugas.link}`,
-    "name": `Detail ${tugas.title} – Agit Rahadian`,
-    "description": tugas.description
+    "@id": `${siteUrl}${tugas.link}`,
+    url: `${siteUrl}${tugas.link}`,
+    name: `Detail ${tugas.title} – Agit Rahadian`,
+    description: tugas.description
   };
 
+  // Person JSON-LD
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Agit Rahadian",
-    "url": "https://agitrahadian.my.id",
-    "image": "https://agitrahadian.my.id/assets/profile-picture.avif",
-    "jobTitle": "Full-Stack Web Developer",
-    "alumniOf": "STMIK Mardira Indonesia",
-    "address": {
+    name: "Agit Rahadian",
+    url: siteUrl,
+    image: `${siteUrl}/assets/profile-picture.avif`,
+    jobTitle: "Full-Stack Web Developer",
+    alumniOf: "STMIK Mardira Indonesia",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Garut",
-      "addressRegion": "Jawa Barat",
-      "addressCountry": "ID"
+      addressLocality: "Garut",
+      addressRegion: "Jawa Barat",
+      addressCountry: "ID"
     }
   };
 
+  // Organization JSON-LD
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Agit Rahadian Digital",
-    "url": "https://agitrahadian.my.id",
-    "logo": "https://agitrahadian.my.id/assets/profile-picture.avif",
-    "founder": {
+    name: "Agit Rahadian Digital",
+    url: siteUrl,
+    logo: `${siteUrl}/assets/profile-picture.avif`,
+    founder: {
       "@type": "Person",
-      "name": "Agit Rahadian"
+      name: "Agit Rahadian"
     }
   };
 
+  // Kombinasi structured data
   const structuredData = [
     breadcrumbSchema,
     webpageSchema,
@@ -70,16 +78,18 @@ export default function Tugas1() {
         title={`Detail ${tugas.title}`}
         description={tugas.description}
         keywords="Logika First Order, FOL, Tugas 1, Agit Rahadian"
-        canonical={`https://agitrahadian.my.id${tugas.link}`}
+        canonical={`${siteUrl}${tugas.link}`}
         structuredData={structuredData}
       />
 
       <Navbar />
 
       <main className="detail-tugas-page container" role="main" aria-labelledby="judul-tugas1">
-  <header className="detail-tugas-header">
-    <h1 id="judul-tugas1" className="detail-tugas-title">Tugas 1: Logika First Order</h1>
-  </header>
+        <header className="detail-tugas-header">
+          <h1 id="judul-tugas1" className="detail-tugas-title">
+            {tugas.title}
+          </h1>
+        </header>
 
         {/* Bagian 1 */}
         <section className="detail-tugas-content" aria-labelledby="section-1">
@@ -89,7 +99,7 @@ export default function Tugas1() {
           <ul>
             <li>Memiliki kuantor universal (∀) dan eksistensial (∃)</li>
             <li>Menyatakan sifat objek dengan predikat (misalnya: Manusia(x))</li>
-            <li>Digunakan dalam AI, basis data, sistem pakar, dll.</li>
+            <li>Digunakan dalam AI, basis data, sistem pakar, dan sebagainya</li>
           </ul>
           <h3>Contoh kasus:</h3>
           <ul>
@@ -99,13 +109,13 @@ export default function Tugas1() {
         </section>
 
         {/* Bagian 2 */}
-        <section className="tugas1-content" aria-labelledby="section-2">
+        <section className="detail-tugas-content" aria-labelledby="section-2">
           <h2 id="section-2"><i className="fas fa-pencil-alt" /> 2. Menuliskan Ekspresi dalam Logika First Order</h2>
           <p><strong>Pernyataan:</strong></p>
           <ol>
-            <li>Semua mahasiswa informatika suka kecerdasan buatan</li>
-            <li>Setiap yang paham pemrograman suka kecerdasan buatan</li>
-            <li>Kesimpulan: Semua mahasiswa ilmu komputer paham pemrograman</li>
+            <li>Semua mahasiswa informatika suka kecerdasan buatan.</li>
+            <li>Setiap yang paham pemrograman suka kecerdasan buatan.</li>
+            <li>Kesimpulan: Semua mahasiswa ilmu komputer paham pemrograman.</li>
           </ol>
           <p><strong>Notasi:</strong></p>
           <ul>
@@ -124,14 +134,14 @@ export default function Tugas1() {
         </section>
 
         {/* Bagian 3 */}
-        <section className="tugas1-content" aria-labelledby="section-3">
+        <section className="detail-tugas-content" aria-labelledby="section-3">
           <h2 id="section-3"><i className="fas fa-exchange-alt" /> 3. Konversi Kalimat ke FOL dan Pembuktian</h2>
           <p><strong>Pernyataan:</strong></p>
           <ol>
-            <li>Setiap apel atau pear adalah buah</li>
-            <li>Setiap buah memiliki warna kuning atau hijau atau merah</li>
-            <li>Tidak ada pear berwarna merah</li>
-            <li>Tidak ada buah manis berwarna hijau</li>
+            <li>Setiap apel atau pear adalah buah.</li>
+            <li>Setiap buah memiliki warna kuning atau hijau atau merah.</li>
+            <li>Tidak ada pear berwarna merah.</li>
+            <li>Tidak ada buah manis berwarna hijau.</li>
           </ol>
           <p><strong>Notasi:</strong></p>
           <ul>
@@ -150,10 +160,10 @@ export default function Tugas1() {
             <li>¬∃x (R(x) ∧ M(x))</li>
             <li>¬∃x (S(x) ∧ H(x))</li>
           </ul>
-          <p><strong>Pembuktian:</strong> Berdasarkan premis, pear tidak berwarna merah dan buah manis tidak berwarna hijau. Maka, buah manis hanya mungkin berwarna kuning atau merah, dan pear hanya mungkin kuning atau hijau.</p>
+          <p><strong>Pembuktian:</strong> Berdasarkan premis, pear tidak berwarna merah dan buah manis tidak berwarna hijau. Maka, buah manis hanya mungkin berwarna kuning atau merah, dan pear hanya mungkin berwarna kuning atau hijau.</p>
         </section>
 
-        {/* Navigasi kembali */}
+        {/* Tombol Kembali */}
         <nav className="back-link" aria-label="Navigasi kembali ke daftar tugas">
           <Link to="/tugas" className="btn-back">
             ← Kembali ke Daftar Tugas

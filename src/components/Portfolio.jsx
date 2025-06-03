@@ -1,6 +1,7 @@
+// src/components/Portfolio.jsx
 import { Link } from 'react-router-dom';
-import { portfolioList } from '../data/DataPortfolio';
 import SEO from '../components/SEO';
+import { portfolioList } from '../data/DataPortfolio';
 import '../styles/Portfolio.css';
 
 function Portfolio() {
@@ -17,11 +18,11 @@ function Portfolio() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "@id": "https://agitrahadian.my.id/portfolio#ItemList",
-    "url": "https://agitrahadian.my.id/portfolio",
-    "name": "Portfolio – Agit Rahadian",
-    "description":
+    url: "https://agitrahadian.my.id/portfolio",
+    name: "Portfolio – Agit Rahadian",
+    description:
       "Lihat proyek-proyek portofolio Agit Rahadian: website sekolah, aplikasi madrasah, dan sistem informasi akademik.",
-    "itemListElement": itemListElements,
+    itemListElement: itemListElements,
   };
 
   return (
@@ -30,8 +31,9 @@ function Portfolio() {
         title="Portfolio – Agit Rahadian"
         description="Lihat portfolio Agit Rahadian, Full-Stack Developer dari Garut: koleksi proyek website sekolah, aplikasi madrasah, dan sistem informasi akademik."
         keywords="Portfolio, Web Development, Agit Rahadian, Aplikasi Pendidikan, Sistem Informasi Akademik"
-        ogImage="https://agitrahadian.my.id/assets/portfolio1.webp"
         canonical="https://agitrahadian.my.id/portfolio"
+        ogImage="https://agitrahadian.my.id/assets/portfolio1.webp"
+        ogType="website"
         structuredData={listSchema}
       />
 
@@ -45,11 +47,7 @@ function Portfolio() {
         <div className="grid">
           {portfolioList.map((item) => (
             <div className="item" key={item.id} itemProp="itemListElement">
-              <article
-                className="box"
-                itemScope
-                itemType="https://schema.org/CreativeWork"
-              >
+              <article className="box" itemScope itemType="https://schema.org/CreativeWork">
                 <Link
                   to={`/portfolio/${item.id}`}
                   className="image-link"

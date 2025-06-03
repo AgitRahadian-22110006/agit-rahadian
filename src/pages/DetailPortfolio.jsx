@@ -1,3 +1,5 @@
+// src/pages/DetailPortfolio.jsx
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import { portfolioList } from '../data/DataPortfolio';
 import Navbar from '../components/Navbar';
@@ -6,7 +8,7 @@ import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import '../styles/DetailPortfolio.css';
 
-function DetailPortfolio() {
+export default function DetailPortfolio() {
   const { id } = useParams();
   const item = portfolioList.find((p) => p.id === Number(id));
   const siteUrl = 'https://agitrahadian.my.id';
@@ -15,7 +17,7 @@ function DetailPortfolio() {
     return (
       <>
         <SEO
-          title="Portfolio Tidak Ditemukan"
+          title="Portfolio Tidak Ditemukan – Agit Rahadian"
           description="Halaman portfolio yang Anda cari tidak ditemukan. Silakan kembali ke halaman utama untuk melihat proyek lainnya."
           canonical={`${siteUrl}/404`}
         >
@@ -31,35 +33,35 @@ function DetailPortfolio() {
     );
   }
 
-  // Schema: CreativeWork
+  // CreativeWork JSON-LD (Project)
   const projectSchema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     "@id": `${siteUrl}/portfolio/${item.id}`,
-    "name": item.title,
-    "headline": item.title,
-    "description": item.description,
-    "image": item.images[0]?.src,
-    "url": `${siteUrl}/portfolio/${item.id}`,
-    "author": {
+    name: item.title,
+    headline: item.title,
+    description: item.description,
+    image: item.images[0]?.src,
+    url: `${siteUrl}/portfolio/${item.id}`,
+    author: {
       "@type": "Person",
-      "name": "Agit Rahadian",
-      "url": siteUrl
+      name: "Agit Rahadian",
+      url: siteUrl
     }
   };
 
-  // Schema: BreadcrumbList
+  // BreadcrumbList JSON-LD
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": `${siteUrl}/` },
-      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": `${siteUrl}/portfolio` },
-      { "@type": "ListItem", "position": 3, "name": item.title, "item": `${siteUrl}/portfolio/${item.id}` }
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Beranda", item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 2, name: "Portfolio", item: `${siteUrl}/portfolio` },
+      { "@type": "ListItem", position: 3, name: item.title, item: `${siteUrl}/portfolio/${item.id}` }
     ]
   };
 
-  // Schema: Person
+  // Person JSON-LD
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -80,7 +82,7 @@ function DetailPortfolio() {
     }
   };
 
-  // Schema: Organization
+  // Organization JSON-LD
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -90,7 +92,7 @@ function DetailPortfolio() {
     sameAs: personSchema.sameAs
   };
 
-  // Schema: WebSite
+  // WebSite JSON-LD
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -120,9 +122,10 @@ function DetailPortfolio() {
     <>
       <SEO
         title={item.title}
-        description={`${item.description} Lihat detail proyek ${item.title} oleh Agit Rahadian, Full-Stack Web Developer asal Garut yang berspesialisasi dalam pengembangan solusi digital.`}
+        description={`${item.description} Lihat detail proyek ${item.title} oleh Agit Rahadian, Full-Stack Web Developer asal Garut.`}
         keywords={`${item.title}, Web Development, Portofolio, Agit Rahadian, Garut`}
         ogImage={item.images[0]?.src}
+        ogType="website"
         canonical={`${siteUrl}/portfolio/${item.id}`}
         structuredData={structuredData}
       >
@@ -130,7 +133,12 @@ function DetailPortfolio() {
       </SEO>
 
       <Navbar />
-      <main id="detail-portfolio" className="detail-portfolio" role="main" aria-label={`Detail Portofolio: ${item.title}`}>
+      <main
+        id="detail-portfolio"
+        className="detail-portfolio"
+        role="main"
+        aria-label={`Detail Portofolio: ${item.title}`}
+      >
         <div className="container">
           <article className="detail-header">
             <a
@@ -168,5 +176,3 @@ function DetailPortfolio() {
     </>
   );
 }
-
-export default DetailPortfolio;

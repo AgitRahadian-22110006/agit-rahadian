@@ -1,3 +1,5 @@
+// src/pages/Tugas.jsx
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Navbar from '../components/Navbar';
@@ -8,49 +10,55 @@ import profileImg from '../assets/profile-picture.avif';
 import tugasList from '../data/TugasData';
 
 export default function Tugas() {
+  const siteUrl = 'https://agitrahadian.my.id';
+
+  // BreadcrumbList JSON-LD
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://agitrahadian.my.id/" },
-      { "@type": "ListItem", "position": 2, "name": "Tugas", "item": "https://agitrahadian.my.id/tugas" }
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Beranda", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Tugas", item: `${siteUrl}/tugas` }
     ]
   };
 
+  // WebPage JSON-LD
   const webpageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://agitrahadian.my.id/tugas",
-    "url": "https://agitrahadian.my.id/tugas",
-    "name": "Halaman Tugas – Agit Rahadian",
-    "description": "Daftar tugas dan materi yang dibawakan oleh Agit Rahadian, Full-Stack Web Developer."
+    "@id": `${siteUrl}/tugas`,
+    url: `${siteUrl}/tugas`,
+    name: "Halaman Tugas – Agit Rahadian",
+    description: "Daftar tugas dan materi mata kuliah Kecerdasan Buatan yang dibawakan oleh Agit Rahadian, Full-Stack Web Developer."
   };
 
+  // Person JSON-LD
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Agit Rahadian",
-    "url": "https://agitrahadian.my.id",
-    "image": "https://agitrahadian.my.id/assets/profile-picture.avif",
-    "jobTitle": "Full-Stack Web Developer",
-    "alumniOf": "STMIK Mardira Indonesia",
-    "address": {
+    name: "Agit Rahadian",
+    url: siteUrl,
+    image: `${siteUrl}/assets/profile-picture.avif`,
+    jobTitle: "Full-Stack Web Developer",
+    alumniOf: "STMIK Mardira Indonesia",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Garut",
-      "addressRegion": "Jawa Barat",
-      "addressCountry": "ID"
+      addressLocality: "Garut",
+      addressRegion: "Jawa Barat",
+      addressCountry: "ID"
     }
   };
 
+  // Organization JSON-LD
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Agit Rahadian Digital",
-    "url": "https://agitrahadian.my.id",
-    "logo": "https://agitrahadian.my.id/assets/profile-picture.avif",
-    "founder": {
+    name: "Agit Rahadian Digital",
+    url: siteUrl,
+    logo: `${siteUrl}/assets/profile-picture.avif`,
+    founder: {
       "@type": "Person",
-      "name": "Agit Rahadian"
+      name: "Agit Rahadian"
     }
   };
 
@@ -64,10 +72,10 @@ export default function Tugas() {
   return (
     <>
       <SEO
-        title="Halaman Tugas"
-        description="Daftar tugas dan materi yang dibawakan oleh Agit Rahadian, Full-Stack Web Developer."
-        keywords="Tugas, Materi, Agit Rahadian, Full-Stack Web Developer"
-        canonical="https://agitrahadian.my.id/tugas"
+        title="Tugas Kecerdasan Buatan – Agit Rahadian"
+        description="Halaman daftar tugas Mata Kuliah Kecerdasan Buatan yang dibawakan oleh Agit Rahadian, Full-Stack Web Developer. Temukan Tugas 1 dan Tugas 2 di sini."
+        keywords="Tugas Kecerdasan Buatan, Agit Rahadian, Full-Stack Web Developer, AI Assignment"
+        canonical={`${siteUrl}/tugas`}
         structuredData={structuredData}
       />
 
@@ -84,13 +92,12 @@ export default function Tugas() {
               width="140"
               height="140"
               loading="lazy"
-              
             />
           </header>
-           <h1>Nama : Agit Rahadian</h1>
-           <p>NIM : 22110006</p>
-           <p>Kelas : E2022</p>
-            <p>Dosen : Dani Rohpandi, M. Kom.</p>
+          <p><strong>Nama:</strong> Agit Rahadian</p>
+          <p><strong>NIM:</strong> 22110006</p>
+          <p><strong>Kelas:</strong> E2022</p>
+          <p><strong>Dosen:</strong> Dani Rohpandi, M. Kom.</p>
 
           <section className="tugas-list" aria-label="Daftar Tugas">
             {tugasList.map((tugas) => (
@@ -106,7 +113,7 @@ export default function Tugas() {
                   to={tugas.link}
                   className="btn-profil"
                   role="button"
-                  aria-label={`Lihat detail tugas ${tugas.title}`}
+                  aria-label={`Lihat detail ${tugas.title}`}
                 >
                   Lihat Detail
                 </Link>

@@ -1,4 +1,5 @@
 // src/pages/Home.jsx
+import React from 'react';
 import Navbar from '../components/Navbar';
 import Header from '../components/Header';
 import Portfolio from '../components/Portfolio';
@@ -91,18 +92,31 @@ function Home() {
     logo: `${siteUrl}/android-chrome-512x512.png`
   };
 
-  // Combine all schemas
-  const structuredData = [personSchema, organizationSchema, breadcrumbSchema, webSiteSchema];
+  // Gabungkan semua schema
+  const structuredData = [
+    personSchema,
+    organizationSchema,
+    breadcrumbSchema,
+    webSiteSchema
+  ];
 
   return (
     <>
       <SEO
-        title="Home"
-        description="Agit Rahadian adalah Full-Stack Web Developer lulusan STMIK Mardira Indonesia yang berspesialisasi dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital praktis. Lihat portfolio dan pengalaman membangun aplikasi dengan teknologi React, Laravel, dan PHP."
-        keywords="Website Sekolah, Aplikasi Pendidikan, React Developer, Laravel Developer, Garut, Jawa Barat, Indonesia"
+        title="Agit Rahadian – Full-Stack Web Developer"
+        description="Agit Rahadian adalah Full-Stack Web Developer lulusan STMIK Mardira Indonesia. Berspesialisasi dalam pengembangan website sekolah, aplikasi pendidikan, dan solusi digital praktis di Garut, Jawa Barat."
+        keywords="Agit Rahadian, Full-Stack Developer, Web Developer, Garut, Indonesia, Website Sekolah, Aplikasi Pendidikan, React, Laravel"
         canonical={siteUrl}
         structuredData={structuredData}
       >
+        {/* Tambahkan Open Graph dan Twitter Card khusus halaman Home */}
+        <meta property="og:title" content="Agit Rahadian – Full-Stack Web Developer" />
+        <meta property="og:description" content="Agit Rahadian adalah Full-Stack Web Developer dari Garut yang ahli membangun website sekolah, aplikasi pendidikan, dan solusi digital." />
+        <meta property="og:image" content={`${siteUrl}/og/profile-picture.avif`} />
+        <meta property="og:url" content={siteUrl} />
+        <meta name="twitter:title" content="Agit Rahadian – Full-Stack Web Developer" />
+        <meta name="twitter:description" content="Agit Rahadian adalah Full-Stack Web Developer dari Garut yang ahli membangun website sekolah, aplikasi pendidikan, dan solusi digital." />
+        <meta name="twitter:image" content={`${siteUrl}/og/profile-picture.avif`} />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
         <meta name="google" content="notranslate" />
