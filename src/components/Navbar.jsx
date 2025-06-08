@@ -65,35 +65,53 @@ export default function Navbar() {
           role="menubar"
         >
           <li role="none">
-            <NavLink to="/" end role="menuitem" onClick={scrollToTop}>Home</NavLink>
+            <NavLink to="/" end role="menuitem" onClick={scrollToTop}>
+              Home
+            </NavLink>
           </li>
           <li role="none">
-            <HashLink to="/#portfolio" smooth role="menuitem" onClick={closeMenu}>Portfolio</HashLink>
+            <HashLink to="/#portfolio" smooth role="menuitem" onClick={closeMenu}>
+              Portfolio
+            </HashLink>
           </li>
           <li role="none">
-            <HashLink to="/#about" smooth role="menuitem" onClick={closeMenu}>About</HashLink>
+            <HashLink to="/#about" smooth role="menuitem" onClick={closeMenu}>
+              About
+            </HashLink>
           </li>
           <li role="none">
-            <NavLink to="/experience" role="menuitem" onClick={closeMenu}>Experience</NavLink>
+            <NavLink to="/experience" role="menuitem" onClick={closeMenu}>
+              Experience
+            </NavLink>
           </li>
           <li role="none">
-            <NavLink to="/tugas" role="menuitem" onClick={closeMenu}>AI Assignment</NavLink>
+            <NavLink to="/tugas" role="menuitem" onClick={closeMenu}>
+              AI Assignment
+            </NavLink>
           </li>
           <li role="none">
-            <NavLink to="/blog" role="menuitem" onClick={closeMenu}>Blog</NavLink>
+            <NavLink to="/blog" role="menuitem" onClick={closeMenu}>
+              Blog
+            </NavLink>
           </li>
 
-          {!user ? (
-            <li role="none">
-              <NavLink to="/admin" role="menuitem" onClick={closeMenu}>Login Admin</NavLink>
-            </li>
-          ) : (
+          {user && (
             <>
               <li role="none">
-                <NavLink to="/admin/dashboard" role="menuitem" onClick={closeMenu}>Admin</NavLink>
+                <NavLink
+                  to="/admin/dashboard"
+                  role="menuitem"
+                  onClick={closeMenu}
+                >
+                  Admin
+                </NavLink>
               </li>
               <li role="none">
-                <button className="logout-button" role="menuitem" onClick={handleLogout}>
+                <button
+                  className="logout-button"
+                  role="menuitem"
+                  onClick={handleLogout}
+                >
                   Logout
                 </button>
               </li>
